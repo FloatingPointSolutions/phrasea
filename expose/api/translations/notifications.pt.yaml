@@ -1,0 +1,14 @@
+download:
+    link:
+        email:
+            subject: 'A sua transferência está pronta'
+            body: '<p>A sua transferência está pronta.</p><p><a href="%url%">Transferir</a></p><p>Esta ligação é válida por um período limitado.</p>'
+        sms:
+            body: 'A sua transferência está pronta: %url%'
+    zippy_link:
+        email:
+            subject: 'O seu arquivo está a ser preparado'
+            body: '<p>O seu arquivo está a ser preparado e estará disponível em breve.</p><p><a href="%url%">Transferir arquivo</a></p>'
+            validity: 'Esta ligação é válida por %count% dia.|Esta ligação é válida por %count% dias.'
+        sms:
+            body: 'O seu arquivo está pronto (%count% dia): %url%|O seu arquivo está pronto (%count% dias): %url%'
