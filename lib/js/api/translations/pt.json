@@ -1,0 +1,17 @@
+{
+    "lib": {
+        "api": {
+            "error": {
+                "http_bad_request": "Pedido inválido",
+                "http_error": "Erro do servidor",
+                "http_not_found": "Não encontrado",
+                "http_unauthorized": "Não autorizado",
+                "network": "Erro de rede",
+                "session_expired": "A sua sessão expirou"
+            },
+            "http_error": {
+                "429": "Demasiados pedidos, pode tentar novamente dentro de {{minutes}}min"
+            }
+        }
+    }
+}
