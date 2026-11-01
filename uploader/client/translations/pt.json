@@ -1,0 +1,106 @@
+{
+    "common": {
+        "cancel": "Cancelar",
+        "next": "Seguinte",
+        "uploader": "Uploader"
+    },
+    "download": {
+        "back": "Voltar",
+        "done": {
+            "restart": "Transferir outro",
+            "your_file_will_be_downloaded": "O seu ficheiro será transferido!"
+        },
+        "download_asset": "Transferir ativo",
+        "file_url": "URL do ficheiro",
+        "fill_the_form_to_download_your_asset": "Preencha o formulário para transferir o seu ativo."
+    },
+    "file_picker": {
+        "alternative_upload_methods": "ou simplesmente <l>transfira</l> a partir de URLs.",
+        "drag_n_drop_some_files_here_or_click_to_select_files": "Arraste e largue ficheiros aqui ou clique para selecionar ficheiros",
+        "file_count_one": "Selecionou {{count}} ficheiro",
+        "file_count_other": "Selecionou {{count}} ficheiros",
+        "max_file_size": "Tamanho máximo do ficheiro: {{size}}",
+        "next": "Seguinte",
+        "total_max_file_count_exceeded": "Número máximo total de ficheiros excedido ({{fileCount}} > {{maxFileCount}})",
+        "total_max_file_size_exceeded": "Tamanho máximo total de ficheiros excedido ({{actualSize}} > {{maxSize}})",
+        "total_size": "Tamanho total: {{size}} / {{maxCommitSize}}",
+        "total_size_no_limit": "Tamanho total: {{size}}"
+    },
+    "form": {
+        "addItem": "Adicionar",
+        "selectPlaceholder": "Escolha uma opção"
+    },
+    "form_editor": {
+        "create": {
+            "title": "Criação de novo esquema de formulário"
+        },
+        "edit": {
+            "title": "Edição do esquema de formulário: {{name}}"
+        },
+        "form_saved": "Formulário guardado com sucesso",
+        "form_submitted": "Formulário submetido com os dados:<pre>{{json}}}</pre>",
+        "form_submitted_title": "Formulário submetido",
+        "invalid_json": "JSON inválido: {{message}}",
+        "locale": {
+            "helper": "Idioma opcional para este esquema de formulário (p. ex., en, fr, etc.). Deixe em branco para todos os idiomas.",
+            "label": "Idioma"
+        },
+        "save_form": "Guardar formulário",
+        "target": {
+            "label": "Destino"
+        }
+    },
+    "form_schema": {
+        "list": {
+            "create_button": "Criar novo esquema de formulário",
+            "delete": "Eliminar",
+            "delete_confirm_message": "Tem a certeza de que pretende eliminar o esquema de formulário de {{name}}?",
+            "delete_confirm_title": "Eliminar esquema de formulário",
+            "edit": "Editar",
+            "empty": "Não foram encontrados esquemas de formulário. Clique no botão abaixo para criar um novo.",
+            "title": "Esquemas de formulário"
+        }
+    },
+    "menu": {
+        "form_editor": "Editor de formulários",
+        "target_data_editor": "Editor de dados de destino"
+    },
+    "require_login": {
+        "intro": "Inicie sessão para aceder a esta página.",
+        "log_in": "Iniciar sessão"
+    },
+    "target_param": {
+        "create": {
+            "title": "Criação de novos parâmetros de destino"
+        },
+        "edit": {
+            "title": "Edição dos parâmetros de destino: {{name}}"
+        },
+        "form_saved": "Formulário guardado com sucesso",
+        "list": {
+            "create_button": "Criar novos parâmetros de destino",
+            "delete": "Eliminar",
+            "delete_confirm_message": "Tem a certeza de que pretende eliminar os parâmetros do destino {{name}}?",
+            "delete_confirm_title": "Eliminar esquema de formulário",
+            "edit": "Editar",
+            "empty": "Nenhum",
+            "title": "Parâmetros de destino"
+        },
+        "save_form": "Guardar formulário",
+        "target": {
+            "label": "Destino"
+        }
+    },
+    "targets": {
+        "none_available": "Não tem acesso a nenhum destino de carregamento."
+    },
+    "upload": {
+        "cancelConfirmation": "Tem a certeza de que pretende cancelar o carregamento atual?",
+        "retry_warning": "O carregamento falhou. Nova tentativa {{retryCount}} dentro de {{delay}}s..."
+    },
+    "upload_done": {
+        "all_files_have_been_uploaded": "Todos os ficheiros foram carregados.",
+        "go_back_home": "Voltar à página inicial",
+        "you_re_done": "Concluído!"
+    }
+}
