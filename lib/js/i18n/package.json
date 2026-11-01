@@ -12,7 +12,8 @@
         "lint": "eslint src",
         "lint:fix": "eslint --fix src",
         "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|cjs|tsx|jsx)\"",
-        "cs": "pnpm lint:fix && pnpm format"
+        "cs": "pnpm lint:fix && pnpm format",
+        "check-translations": "node bin/check-translations.mjs"
     },
     "peerDependencies": {
         "react-i18next": "^14.1.1"
