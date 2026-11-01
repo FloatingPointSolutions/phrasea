@@ -1,0 +1,17 @@
+fileignoreconfig:
+- filename: .env
+  checksum: e60c61e29e8534758363528d96750652f8bda1115f95f0785480475fa91ccbd9
+- filename: databox/api/translations/messages.es.yaml
+  checksum: 57e916f0599e117899ef3ffac467aa3cbc6af6edbe6fd84a56cd7fee42c8dcdb
+- filename: databox/api/translations/messages.pt.yaml
+  checksum: 322ba2c6430d7cb2caa11f16bbcba21d4be6cf17f3e8cb555a7b14cf7712c5e8
+- filename: databox/client/translations/pt.json
+  checksum: 3d4b30408cad1b6ea6c88e1915cd1775ba54a232a7a8cca17c003767ce3c5e00
+- filename: expose/client/translations/es.json
+  checksum: a32971b2038c98aa3e3c91230eaeeffe621001b745580a247c295f0267f0931e
+- filename: expose/client/translations/pt.json
+  checksum: ae5d9364e5b30f15f1a5af6e20dc4f83ceb7a4ec9443ac80897ebea530523444
+- filename: lib/js/i18n/bin/check-translations.mjs
+  checksum: 7a45812da95fef938690760cd449a5f4eb3fa70f824b5af66050ea03d713b25a
+threshold: medium
+version: "1.0"
