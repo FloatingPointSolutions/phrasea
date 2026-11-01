@@ -1,0 +1,2885 @@
+{
+    "acl": {
+        "delete": "Eliminar",
+        "form": {
+            "group_select": {
+                "placeholder": "Selecionar utilizador"
+            },
+            "user_select": {
+                "placeholder": "Selecionar grupo"
+            }
+        },
+        "parent": {
+            "show": "Mostrar permissões do elemento principal <strong>{{name}}</strong>"
+        },
+        "permission": {
+            "all": "Todas",
+            "asset": {
+                "delete": {
+                    "desc": "Permite eliminar este ativo.",
+                    "label": "Eliminar"
+                },
+                "edit": {
+                    "desc": "Permite editar os atributos do ativo.",
+                    "label": "Editar atributos"
+                },
+                "edit_permissions": {
+                    "desc": "Permite alterar as permissões e as definições de privacidade dos ativos de que é proprietário.",
+                    "label": "Editar permissões/privacidade"
+                },
+                "operator": {
+                    "desc": "Permite ações de gestão sobre o ativo ({{manage_asset_desc}}).",
+                    "label": "Gerir"
+                },
+                "owner": {
+                    "desc": "Controlo total sobre este ativo, exceto permissões e definições de privacidade.",
+                    "label": "Proprietário"
+                },
+                "view": {
+                    "desc": "Permite visualizar este ativo, mas não necessariamente a coleção a que pertence.",
+                    "label": "Ver"
+                }
+            },
+            "child_create": "Criação de subelementos",
+            "child_delete": "Eliminação de subelementos",
+            "child_edit": "Edição de subelementos",
+            "child_master": "Master de subelementos",
+            "child_operator": "Operador de subelementos",
+            "child_owner": "Proprietário de subelementos",
+            "child_share": "Partilha de subelementos",
+            "child_undelete": "Restauro de subelementos",
+            "child_view": "Visualização de subelementos",
+            "collection": {
+                "assets_operator": {
+                    "desc": "Permite ações de gestão sobre os ativos ({{manage_asset_desc}}) da coleção e das subcoleções.",
+                    "label": "Gerir ativos"
+                },
+                "assets_owner": {
+                    "desc": "Controlo total sobre os ativos da coleção e das subcoleções, exceto permissões e definições de privacidade.",
+                    "label": "Proprietário dos ativos"
+                },
+                "create": {
+                    "desc": "Permite criar subcoleções nesta coleção. As novas subcoleções herdam as mesmas permissões da coleção principal.",
+                    "label": "Criar coleções"
+                },
+                "create_assets": {
+                    "desc": "Permite criar ativos na coleção e nas subcoleções.",
+                    "label": "Criar ativos"
+                },
+                "delete": {
+                    "desc": "Permite eliminar esta coleção, as subcoleções e os respetivos ativos.",
+                    "label": "Eliminar"
+                },
+                "delete_assets": {
+                    "desc": "Permite eliminar ativos da coleção e das subcoleções.",
+                    "label": "Eliminar ativos"
+                },
+                "edit": {
+                    "desc": "Permite gerir esta coleção, mas não editar os ativos nela contidos.",
+                    "label": "Gerir coleção"
+                },
+                "edit_assets": {
+                    "desc": "Permite editar os atributos dos ativos da coleção e das subcoleções.",
+                    "label": "Editar atributos dos ativos"
+                },
+                "edit_permissions": {
+                    "desc": "Permite editar as permissões e a privacidade das coleções e dos ativos de que é proprietário.",
+                    "label": "Gerir permissões do conteúdo próprio"
+                },
+                "owner": {
+                    "desc": "Controlo total sobre esta coleção e as subcoleções, exceto permissões e definições de privacidade.",
+                    "label": "Proprietário"
+                },
+                "quarantine": {
+                    "desc": "Permite visualizar os ativos em quarentena nesta coleção.",
+                    "label": "Ver em quarentena"
+                },
+                "quarantine_by_pass": {
+                    "desc": "Permite contornar a quarentena dos ativos desta coleção.",
+                    "label": "Contornar quarentena"
+                },
+                "share_assets": {
+                    "desc": "Permite partilhar os ativos da coleção e das subcoleções.",
+                    "label": "Partilhar ativos"
+                },
+                "view": {
+                    "desc": "Permite visualizar esta coleção, as suas subcoleções e os respetivos ativos.",
+                    "label": "Ver"
+                },
+                "view_assets": {
+                    "desc": "Permite visualizar os ativos desta coleção e das subcoleções, mas não as coleções a que pertencem.",
+                    "label": "Ver ativos"
+                }
+            },
+            "common": {
+                "operator": {
+                    "desc": "editar o título ou as etiquetas, mover para outra coleção, editar renderizações, ver versões de ficheiros"
+                }
+            },
+            "create": "Criar",
+            "delete": "Eliminar",
+            "edit": "Editar",
+            "integration": {
+                "child_edit": {
+                    "desc": "Permite interagir com a integração, por exemplo executá-la ou utilizá-la num fluxo de trabalho, mas não editar a sua configuração nem eliminá-la.",
+                    "label": "Interagir"
+                },
+                "child_view": {
+                    "desc": "Permite visualizar a integração e ler os seus dados, mas não interagir com ela. Útil para utilizadores que precisam de ver os resultados de uma integração, mas não devem poder executá-la nem editar a sua configuração.",
+                    "label": "Utilizar"
+                },
+                "edit": {
+                    "desc": "Permite editar a configuração da integração.",
+                    "label": "Editar"
+                },
+                "view": {
+                    "desc": "Permite ver que a integração existe, mas não interagir com ela nem visualizar os seus dados. Útil para utilizadores que precisam de saber que uma integração está presente, mas não devem poder executá-la nem ver os seus resultados.",
+                    "label": "Ver"
+                }
+            },
+            "master": "Master",
+            "operator": "Operador",
+            "owner": "Proprietário",
+            "rendition_policy": {
+                "child_edit": {
+                    "desc": "Editar renderização desta política.",
+                    "label": "Editar"
+                },
+                "child_view": {
+                    "desc": "Ver renderização desta política.",
+                    "label": "Ver"
+                }
+            },
+            "share": "Partilhar",
+            "undelete": "Restaurar",
+            "view": "Ver",
+            "workspace": {
+                "assets_operator": {
+                    "desc": "Permite ações de gestão sobre os ativos ({{manage_asset_desc}}) ao nível da raiz deste espaço de trabalho.",
+                    "label": "Gerir ativos"
+                },
+                "assets_owner": {
+                    "desc": "Controlo total sobre todos os ativos deste espaço de trabalho, exceto permissões e definições de privacidade.",
+                    "label": "Proprietário dos ativos"
+                },
+                "create": {
+                    "desc": "Permite criar coleções neste espaço de trabalho, mas não editar nem eliminar coleções criadas por outros.",
+                    "label": "Criar coleções"
+                },
+                "create_assets": {
+                    "desc": "Permite criar ativos ao nível da raiz deste espaço de trabalho.",
+                    "label": "Criar ativos"
+                },
+                "delete": {
+                    "desc": "Permite eliminar este espaço de trabalho (não implementado na interface gráfica).",
+                    "label": "Eliminar"
+                },
+                "delete_assets": {
+                    "desc": "Permite eliminar ativos ao nível da raiz deste espaço de trabalho.",
+                    "label": "Eliminar ativos"
+                },
+                "edit": {
+                    "desc": "Permite gerir este espaço de trabalho (alterar o título, adicionar idiomas, etiquetas, entidades, renderizações, atributos), mas não editar os ativos nele contidos.",
+                    "label": "Gerir"
+                },
+                "edit_assets": {
+                    "desc": "Permite editar os atributos dos ativos ao nível da raiz deste espaço de trabalho.",
+                    "label": "Editar atributos dos ativos"
+                },
+                "edit_permissions": {
+                    "desc": "Permite editar as permissões e a privacidade das coleções e dos ativos de que é proprietário.",
+                    "label": "Editar permissões"
+                },
+                "owner": {
+                    "desc": "Controlo total sobre o espaço de trabalho, as suas coleções e os seus ativos.",
+                    "label": "Proprietário"
+                },
+                "quarantine": {
+                    "desc": "Permite visualizar os ativos em quarentena neste espaço de trabalho.",
+                    "label": "Ver em quarentena"
+                },
+                "quarantine_by_pass": {
+                    "desc": "Permite contornar a quarentena dos ativos deste espaço de trabalho.",
+                    "label": "Contornar quarentena"
+                },
+                "share_assets": {
+                    "desc": "Permite partilhar ativos ao nível da raiz deste espaço de trabalho.",
+                    "label": "Partilhar ativos"
+                },
+                "view": {
+                    "desc": "Permissão mínima necessária para aceder a este espaço de trabalho. Em alternativa, o espaço de trabalho pode ser marcado como público.",
+                    "label": "Acesso"
+                },
+                "view_assets": {
+                    "desc": "Permite visualizar todos os ativos do espaço de trabalho, mas não necessariamente as coleções a que pertencem.",
+                    "label": "Ver ativos"
+                }
+            }
+        },
+        "table": {
+            "cols": {
+                "user_group": "Utilizador/Grupo"
+            }
+        }
+    },
+    "analysis": {
+        "severity": {
+            "error": "Erro",
+            "info": "Informação",
+            "success": "OK",
+            "warning": "Aviso"
+        }
+    },
+    "annotation": {
+        "type": {
+            "arrow": "Seta",
+            "circle": "Círculo",
+            "cue": "Marcador",
+            "draw": "Desenho",
+            "line": "Linha",
+            "rectangle": "Retângulo",
+            "target": "Alvo",
+            "text": "Texto",
+            "timerange": "Intervalo de tempo"
+        }
+    },
+    "annotations": {
+        "delete_shape": {
+            "confirm": "Tem a certeza de que pretende eliminar esta forma?"
+        }
+    },
+    "appbar": {
+        "assets": "Ativos",
+        "operationTasks": "Tarefas de operação",
+        "pages": "Páginas"
+    },
+    "aql": {
+        "constant": {
+            "na": "N/D",
+            "no": "Não",
+            "null": "Nulo",
+            "yes": "Sim"
+        }
+    },
+    "archive": {
+        "basket": {
+            "confirmed": "O cesto foi arquivado!"
+        }
+    },
+    "asset": {
+        "actions": {
+            "add_to_basket": "Adicionar ao cesto",
+            "copy": "Copiar",
+            "delete": "Eliminar",
+            "download": "Transferir",
+            "edit": "Editar",
+            "info": "Informação",
+            "move": "Mover",
+            "open": "Abrir",
+            "replace_source_file": "Substituir ficheiro de origem",
+            "restore": "Restaurar",
+            "save_as": "Guardar como",
+            "share": "Partilhar"
+        },
+        "chip": {
+            "deleted": "Eliminado"
+        },
+        "collection_list": {
+            "collections_one": "+ {{count}} coleção",
+            "collections_other": "+ {{count}} coleções",
+            "others_one": "+ {{count}} outra",
+            "others_other": "+ {{count}} outras"
+        },
+        "delete": {
+            "confirm": {
+                "not_allowed": "Não tem permissão para eliminar nenhum destes ativos",
+                "text_to_type": {
+                    "delete": "Eliminar"
+                },
+                "title": "Confirmar eliminação"
+            },
+            "confirm_hard_delete_message_one": "Tem a certeza de que pretende eliminar <strong>permanentemente</strong> este ativo? Esta ação não pode ser anulada.",
+            "confirm_hard_delete_message_other": "Tem a certeza de que pretende eliminar <strong>permanentemente</strong> <strong>{{count}} ativos</strong>? Esta ação não pode ser anulada.",
+            "confirm_move_to_trash_message_one": "Tem a certeza de que pretende mover este ativo para o lixo?",
+            "confirm_move_to_trash_message_other": "Tem a certeza de que pretende mover <strong>{{count}} ativos</strong> para o lixo?",
+            "hard_delete_one": "Eliminar ativo permanentemente",
+            "hard_delete_other": "Eliminar <strong>{{count}} ativos</strong> permanentemente",
+            "move_to_trash_one": "Mover ativo para o lixo",
+            "move_to_trash_other": "Mover <strong>{{count}} ativos</strong> para o lixo",
+            "remove_from_collection": "Remover da coleção <strong>{{name}}</strong>",
+            "remove_from_story": "Remover da história <strong>{{name}}</strong>",
+            "shared_warning_one": "Este ativo está atualmente partilhado. Eliminá-lo removerá o acesso a todos os utilizadores.",
+            "shared_warning_other": "<strong>{{count}}</strong> destes ativos estão atualmente partilhados. Eliminá-los removerá o acesso a todos os utilizadores."
+        },
+        "es_document": {
+            "sync_now": "Sincronizar agora"
+        },
+        "info": {
+            "collection": "Coleção",
+            "collections": {
+                "none": "Nenhuma"
+            },
+            "created_at": "Criado em",
+            "id": "ID",
+            "last_attribute_modification_date": "Data da última modificação de atributos",
+            "last_modification_date": "Data da última modificação",
+            "owner": "Proprietário",
+            "source_file": {
+                "label": "Ficheiro de origem",
+                "none": "Nenhum"
+            },
+            "workspace": "Espaço de trabalho"
+        },
+        "manage": {
+            "acl": {
+                "title": "Permissões",
+                "versions": "Versões"
+            },
+            "edit": {
+                "title": "Editar"
+            },
+            "es_doc": {
+                "title": "Documento ES"
+            },
+            "info": {
+                "title": "Informação"
+            },
+            "open": {
+                "title": "Abrir"
+            },
+            "operations": {
+                "title": "Operações"
+            },
+            "renditions": {
+                "title": "Renderizações"
+            },
+            "title": "Gerir ativo {{name}}",
+            "workflow": {
+                "title": "Fluxo de trabalho"
+            }
+        },
+        "not_found_or_no_access": "Ativo não encontrado ou não tem acesso para o visualizar.",
+        "operations": {
+            "last_asset_workflows": "Últimos fluxos de trabalho do ativo",
+            "trigger_workflow_again": "Acionar fluxo de trabalho novamente",
+            "view": "Ver"
+        },
+        "replace": {
+            "label": "Substituir"
+        },
+        "restore": {
+            "confirm": {
+                "title": "Confirmar restauro"
+            },
+            "confirm_message_one": "Tem a certeza de que pretende restaurar este ativo?",
+            "confirm_message_other": "Tem a certeza de que pretende restaurar {{count}} ativos?",
+            "deleted_collection": "Restaurar",
+            "deleted_collection_or_story_warning": "Nota: alguns ativos não podem ser restaurados porque as respetivas coleções de referência ou história foram eliminadas:",
+            "no_restorable_assets": "Nenhum dos ativos selecionados pode ser restaurado porque as respetivas coleções de referência foram eliminadas."
+        },
+        "tag_list": {
+            "others_one": "+ {{count}} outra",
+            "others_other": "+ {{count}} outras",
+            "tags_one": "+ {{count}} etiqueta",
+            "tags_other": "+ {{count}} etiquetas"
+        },
+        "view": {
+            "add_attachment": "Adicionar anexo",
+            "appears_in": "Aparece em",
+            "attachments": "Anexos",
+            "attributes": "Atributos",
+            "delete_attachment": {
+                "button": "Eliminar anexo",
+                "confirm_button": "Eliminar",
+                "confirm_message": "Tem a certeza de que pretende eliminar este anexo? Esta ação não pode ser anulada.",
+                "confirm_title": "Eliminar anexo",
+                "success_toast": "Anexo eliminado com sucesso"
+            },
+            "detach_attachment": {
+                "button": "Desanexar do ativo",
+                "confirm_button": "Desanexar",
+                "confirm_message": "Tem a certeza de que pretende desanexar este elemento do ativo?",
+                "confirm_title": "Desanexar do ativo",
+                "success_toast": "Anexo desanexado com sucesso"
+            },
+            "discussion": "Discussão",
+            "info": "Informação",
+            "metrics": {
+                "not_configured": "A análise do Matomo não está configurada.",
+                "title": "Métricas"
+            },
+            "rename_attachment": "Mudar o nome do anexo"
+        }
+    },
+    "asset_actions": {
+        "batch_edit": {
+            "different_workspaces": {
+                "message": "Não é possível editar atributos de ativos de espaços de trabalho diferentes em simultâneo."
+            }
+        },
+        "copy": "Copiar",
+        "delete": "Eliminar",
+        "delete_permanently": "Eliminar permanentemente",
+        "download": "Transferir",
+        "edit": "Editar",
+        "export": "Exportar",
+        "move": "Mover",
+        "restore": "Restaurar",
+        "select_all": "Selecionar tudo",
+        "share": "Partilhar",
+        "share_multiple": "Só é possível partilhar um ativo de cada vez",
+        "substitute_file": "Substituir ficheiro",
+        "unselect_all": "Desmarcar tudo"
+    },
+    "asset_collections": {
+        "other_collections": "Também aparece como atalho nas seguintes coleções:",
+        "reference_collection": "Este ativo pertence à coleção <strong>{{collection}}</strong> no espaço de trabalho <i>{{workspace}}</i>.",
+        "reference_workspace": "Este ativo pertence à coleção raiz do espaço de trabalho <strong>{{workspace}}</strong>.",
+        "remove_shortcut": "Remover atalho",
+        "remove_shortcut_confirm": "Tem a certeza de que pretende remover este atalho?",
+        "title": "Coleções"
+    },
+    "asset_delete": {
+        "confirm": "Tem a certeza de que pretende eliminar este ativo?",
+        "title": "Eliminar ativo"
+    },
+    "asset_dropzone": {
+        "drop_the_files_here": "Largue os ficheiros aqui…",
+        "you_must_be_authenticated_in_order_to_upload_new_files": "Tem de estar autenticado para carregar novos ficheiros"
+    },
+    "asset_export": {
+        "pending": {
+            "toast": {
+                "done": "Exportação pronta! <a>Transferir</a>",
+                "in_progress": "A preparar a exportação… {{progress}}%"
+            }
+        }
+    },
+    "asset_file_versions": {
+        "current": "Atual"
+    },
+    "asset_policy": {
+        "new": {
+            "label": "Nova política de ativos"
+        }
+    },
+    "asset_restore": {
+        "confirm": "Tem a certeza de que pretende restaurar este ativo?",
+        "title": "Restaurar ativo"
+    },
+    "asset_selection": {
+        "x_item_one": "<strong>{{count}}</strong> ativo",
+        "x_item_other": "<strong>{{total}}</strong> ativos",
+        "x_item_with_selection_one": "<strong>{{selection}} / {{total}}</strong> ativo",
+        "x_item_with_selection_other": "<strong>{{selection}} / {{total}}</strong> ativos"
+    },
+    "asset_status": {
+        "choice": {
+            "accepted": "Aceite",
+            "pending": "Pendente",
+            "quarantined": "Em quarentena"
+        }
+    },
+    "asset_type": {
+        "choice": {
+            "asset": "Ativos",
+            "asset_only": "Apenas ativos",
+            "both": "Ambos",
+            "story": "Histórias",
+            "story_only": "Apenas histórias"
+        }
+    },
+    "asset_version": {
+        "delete": "Eliminar versão"
+    },
+    "asset_version_delete": {
+        "confirm": "Tem a certeza de que pretende eliminar esta versão?",
+        "confirmed": "A versão foi eliminada!"
+    },
+    "asset_view": {
+        "edit_asset": "Ativo <strong>{{name}}</strong>"
+    },
+    "attachment": {
+        "dialog": {
+            "add": {
+                "submit": "Anexar",
+                "success": "Foi adicionado um novo anexo.",
+                "title": "Adicionar anexo ao ativo"
+            }
+        }
+    },
+    "attribute": {
+        "editor": {
+            "correct_invalid": "Corrigir",
+            "invalid_valid": "Valor inválido. Por favor, corrija-o!",
+            "tabs": {
+                "preview": {
+                    "no_asset": "Nenhum ativo selecionado",
+                    "title": "Pré-visualização"
+                },
+                "values": {
+                    "title": "Valores"
+                }
+            }
+        },
+        "entity": {
+            "pending": "[Valor pendente de aprovação]"
+        },
+        "invalidValue": "Valor inválido",
+        "type": {
+            "duration": {},
+            "size": {
+                "unit": {
+                    "bytes": "{{value}} Bytes",
+                    "eb": "{{value}} EB",
+                    "eib": "{{value}} EiB",
+                    "gb": "{{value}} GB",
+                    "gib": "{{value}} GiB",
+                    "kb": "{{value}} KB",
+                    "kib": "{{value}} KiB",
+                    "mb": "{{value}} MB",
+                    "mib": "{{value}} MiB",
+                    "pb": "{{value}} PB",
+                    "pib": "{{value}} PiB",
+                    "tb": "{{value}} TB",
+                    "tib": "{{value}} TiB",
+                    "yb": "{{value}} YB",
+                    "yib": "{{value}} YiB",
+                    "zb": "{{value}} ZB",
+                    "zib": "{{value}} ZiB"
+                }
+            }
+        }
+    },
+    "attribute_definitions": {
+        "filter": {
+            "asset_type": "Filtrar por tipo de ativo",
+            "fillFromName": "Preencher a partir do nome",
+            "type": "Filtrar por tipo",
+            "useAsName": "Utilizar como nome"
+        },
+        "new": {
+            "label": "Novo atributo"
+        }
+    },
+    "attribute_editor": {
+        "cancel": {
+            "label": "Cancelar"
+        },
+        "definitions": {
+            "indeterminate": "Indeterminado"
+        },
+        "diff": {
+            "dialog": {
+                "title": "Confirmar alterações?"
+            }
+        },
+        "discard_changes": {
+            "confirm": "Sim, descartar",
+            "desc": "Todas as alterações efetuadas nos ativos não foram aplicadas e serão descartadas.",
+            "title": "Descartar alterações?"
+        },
+        "remove_from_selection": "Remover da seleção",
+        "save": {
+            "label": "Guardar"
+        },
+        "saved": "Guardado!",
+        "suggestions": {
+            "menu": {
+                "apply": "Atribuir este valor aos ativos selecionados",
+                "select_with_value": "Selecionar os ativos com este valor"
+            },
+            "no_value": "- vazio -",
+            "originalValues": {
+                "label": "Comparar valores originais"
+            }
+        }
+    },
+    "attribute_entity": {
+        "batch_delete": {
+            "confirm": "Tem a certeza de que pretende eliminar estas entidades?",
+            "label": "Eliminar"
+        },
+        "batch_merge": {
+            "dialog": {
+                "keep": "Selecione a entidade que pretende manter. As restantes serão unidas a esta e eliminadas.",
+                "submit": "Unir",
+                "title": "Unir entidades"
+            },
+            "label": "Unir"
+        },
+        "delete": {
+            "confirm": {
+                "assertion": {
+                    "delete_attr_def": "Compreendo que a definição de atributo \"{{ definitionName }}\" será eliminada porque a utiliza.",
+                    "unset_on_attrs": "Compreendo que esta entidade será removida de todos os atributos de ativos que a utilizam."
+                }
+            }
+        },
+        "dialog": {
+            "create": {
+                "title": "Novo item"
+            }
+        },
+        "form": {
+            "created": "Item criado!"
+        },
+        "import": {
+            "format": {
+                "csv": "CSV",
+                "raw": "Em bruto (um valor por linha)"
+            }
+        },
+        "new": {
+            "label": "Nova entidade"
+        },
+        "pending": {
+            "approve": "Aprovar",
+            "reject": "Rejeitar"
+        },
+        "status": {
+            "approved": "Aprovado",
+            "pending": "Pendente",
+            "rejected": "Rejeitado"
+        }
+    },
+    "attribute_entity_select": {
+        "manage_list": "Gerir lista"
+    },
+    "attribute_policy": {
+        "new": {
+            "label": "Nova política"
+        }
+    },
+    "attribute_type": {
+        "boolean": {
+            "no": {
+                "label": "Não"
+            },
+            "yes": {
+                "label": "Sim"
+            }
+        }
+    },
+    "attributes": {
+        "values_one": "{{count}} valor",
+        "values_other": "{{count}} valores"
+    },
+    "aws_rekognition": {
+        "actions": {
+            "detect_faces": "Detetar rostos",
+            "detect_image_labels": "Detetar etiquetas de imagem",
+            "detect_texts": "Detetar textos",
+            "face_n": "Rosto n.º {{n}}",
+            "faces": "Rostos",
+            "labels": "Etiquetas",
+            "no_face_detected": "Nenhum rosto detetado",
+            "no_label_detected": "Nenhuma etiqueta detetada",
+            "no_text_detected": "Nenhum texto detetado",
+            "texts": "Textos"
+        }
+    },
+    "basket": {
+        "actions": {
+            "archive": "Arquivar cesto",
+            "delete": "Eliminar cesto",
+            "edit": "Editar cesto",
+            "unarchive": "Desarquivar cesto"
+        },
+        "added_to_basket_one": "Item adicionado ao cesto",
+        "added_to_basket_other": "{{count}} itens adicionados ao cesto",
+        "choose_modal": {
+            "title": "Selecionar o cesto atual"
+        },
+        "create_button": {
+            "label": "Criar novo cesto"
+        },
+        "default": {
+            "name": "O meu cesto",
+            "title": "O meu cesto"
+        },
+        "disabled": {
+            "label": "Não tem permissão para editar este cesto"
+        },
+        "display_archive": {
+            "label": "Mostrar arquivados"
+        },
+        "info": {
+            "creation_date": "Data de criação",
+            "id": "ID",
+            "modification_date": "Data de modificação",
+            "owner": "Proprietário"
+        },
+        "manage": {
+            "acl": {
+                "title": "Permissões"
+            },
+            "edit": {
+                "title": "Editar"
+            },
+            "info": {
+                "title": "Informações"
+            },
+            "integrations": {
+                "title": "Integrações"
+            },
+            "operations": {
+                "title": "Operações"
+            },
+            "title": "Gerir cesto {{name}}"
+        }
+    },
+    "basket_delete": {
+        "confirm": "Tem a certeza de que pretende eliminar este cesto?",
+        "title": "Eliminar cesto"
+    },
+    "basket_view_dialog": {
+        "info": "Informações",
+        "integrations": "Integrações",
+        "remove_from_basket": "Remover do cesto",
+        "title": "Cesto <strong>{{name}}</strong>",
+        "x_item_one": "<strong>{{count}}</strong> item",
+        "x_item_other": "<strong>{{total}}</strong> itens",
+        "x_item_with_selection_one": "<strong>{{selection}} / {{total}}</strong> item",
+        "x_item_with_selection_other": "<strong>{{selection}} / {{total}}</strong> itens"
+    },
+    "boolean_filter": {
+        "choice": {
+            "false": "Não",
+            "true": "Sim"
+        }
+    },
+    "change_theme": {
+        "title": "Escolher um tema"
+    },
+    "chip": {
+        "disabled": "Desativado",
+        "editable": "Editável",
+        "private": "Privado",
+        "public": "Público",
+        "read_only": "Apenas leitura"
+    },
+    "collection": {
+        "acl": {
+            "parent": {
+                "collection": "Permissões em <strong>{{name}}</strong>",
+                "story": "Permissões na história <strong>{{name}}</strong>",
+                "workspace": "Permissões no espaço de trabalho <strong>{{name}}</strong>"
+            }
+        },
+        "delete": {
+            "confirm_message": "Tem a certeza de que pretende eliminar a coleção <coll/> ?"
+        },
+        "info": {
+            "absolute_path": "Caminho absoluto",
+            "creation_date": "Data de criação",
+            "id": "ID",
+            "modification_date": "Data de modificação",
+            "owner": "Proprietário",
+            "workspace": "Espaço de trabalho"
+        },
+        "item": {
+            "create_asset": "Adicionar ativo à coleção",
+            "create_collection": "Criar subcoleção",
+            "delete": "Eliminar",
+            "edit": "Editar",
+            "notifications": "Notificações",
+            "restore": "Restaurar"
+        },
+        "manage": {
+            "acl": {
+                "title": "Permissões"
+            },
+            "edit": {
+                "title": "Editar"
+            },
+            "es_doc": {
+                "title": "Documento ES"
+            },
+            "info": {
+                "title": "Informações"
+            },
+            "notifications": {
+                "title": "Notificações"
+            },
+            "operations": {
+                "title": "Operações"
+            },
+            "title": "Gerir coleção {{name}}"
+        },
+        "restore": {
+            "confirm": {
+                "title": "Confirmar restauro da coleção"
+            },
+            "confirm_message": "Tem a certeza de que pretende restaurar a coleção <coll/> ?"
+        },
+        "tree_view": {
+            "new_collection": "Nova coleção"
+        }
+    },
+    "collection_delete": {
+        "confirmed": "A coleção foi eliminada!",
+        "title": "Eliminar coleção"
+    },
+    "collection_move": {
+        "intro": "Selecione o destino para onde mover esta coleção:",
+        "move": {
+            "label": "Mover coleção"
+        },
+        "title": "Mover coleção"
+    },
+    "collection_panel": {
+        "quarantine": "Quarentena",
+        "trash": "Lixo"
+    },
+    "collection_restore": {
+        "confirmed": "A coleção foi restaurada!",
+        "title": "Restaurar coleção"
+    },
+    "common": {
+        "cancel": "Cancelar",
+        "clear": "Limpar",
+        "close": "Fechar",
+        "confirm": "Confirmar",
+        "copy": "Copiar",
+        "databox": "Databox",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "filter": {
+            "placeholder": "Filtrar…"
+        },
+        "id": "ID",
+        "item_sorted": "Ordem guardada!",
+        "loading": "A carregar…",
+        "no": "Não",
+        "remove": "Remover",
+        "revoke": "Revogar",
+        "save": "Guardar",
+        "search": {
+            "placeholder": "Pesquisar…",
+            "submit": "Pesquisar"
+        },
+        "yes": "Sim"
+    },
+    "copy_assets": {
+        "dialog": {
+            "intro": "Para onde pretende copiar os ativos selecionados?",
+            "submit": "Copiar",
+            "title_one": "Copiar {{count}} ativo",
+            "title_other": "Copiar {{count}} ativos"
+        },
+        "form": {
+            "by_reference": {
+                "label": "Copiar por referência (atalho)"
+            },
+            "with_attributes": {
+                "label": "Copiar atributos"
+            },
+            "with_tags": {
+                "label": "Copiar etiquetas"
+            }
+        }
+    },
+    "copy_assets_dialog": {
+        "assets_were_copied": "Os ativos foram copiados"
+    },
+    "copy_toclipboard": {
+        "copied": "Copiado para a área de transferência!"
+    },
+    "create_rendition_dialog": {
+        "bw": {
+            "label": "Preto e branco"
+        },
+        "create_custom_rendition": "Criar renderização personalizada",
+        "crop": {
+            "aspect": "Proporção",
+            "aspect_custom": "Personalizada",
+            "aspect_height": "Altura da proporção",
+            "aspect_original": "Original",
+            "aspect_width": "Largura da proporção",
+            "label": "Recortar",
+            "zoom": "Zoom"
+        },
+        "dimensions": {
+            "height": "Altura",
+            "label": "Dimensões máximas (px)",
+            "width": "Largura"
+        },
+        "format": {
+            "keep": "Igual à origem",
+            "label": "Formato de saída"
+        },
+        "generate": "Gerar",
+        "name": {
+            "label": "Nome"
+        },
+        "rendition_is_being_generated": "A renderização está a ser gerada…",
+        "source": {
+            "label": "Origem",
+            "source_file": "Ficheiro de origem"
+        },
+        "write_metadata": {
+            "label": "Escrever atributos nos metadados do ficheiro"
+        }
+    },
+    "create_share_link": {
+        "dialog": {
+            "submit": "Criar ligação",
+            "title": "Criar ligação de partilha"
+        },
+        "form": {
+            "expiresAt": {
+                "helper": "Opcional. Se definido, a ligação de partilha só estará ativa até esta data e hora",
+                "label": "Expira em"
+            },
+            "name": {
+                "helper": "Pode dar um nome à audiência desta ligação de partilha",
+                "label": "Nome"
+            },
+            "startsAt": {
+                "helper": "Opcional. Se definido, a ligação de partilha só estará ativa a partir desta data e hora",
+                "label": "Começa em"
+            }
+        }
+    },
+    "danger_zone": "Zona de perigo",
+    "date_histogram_facet": {
+        "clear_filter": "Limpar filtro"
+    },
+    "debug_es_modal": {
+        "elasticsearch_response_time": "Tempo de resposta do Elasticsearch:",
+        "search_debug": "Depuração da pesquisa",
+        "total_response_time": "Tempo de resposta total:"
+    },
+    "definition_manager": {
+        "confirm_delete": "Tem a certeza de que pretende eliminar este item?",
+        "count_one": "{{count}} item",
+        "count_other": "{{count}} itens",
+        "saved": "Guardado!"
+    },
+    "delete": {
+        "basket": {
+            "confirmed": "O cesto foi removido!"
+        }
+    },
+    "dialog": {
+        "apply": "Aplicar",
+        "cancel": "Cancelar",
+        "close": "Fechar",
+        "export_attribute_entities": {
+            "all_locales": "Todos os idiomas",
+            "data": {
+                "label": "Dados"
+            },
+            "export": "Exportar",
+            "format": "Formato",
+            "locale": "Idioma",
+            "select_format": "Selecionar formato",
+            "select_locale": "Selecionar idioma",
+            "title": "Exportar {{list}}"
+        },
+        "import_attribute_entities": {
+            "import_button": "Importar",
+            "title": "Importar entidades de atributo para {{list}}",
+            "toast": {
+                "success": "Entidades de atributo importadas com sucesso."
+            }
+        },
+        "reset": "Repor",
+        "save": "Guardar",
+        "search": "Pesquisar"
+    },
+    "display_profile": {
+        "auto_sync": {
+            "label": "Sincronização automática das preferências"
+        },
+        "choose_modal": {
+            "title": "Selecionar o perfil de visualização atual"
+        },
+        "create_button": {
+            "label": "Criar novo perfil de visualização"
+        },
+        "default": {
+            "title": "Perfil de visualização predefinido"
+        },
+        "delete": {
+            "confirm": "Tem a certeza de que pretende eliminar este perfil de visualização?"
+        },
+        "info": {
+            "created_at": "Criado em",
+            "description": "Descrição",
+            "name": "Nome",
+            "owner": "Proprietário",
+            "updated_at": "Atualizado em",
+            "visibility": "Visibilidade"
+        },
+        "manage": {
+            "acl": {
+                "title": "Permissões"
+            },
+            "edit": {
+                "title": "Editar"
+            },
+            "grid": {
+                "title": "Cartão da grelha"
+            },
+            "info": {
+                "title": "Informações"
+            },
+            "organize": {
+                "title": "Organizar"
+            },
+            "title": "Gerir perfil de visualização {{name}}"
+        },
+        "organize": {
+            "add_divider": "Adicionar divisor",
+            "add_spacer": "Adicionar espaçador"
+        },
+        "private": "Privado",
+        "public": "Público",
+        "shared_by": "Partilhado por {{owner}}"
+    },
+    "edit_sort_by": {
+        "add_group_separators_between_results": "Adicionar separadores de grupo entre os resultados",
+        "group_by_sections": "Agrupar por secções"
+    },
+    "editor": {
+        "format": {
+            "alignCenter": "Alinhar ao centro",
+            "alignJustify": "Justificar",
+            "alignLeft": "Alinhar à esquerda",
+            "alignRight": "Alinhar à direita",
+            "blockQuote": "Bloco de citação",
+            "block_type": {
+                "heading": {
+                    "label": "Título {{number}}"
+                },
+                "paragraph": {
+                    "label": "Normal"
+                }
+            },
+            "bold": "Negrito",
+            "bulletList": "Lista com marcas",
+            "clear": "Limpar formatação",
+            "code": "Código",
+            "codeBlock": "Bloco de código",
+            "fontFamily": {
+                "label": "Tipo de letra"
+            },
+            "italic": "Itálico",
+            "link": "Ligação",
+            "orderedList": "Lista numerada",
+            "redo": "Refazer",
+            "save": "Guardar",
+            "strikethrough": "Rasurado",
+            "underline": "Sublinhado",
+            "undo": "Anular",
+            "view": "Visualizar"
+        },
+        "link": {
+            "dialog": {
+                "dialog_title": "Inserir ligação",
+                "remove": {
+                    "label": "Remover ligação"
+                },
+                "target": {
+                    "blank": {
+                        "label": "Novo separador"
+                    },
+                    "label": "Abrir ligação em",
+                    "self": {
+                        "label": "Mesmo separador"
+                    }
+                },
+                "title": {
+                    "label": "Título (opcional)"
+                },
+                "url": {
+                    "label": "URL"
+                }
+            }
+        },
+        "menu": {
+            "colors": {
+                "backgroundColor": "Cor de fundo",
+                "textColor": "Cor do texto"
+            }
+        },
+        "widgets": {
+            "asset": {
+                "options": {
+                    "assetId": {
+                        "label": "ID do ativo"
+                    },
+                    "borderRadius": {
+                        "label": "Raio dos cantos (px)"
+                    },
+                    "gap": {
+                        "label": "Espaço entre elementos"
+                    },
+                    "imagePosition": {
+                        "bottom": "Inferior",
+                        "label": "Posição da imagem",
+                        "left": "Esquerda",
+                        "right": "Direita",
+                        "top": "Superior"
+                    },
+                    "maxHeight": {
+                        "label": "Altura máxima (px)"
+                    },
+                    "maxWidth": {
+                        "label": "Largura máxima (px)"
+                    },
+                    "position": {
+                        "fixed": "Fixa",
+                        "label": "Posição da imagem",
+                        "static": "Estática"
+                    },
+                    "title": {
+                        "label": "Título"
+                    }
+                },
+                "title": "Ativo"
+            },
+            "carousel": {
+                "options": {
+                    "backgroundColor": {
+                        "label": "Cor de fundo"
+                    },
+                    "cover": {
+                        "label": "Modo de cobertura"
+                    },
+                    "height": {
+                        "label": "Altura (px)"
+                    },
+                    "maxItems": {
+                        "label": "Número máximo de itens"
+                    },
+                    "openAsset": {
+                        "label": "Abrir ativo ao clicar"
+                    },
+                    "searchId": {
+                        "label": "Pesquisa guardada"
+                    }
+                },
+                "title": "Carrossel"
+            },
+            "footer": {
+                "options": {
+                    "add_link": "Adicionar ligação",
+                    "backgroundColor": {
+                        "label": "Cor de fundo"
+                    },
+                    "link_label": {
+                        "label": "Rótulo"
+                    },
+                    "link_url": {
+                        "label": "URL"
+                    },
+                    "links": {
+                        "label": "Ligações"
+                    },
+                    "textColor": {
+                        "label": "Cor do texto"
+                    }
+                },
+                "title": "Rodapé"
+            },
+            "grid": {
+                "options": {
+                    "backgroundColor": {
+                        "label": "Cor de fundo"
+                    },
+                    "gap": {
+                        "label": "Espaço entre elementos"
+                    },
+                    "maxItems": {
+                        "label": "Número máximo de itens"
+                    },
+                    "openAsset": {
+                        "label": "Abrir ativo ao clicar"
+                    },
+                    "searchId": {
+                        "label": "Pesquisa guardada"
+                    },
+                    "size": {
+                        "label": "Tamanho (px)"
+                    }
+                },
+                "title": "Grelha"
+            },
+            "header_bar": {
+                "options": {
+                    "add_link": "Adicionar ligação",
+                    "link_label": {
+                        "label": "Rótulo"
+                    },
+                    "link_url": {
+                        "label": "URL"
+                    },
+                    "links": {
+                        "label": "Ligações"
+                    }
+                },
+                "title": "Barra de cabeçalho"
+            },
+            "remove_widget": "Remover widget",
+            "search_grid": {
+                "options": {
+                    "actions": {
+                        "basket": {
+                            "label": "Adicionar ao cesto"
+                        },
+                        "copy": {
+                            "label": "Copiar"
+                        },
+                        "delete": {
+                            "label": "Eliminar"
+                        },
+                        "edit": {
+                            "label": "Editar"
+                        },
+                        "export": {
+                            "label": "Exportar"
+                        },
+                        "info": {
+                            "label": "Informações"
+                        },
+                        "label": "Ações",
+                        "move": {
+                            "label": "Mover"
+                        },
+                        "open": {
+                            "label": "Abrir"
+                        },
+                        "replace": {
+                            "label": "Substituir"
+                        },
+                        "restore": {
+                            "label": "Restaurar"
+                        },
+                        "share": {
+                            "label": "Partilhar"
+                        }
+                    },
+                    "containerHeight": {
+                        "label": "Altura do contentor (px)"
+                    },
+                    "displayFacets": {
+                        "label": "Mostrar facetas"
+                    },
+                    "maxItems": {
+                        "label": "Número máximo de itens"
+                    },
+                    "openAsset": {
+                        "label": "Abrir ativo ao clicar"
+                    },
+                    "searchId": {
+                        "label": "Pesquisa guardada"
+                    },
+                    "size": {
+                        "label": "Tamanho (px)"
+                    }
+                },
+                "title": "Grelha de pesquisa"
+            },
+            "spacer": {
+                "options": {
+                    "spacing": {
+                        "label": "Espaçamento"
+                    }
+                },
+                "title": "Espaçador"
+            },
+            "unknown": "Tipo de widget desconhecido"
+        }
+    },
+    "editor_panel": {
+        "untranslated": "Não traduzido"
+    },
+    "entity": {
+        "not_allowed": "Não permitido",
+        "not_found": "Não encontrado",
+        "unresolved": "…"
+    },
+    "entity_type": {
+        "definitions": {
+            "count_one": "Utilizada em {{ count }} definição de atributo",
+            "count_other": "Utilizada em {{ count }} definições de atributo",
+            "none": "Não utilizada em nenhuma definição de atributo"
+        },
+        "delete": {
+            "confirm": {
+                "assertion": {
+                    "no_undo": "Compreendo que esta ação não pode ser anulada.",
+                    "unset_on_attrs": "Compreendo que todas as entidades desta lista serão removidas dos atributos dos ativos que as utilizam."
+                }
+            }
+        },
+        "list": {
+            "clear": {
+                "confirm": "Tem a certeza de que pretende eliminar todas as entidades desta lista?"
+            },
+            "export": "Exportar",
+            "import": "Importar"
+        },
+        "new": {
+            "label": "Nova lista de entidades"
+        }
+    },
+    "es_document": {
+        "not_synced": "Este documento não está sincronizado.",
+        "refresh": "Atualizar",
+        "sync_scheduled": "Sincronização agendada"
+    },
+    "export": {
+        "dialog": {
+            "intro": "Selecione as renderizações que pretende exportar:",
+            "submit": "Exportar",
+            "title_one": "Exportar {{count}} ativo",
+            "title_other": "Exportar {{count}} ativos"
+        }
+    },
+    "expose_basket_integration": {
+        "also_delete_the_publication": "Eliminar também a publicação",
+        "authorize": "Autorizar",
+        "edit_publication": "Editar publicação",
+        "force_sync": "Forçar sincronização",
+        "ok": "OK",
+        "stop_synchronization": "Parar a sincronização?",
+        "sync_with_a_publication": "Sincronizar com uma publicação"
+    },
+    "face_detail_tooltip": {
+        "age_range": "Faixa etária",
+        "eyeglasses": "Óculos",
+        "eyes_open": "Olhos abertos",
+        "gender": "Género",
+        "has_a_beard": "Tem barba",
+        "mouth_open": "Boca aberta",
+        "mustache": "Bigode",
+        "smiling": "A sorrir"
+    },
+    "facet": {
+        "boolean": {
+            "false": {
+                "label": "Não ({{n}})"
+            },
+            "true": {
+                "label": "Sim ({{n}})"
+            }
+        }
+    },
+    "facets": {
+        "action": {
+            "collapseAll": "Recolher tudo",
+            "expandAll": "Expandir tudo",
+            "hidden": {
+                "success": "A faceta {{facetName}} foi ocultada",
+                "undo": "Faceta {{facetName}} restaurada"
+            },
+            "undo": "Anular"
+        },
+        "missing_with_total": "Em falta ({{total}})",
+        "settings": {
+            "hidden": "Facetas ocultas",
+            "reset": "Repor predefinições",
+            "reset_confirm": "Tem a certeza de que pretende repor as definições das facetas?",
+            "title": "Definições das facetas",
+            "visible": "Facetas visíveis"
+        }
+    },
+    "file": {
+        "analysis": {
+            "state": {
+                "bypassed": {
+                    "label": "Contornada",
+                    "message": "A análise foi contornada manualmente por um administrador."
+                },
+                "not_applicable": {
+                    "label": "Não aplicável",
+                    "message": "Este ficheiro não necessita de ser analisado."
+                },
+                "not_required": {
+                    "label": "Não obrigatória",
+                    "message": "A análise de ficheiros não é obrigatória neste espaço de trabalho."
+                },
+                "passed": {
+                    "label": "Analisado",
+                    "message": "Este ficheiro foi analisado com sucesso."
+                },
+                "pending": {
+                    "message": "Este ficheiro aguarda análise."
+                },
+                "reported": {
+                    "label": "Ocorrências",
+                    "message": "A análise comunicou problemas, mas não é obrigatória neste espaço de trabalho: este ficheiro não está bloqueado."
+                },
+                "skipped": {
+                    "label": "Ignorada"
+                }
+            }
+        },
+        "analysis_pending": "Análise em curso…",
+        "dialog": {
+            "metadata": {
+                "refresh": "Atualizar"
+            }
+        },
+        "info": {
+            "analysis": "Análise",
+            "id": "ID",
+            "size": "Tamanho",
+            "size_unknown": "Desconhecido",
+            "type": "Tipo",
+            "url": "URL",
+            "url_none": "N/D",
+            "usages": "Referenciado por",
+            "usages_none": "Não referenciado"
+        },
+        "manage": {
+            "info": {
+                "title": "Informações"
+            },
+            "metadata": {
+                "title": "Metadados"
+            },
+            "title": "Gerir ficheiro {{name}}"
+        },
+        "rejected": "Rejeitado",
+        "usages": {
+            "rendition": "Renderização \"{{name}}\" do ativo \"{{asset}}\"",
+            "source": "Origem do ativo \"{{asset}}\"",
+            "version": "Versão \"{{name}}\" do ativo \"{{asset}}\""
+        }
+    },
+    "file_analyzer": {
+        "result": {
+            "status": {
+                "rejected": "Este ficheiro foi rejeitado pela análise.",
+                "rejected_with_reason": "Este ficheiro foi rejeitado pelos seguintes analisadores.",
+                "skipped": "A análise do ficheiro foi ignorada.",
+                "success": "Este ficheiro foi analisado com sucesso"
+            }
+        }
+    },
+    "file_upload": {
+        "asset_created_one": "Ativo criado com sucesso.",
+        "asset_created_other": "{{count}} ativos criados com sucesso.",
+        "back_to_file_upload": "Carregar ficheiro",
+        "back_to_files_upload": "Carregar ficheiros",
+        "from_url": {
+            "placeholder": "Introduza o URL do ficheiro"
+        },
+        "from_urls": {
+            "placeholder": "Introduza o(s) URL do(s) ficheiro(s), um por linha"
+        },
+        "import_file": "Importar ficheiro",
+        "import_files": "Importar ficheiro(s)",
+        "upload_from_url": "Carregar a partir de URL"
+    },
+    "filter_rule": {
+        "condition": {
+            "edit": "Editar condição",
+            "empty": "Ainda não foi definida nenhuma condição",
+            "helper": "Os ativos neste espaço de trabalho só serão visíveis se corresponderem a esta condição.",
+            "label": "Condição"
+        },
+        "confirm_delete_this_rule": "Confirmar a eliminação desta regra?",
+        "groups": "Grupos",
+        "rule_applies_for": "A regra aplica-se a:",
+        "targets_helper": "Deixe ambos vazios para aplicar esta regra a todos os utilizadores.",
+        "users": "Utilizadores"
+    },
+    "filter_rules": {
+        "edit_this_rule": "Editar esta regra",
+        "everyone": "Todos",
+        "filter_rules": "Regras de filtro",
+        "new_rule": "Nova regra"
+    },
+    "form": {
+        "annotation": {
+            "default_name": "{{type}} #{{n}}"
+        },
+        "asset": {
+            "tags": {
+                "label": "Etiquetas"
+            },
+            "templates": {
+                "label": "Preencher com modelo",
+                "no_options": "Nenhum modelo disponível"
+            }
+        },
+        "asset_create": {
+            "title": "Criar ativo em",
+            "title_with_parent": "Criar Ativo dentro de"
+        },
+        "asset_edit": {
+            "success": "Ativo editado!"
+        },
+        "asset_policy": {
+            "actions": {
+                "action": {
+                    "hide_attribute": "Ocultar Atributo",
+                    "hide_rendition": "Ocultar Renderização",
+                    "label": "Ação"
+                },
+                "add": "Adicionar Ação",
+                "label": "Ações",
+                "remove": "Remover <1>esta Ação</1>"
+            },
+            "conditions": {
+                "add": "Adicionar Condição",
+                "field": {
+                    "collection": "Coleção",
+                    "label": "Campo"
+                },
+                "label": "Condições",
+                "operator": {
+                    "equals": "Igual a",
+                    "label": "Operador"
+                },
+                "remove": "Remover <1>esta Condição</1>"
+            },
+            "enabled": {
+                "label": "Ativado"
+            },
+            "groups": {
+                "label": "Grupos"
+            },
+            "name": {
+                "label": "Nome"
+            },
+            "users": {
+                "label": "Utilizadores"
+            }
+        },
+        "attribute": {
+            "collection": {
+                "item_add": "Adicionar {{name}}",
+                "item_remove": "Remover"
+            }
+        },
+        "attribute_definition": {
+            "allowInvalid": {
+                "label": "Permitir valores inválidos"
+            },
+            "asset_type": {
+                "label": "Tipo de Ativo Alvo"
+            },
+            "editable": {
+                "label": "Editável"
+            },
+            "editableInGui": {
+                "label": "Editável na interface gráfica"
+            },
+            "enabled": {
+                "label": "Ativado"
+            },
+            "entityList": {
+                "label": "Lista de Entidades"
+            },
+            "facetEnabled": {
+                "label": "Facetas"
+            },
+            "fallback": {
+                "label": "Valor alternativo"
+            },
+            "field_type": {
+                "label": "Tipo de campo"
+            },
+            "fillFromName": {
+                "helper": "Preencher automaticamente este atributo com o valor do campo nome. Aplica-se apenas a atributos de texto.",
+                "label": "Preencher a partir do nome"
+            },
+            "initialValues": {
+                "helper": "Modelo Twig resolvido para inicializar este atributo quando o ativo é criado.",
+                "label": "Valores Iniciais"
+            },
+            "multiple": {
+                "label": "Valores múltiplos"
+            },
+            "name": {
+                "label": "Nome",
+                "translate": {
+                    "title": "Traduzir Nome"
+                }
+            },
+            "namePriority": {
+                "helper": "Utilizar este atributo como nome ao apresentar o ativo. Aplica-se apenas a atributos de texto.",
+                "label": "Prioridade do nome"
+            },
+            "policy": {
+                "label": "Política"
+            },
+            "readFromMetadata": {
+                "helper": "Nomes das etiquetas de metadados a ler do ficheiro de origem para inicializar este atributo. É utilizada a primeira etiqueta encontrada.",
+                "label": "Ler dos metadados"
+            },
+            "searchable": {
+                "label": "Pesquisável"
+            },
+            "slug": {
+                "label": "Slug"
+            },
+            "sortable": {
+                "label": "Ordenável"
+            },
+            "suggest": {
+                "label": "Apresentar nas sugestões de pesquisa"
+            },
+            "translatable": {
+                "label": "Traduzível"
+            },
+            "useAsName": {
+                "label": "Utilizar como Nome do Ativo"
+            },
+            "writeMetadata": {
+                "helper": "Nomes das etiquetas de metadados nas quais o valor deste atributo é escrito quando o ativo (ou a sua renderização) é exportado.",
+                "label": "Escrever nos metadados"
+            },
+            "writeMetadataRenditions": {
+                "all": {
+                    "helper": "Este atributo é escrito em todas as renderizações.",
+                    "label": "Todas as renderizações"
+                },
+                "helper": "Renderizações nas quais este atributo é escrito. Uma seleção vazia significa todas as renderizações.",
+                "label": "Escrever nos metadados das renderizações"
+            }
+        },
+        "attribute_entity": {
+            "color": {
+                "label": "Cor"
+            },
+            "emoji": {
+                "label": "Emoji"
+            },
+            "status": {
+                "label": "Estado"
+            },
+            "synonym": {
+                "label": "Sinónimo"
+            },
+            "synonyms": {
+                "label": "Sinónimos"
+            },
+            "value": {
+                "label": "Valor"
+            }
+        },
+        "attribute_policy": {
+            "editable": {
+                "label": "Editável"
+            },
+            "name": {
+                "label": "Nome"
+            },
+            "public": {
+                "label": "Público"
+            }
+        },
+        "basket": {
+            "description": {
+                "label": "Descrição"
+            },
+            "name": {
+                "label": "Nome"
+            }
+        },
+        "basket_create": {
+            "success": "Cesto criado!",
+            "title": "Criar Cesto"
+        },
+        "basket_edit": {
+            "success": "Cesto editado!"
+        },
+        "collection": {
+            "name": {
+                "label": "Nome"
+            },
+            "privacy": {
+                "inherited": "Esta coleção não pode ser mais restrita do que a sua coleção ascendente."
+            },
+            "title": {
+                "translate": {
+                    "name": "Traduzir Nome"
+                }
+            }
+        },
+        "collection_create": {
+            "success": "Coleção criada!",
+            "title": "Criar Coleção em",
+            "title_with_parent": "Criar Coleção dentro de"
+        },
+        "collection_edit": {
+            "success": "Coleção editada!"
+        },
+        "collection_move": {
+            "success": "Coleção movida!"
+        },
+        "copy_assets": {
+            "asset_not_linkable": {
+                "other_ws": "Os seguintes ativos não podem ser copiados por referência para outro espaço de trabalho.",
+                "permission": "Os seguintes ativos não podem ser copiados por referência porque não tem permissões suficientes.",
+                "select_for_hard_copy": "Pode selecionar o ativo que pretende duplicar para o destino (cópia integral):"
+            },
+            "destination": {
+                "label": "Destino"
+            }
+        },
+        "display_profile": {
+            "create": {
+                "title": "Criar Perfil de Visualização"
+            },
+            "create_success": "Perfil de Visualização criado!",
+            "description": {
+                "label": "Descrição"
+            },
+            "edit_success": "Perfil de Visualização editado!",
+            "name": {
+                "label": "Nome"
+            },
+            "public": {
+                "label": "Público"
+            }
+        },
+        "entity_type": {
+            "allowNewValues": {
+                "label": "Aceitar novos valores"
+            },
+            "approveNewValues": {
+                "label": "Aprovar automaticamente novos valores"
+            },
+            "name": {
+                "label": "Tipo"
+            },
+            "withColors": {
+                "label": "Utilizar cores"
+            },
+            "withEmojis": {
+                "label": "Utilizar emojis como ícone"
+            },
+            "withSynonyms": {
+                "label": "Utilizar sinónimos"
+            },
+            "withTranslations": {
+                "label": "Utilizar traduções"
+            }
+        },
+        "integration": {
+            "config_info": {
+                "title": "Chaves de Integração"
+            },
+            "enabled": {
+                "label": "Ativado"
+            },
+            "errors": {
+                "label": "Últimos erros:"
+            },
+            "help": {
+                "config_reference": "Referência de configuração:",
+                "copy_reference": "Copiar referência"
+            },
+            "if": {
+                "helper": "Esta condição é utilizada para determinar se a integração deve ser executada.",
+                "helper_examples": "Exemplos de condições:",
+                "label": "SE",
+                "placeholder": "Condição para executar a integração"
+            },
+            "integration": {
+                "label": "Integração"
+            },
+            "name": {
+                "label": "Nome"
+            },
+            "needs": {
+                "helper": "Estas integrações têm de estar concluídas antes de esta integração ser executada.",
+                "label": "Requer",
+                "placeholder": "Selecionar dependências"
+            },
+            "public": {
+                "label": "Público"
+            }
+        },
+        "metadata_values": {
+            "add": "Adicionar metadados",
+            "remove": "Remover",
+            "tag": {
+                "label": "Etiqueta (p. ex. IPTC:CopyrightNotice)"
+            },
+            "value": {
+                "label": "Valor"
+            }
+        },
+        "move_assets": {
+            "destination": {
+                "label": "Destino"
+            }
+        },
+        "permissions": {
+            "label": "Permissões"
+        },
+        "privacy": {
+            "choices": {
+                "helpers": {
+                    "private": "Os utilizadores podem solicitar acesso"
+                },
+                "not_set": "Não definido",
+                "private": "Privado",
+                "public": "Público",
+                "secret": "Secreto"
+            },
+            "inherited_from_parent": "A privacidade é herdada do ascendente: <strong>{{privacy}}</strong>",
+            "label": "Privacidade"
+        },
+        "profile_item": {
+            "display_empty": {
+                "label": "Apresentar mesmo se vazio"
+            },
+            "format": {
+                "label": "Formato Predefinido",
+                "none": "Nenhum"
+            },
+            "key": {
+                "label": "Valor"
+            },
+            "save": "Guardar",
+            "success": "Item guardado!"
+        },
+        "rendition_definition": {
+            "buildMode": {
+                "label": "Modo de Construção"
+            },
+            "definition": {
+                "label": "Definição de construção"
+            },
+            "help": {
+                "build_reference": "Referência da definição de construção:",
+                "modules_reference": "Módulos disponíveis:"
+            },
+            "metadata": {
+                "helper": "Valores de metadados fixos escritos no ficheiro da renderização quando esta é exportada.",
+                "label": "Metadados a escrever"
+            },
+            "name": {
+                "label": "Nome",
+                "translate": {
+                    "title": "Traduzir Nome"
+                }
+            },
+            "parent": {
+                "helper": "Renderização da qual esta deriva",
+                "label": "Ascendente",
+                "placeholder": "Ficheiro de origem do ativo"
+            },
+            "policy": {
+                "label": "Política"
+            },
+            "substitutable": {
+                "label": "Substituível"
+            },
+            "target": {
+                "label": "Tipo de Ativo Alvo"
+            },
+            "useAs": {
+                "animatedThumbnail": "Miniatura Animada",
+                "label": "Renderização utilizada para visualização",
+                "main": "Principal",
+                "preview": "Pré-visualização",
+                "thumbnail": "Miniatura"
+            },
+            "write_metadata": {
+                "label": "Escrever atributos nos metadados da renderização ao exportar"
+            }
+        },
+        "rendition_policy": {
+            "editable": {
+                "label": "Editável"
+            },
+            "name": {
+                "label": "Nome"
+            },
+            "public": {
+                "label": "Público"
+            }
+        },
+        "save_as": {
+            "destination": {
+                "label": "Destino"
+            }
+        },
+        "saved_search": {
+            "name": {
+                "label": "Nome"
+            },
+            "privacy": {
+                "label": "Privacidade",
+                "private": {
+                    "helper": "Acessível por ligação, não listada",
+                    "label": "Privada"
+                },
+                "public": {
+                    "helper": "Listada para todos os utilizadores",
+                    "label": "Pública"
+                },
+                "secret": {
+                    "helper": "Apenas para si e para os utilizadores autorizados",
+                    "label": "Secreta"
+                }
+            }
+        },
+        "saved_search_edit": {
+            "success": "Pesquisa Guardada editada!"
+        },
+        "tag": {
+            "color": {
+                "label": "Cor"
+            },
+            "name": {
+                "label": "Nome"
+            },
+            "translate": {
+                "name": "Traduzir Nome"
+            }
+        },
+        "thread_message": {
+            "content": {
+                "placeholder": "Escreva aqui a sua mensagem"
+            },
+            "edit": {
+                "label": "Editar"
+            },
+            "submit": {
+                "label": "Enviar"
+            }
+        },
+        "upload": {
+            "destination": {
+                "label": "Destino"
+            },
+            "files_to_upload_one": "<strong>{{count}}</strong> ficheiro a carregar",
+            "files_to_upload_other": "<strong>{{count}}</strong> ficheiros a carregar",
+            "isStory": {
+                "label": "História"
+            },
+            "quiet": {
+                "label": "Silencioso (sem notificação, sem webhook)"
+            },
+            "reset": "Repor",
+            "submit": {
+                "title": "Carregar"
+            },
+            "title": "Carregar"
+        },
+        "workspace": {
+            "assetDefaultStatus": {
+                "label": "Estado Predefinido do Ativo"
+            },
+            "fallback_locales": {
+                "add": "Adicionar idioma alternativo",
+                "label": "Idioma",
+                "remove": "Remover <1>este idioma</1>",
+                "title": "Idiomas alternativos"
+            },
+            "fileAnalysisRequired": {
+                "label": "Requer Análise de Ficheiro"
+            },
+            "locales": {
+                "add": "Adicionar idioma",
+                "label": "Idioma",
+                "remove": "Remover <1>este idioma</1>",
+                "title": "Idiomas do espaço de trabalho"
+            },
+            "public": {
+                "label": "Público"
+            },
+            "title": {
+                "label": "Título",
+                "translate": {
+                    "title": "Traduzir Título"
+                }
+            },
+            "trashRetentionDelay": {
+                "label": "Prazo de Retenção no Lixo (em dias)"
+            }
+        },
+        "workspace_edit": {
+            "success": "Espaço de trabalho editado!"
+        }
+    },
+    "get_user_name": {
+        "all_groups": "Todos os grupos",
+        "all_users": "Todos os utilizadores",
+        "group_not_found": "Grupo não encontrado",
+        "user_not_found": "Utilizador não encontrado"
+    },
+    "grid_editor": {
+        "config": {
+            "color": {
+                "default": "Predefinida"
+            },
+            "display_empty": "Mostrar se vazio",
+            "format": {
+                "default": "Predefinido",
+                "label": "Formato"
+            },
+            "show_label": "Mostrar rótulo",
+            "size": {
+                "label": "Tamanho",
+                "large": "G",
+                "medium": "M",
+                "small": "P"
+            },
+            "variant": {
+                "chip": "Pastilha",
+                "label": "Mostrar como",
+                "rich": "Enriquecido",
+                "text": "Texto"
+            }
+        },
+        "palette": {
+            "empty": "Todos os campos estão colocados",
+            "hint": "Arraste um campo para o cartão",
+            "no_match": "Nenhum campo correspondente",
+            "title": "Campos disponíveis"
+        },
+        "reserved_cell": "Reservado para os controlos do ativo",
+        "reserved_type_cell": "Reservado para o ícone do tipo de ficheiro"
+    },
+    "group_divider": {
+        "none": "Nenhum"
+    },
+    "integration": {
+        "expose": {
+            "create_pub": {
+                "submit": "Criar e sincronizar",
+                "success": "A publicação foi criada e será sincronizada",
+                "title": "Criar publicação"
+            },
+            "form": {
+                "description": "Descrição",
+                "enabled": "Ativada",
+                "parent": "Publicação principal",
+                "profile": "Perfil de publicação",
+                "slug": "Identificador",
+                "title": "Título da publicação"
+            },
+            "sync": {
+                "event": {
+                    "sync_clean": "A limpar ativos…",
+                    "sync_complete": "Sincronização concluída!",
+                    "sync_failed": "Falha na sincronização: autentique-se novamente",
+                    "sync_progress": "Sincronização em curso…"
+                }
+            }
+        },
+        "not_allowed_for_use": "Não tem permissão para utilizar esta integração"
+    },
+    "integrations": {
+        "new": {
+            "label": "Nova integração"
+        }
+    },
+    "landing": {
+        "editor": {
+            "insert_menu": {
+                "search_placeholder": "Pesquisar widgets..."
+            }
+        },
+        "page_editor": {
+            "save_success": "Página guardada com sucesso"
+        }
+    },
+    "layout": {
+        "display_settings": {
+            "tooltip": "Definições de visualização"
+        },
+        "options": {
+            "display_previews_hover": {
+                "label": "Mostrar pré-visualização ao passar o rato"
+            },
+            "play_preview_videos": {
+                "label": "Reproduzir automaticamente as pré-visualizações de vídeo"
+            },
+            "preview_options": {
+                "attributesRatio": {
+                    "label": "Tamanho dos atributos"
+                },
+                "displayAttributes": {
+                    "label": "Mostrar atributos na pré-visualização"
+                },
+                "displayFile": {
+                    "label": "Mostrar ficheiro na pré-visualização"
+                },
+                "options": {
+                    "label": "Opções de pré-visualização"
+                },
+                "sizeRatio": {
+                    "label": "Tamanho"
+                }
+            },
+            "thumb_size": {
+                "label": "Tamanho das miniaturas"
+            }
+        },
+        "view": {
+            "grid": "Vista em grelha",
+            "list": "Vista em lista"
+        }
+    },
+    "left_panel": {
+        "baskets": "Cestos",
+        "facets": "Facetas",
+        "navigation": "Navegação"
+    },
+    "load_more": {
+        "button": {
+            "load_more": "Carregar mais",
+            "loading": "A carregar…"
+        }
+    },
+    "locale": {
+        "current": "Português",
+        "switcher": {
+            "app_languages": "Idiomas da aplicação/interface",
+            "change_data_locale": {
+                "modal": {
+                    "confirm": "Continuar",
+                    "title": "A página será recarregada"
+                }
+            },
+            "data_languages": "Idioma dos dados",
+            "data_locale": {
+                "default": "Predefinido",
+                "default_description": "Utilizar o idioma da interface"
+            },
+            "filter_placeholder": "Pesquisar...",
+            "title": "Alterar idioma"
+        }
+    },
+    "matomo": {
+        "assetView": {
+            "avg_completion_rate": "Taxa média de conclusão",
+            "avg_media_length": "Duração média do conteúdo multimédia",
+            "avg_time_watched": "Tempo médio de visualização",
+            "finish_rate": "Taxa de finalização",
+            "fullscreen_rate": "Taxa de ecrã inteiro",
+            "interaction_rate": "Taxa de interação",
+            "nb_finishes": "Número de finalizações",
+            "nb_impressions": "Número de impressões",
+            "nb_interactions": "Número de interações",
+            "nb_plays": "Número de reproduções",
+            "nb_plays_with_ml": "Reproduções com ml",
+            "nb_plays_with_tip": "Número de reproduções com tip",
+            "nb_unique_visitors_impressions": "Número de impressões de visitantes únicos",
+            "nb_unique_visitors_plays": "Número de reproduções de visitantes únicos",
+            "nb_visits": "Número de visitas",
+            "noStats": "Não existem estatísticas disponíveis para este ativo",
+            "play_rate": "Taxa de reprodução",
+            "sum_daily_nb_uniq_visitors": "Soma diária de visitantes únicos",
+            "sum_fullscreen_plays": "Soma de reproduções em ecrã inteiro",
+            "sum_time_progress": "Soma do tempo de progresso"
+        }
+    },
+    "metric": {
+        "ms": "ms"
+    },
+    "move_assets": {
+        "dialog": {
+            "intro": "Para onde pretende mover os ativos selecionados?",
+            "submit": "Mover",
+            "title_one": "Mover {{count}} ativo",
+            "title_other": "Mover {{count}} ativos"
+        }
+    },
+    "move_assets_dialog": {
+        "assets_were_moved": "Os ativos foram movidos"
+    },
+    "not_found": {
+        "back_home": "Voltar à página inicial",
+        "content": "A página que procura não existe ou foi removida",
+        "title": "Página não encontrada"
+    },
+    "notification": {
+        "action": {
+            "follow": {
+                "label": "Seguir"
+            },
+            "unfollow": {
+                "label": "Deixar de seguir"
+            }
+        },
+        "topics": {
+            "asset": {
+                "delete": {
+                    "desc": "Receber uma notificação quando o ativo for eliminado",
+                    "label": "Eliminação"
+                },
+                "new_comment": {
+                    "desc": "Receber uma notificação quando houver um novo comentário no ativo",
+                    "label": "Discussão"
+                },
+                "update": {
+                    "desc": "Receber uma notificação quando o ativo for atualizado",
+                    "label": "Atualização"
+                }
+            },
+            "collection": {
+                "asset_add": {
+                    "desc": "Receber uma notificação quando um ativo for adicionado à coleção",
+                    "label": "Ativo adicionado"
+                },
+                "asset_new_comment": {
+                    "desc": "Receber uma notificação quando houver um novo comentário num ativo desta coleção",
+                    "label": "Discussão"
+                },
+                "asset_remove": {
+                    "desc": "Receber uma notificação quando um ativo for removido da coleção",
+                    "label": "Ativo removido"
+                },
+                "asset_update": {
+                    "desc": "Receber uma notificação quando um ativo desta coleção for atualizado",
+                    "label": "Ativo atualizado"
+                },
+                "not_authenticated": "Não está autenticado para seguir esta coleção"
+            }
+        }
+    },
+    "operation_task": {
+        "import_files": {
+            "desc": "Obter todos os ficheiros de um espaço de trabalho ainda referenciados por URL e armazená-los no armazenamento principal",
+            "name": "Importar ficheiros"
+        },
+        "index_assets": {
+            "desc": "Reindexar os ativos e os seus atributos",
+            "name": "Indexar ativos"
+        },
+        "ingest_workspace_assets": {
+            "desc": "Voltar a executar o fluxo de trabalho de ingestão em todos os ativos de um espaço de trabalho",
+            "name": "Ingerir ativos do espaço de trabalho"
+        },
+        "recompute_initial_values": {
+            "desc": "Recalcular o valor inicial de um atributo em todos os ativos do espaço de trabalho. Esta operação substitui os atributos atualmente armazenados para essa definição.",
+            "name": "Recalcular valores iniciais"
+        },
+        "store_fallback_attributes": {
+            "desc": "Resolver a alternativa de um atributo e guardá-la como valor real do atributo em todos os ativos do espaço de trabalho que ainda não têm valor para esse atributo.",
+            "name": "Guardar alternativa como atributo"
+        },
+        "switch_attribute_locales": {
+            "desc": "Trocar os idiomas dos atributos. Útil quando pretende alterar o idioma de um atributo sem ter de o eliminar e voltar a criar.",
+            "name": "Trocar idiomas de atributos"
+        }
+    },
+    "operation_tasks": {
+        "title": "Tarefas de operação"
+    },
+    "operations_asset": {
+        "workflow_is_starting": "O fluxo de trabalho está a iniciar!"
+    },
+    "page": {
+        "delete_confirm": "Eliminar página",
+        "delete_title": "Eliminar página \"{{title}}\"",
+        "list": {
+            "create_button": "Criar página",
+            "no_result": "Nenhuma página",
+            "title": "Páginas"
+        }
+    },
+    "pages": {
+        "create": {
+            "submit": "Criar",
+            "success": "Página criada com sucesso",
+            "title": "Criar página"
+        },
+        "edit": {
+            "submit": "Guardar",
+            "success": "Página guardada com sucesso",
+            "title": "Editar página"
+        },
+        "form": {
+            "enabled": {
+                "label": "Ativada"
+            },
+            "public": {
+                "label": "Pública"
+            },
+            "slug": {
+                "helper": "O slug é utilizado no URL da página e tem de ser único.",
+                "label": "Slug"
+            },
+            "title": {
+                "label": "Título"
+            }
+        }
+    },
+    "pagination": {
+        "load_more_collections": "Carregar mais coleções"
+    },
+    "pasted_image": {
+        "filename": "Imagem-colada-{{date}}"
+    },
+    "permission_table": {
+        "actions": "Ações",
+        "no_permissions": "Nenhuma permissão definida"
+    },
+    "permissions": {
+        "helper_desc": "Níveis de permissão:"
+    },
+    "privacy": {
+        "no_access": "Sem acesso",
+        "private": "Privado",
+        "private_in_workspace": "Privado no espaço de trabalho",
+        "public": "Público",
+        "public_for_users": "Público para utilizadores",
+        "public_in_workspace": "Público no espaço de trabalho",
+        "secret": "Secreto"
+    },
+    "privacy_field": {
+        "only_visible_to_workspace": "Apenas visível para o espaço de trabalho",
+        "user_must_be_authenticated": "O utilizador tem de estar autenticado"
+    },
+    "quarantine": {
+        "actions": {
+            "add_as_version": "Adicionar como nova versão",
+            "bypass": "Contornar (aceitar)",
+            "bypass_error": "Falha ao aceitar o ativo",
+            "bypass_success": "Ativo aceite",
+            "delete": "Eliminar permanentemente",
+            "merge": "Unir duplicados",
+            "move_to_trash": "Mover para o lixo"
+        },
+        "add_as_version": {
+            "description": "Este ficheiro partilha um ID único de documento com o(s) ativo(s) abaixo. Escolha o ativo ao qual deve ser anexado como nova versão de origem — a origem atual passa a ser uma versão anterior e este ativo em quarentena é removido.",
+            "error": "Falha ao adicionar o ficheiro como nova versão",
+            "no_target": "Não foi encontrado nenhum ativo correspondente ao qual anexar este ficheiro.",
+            "success": "Ficheiro adicionado como nova versão",
+            "title": "Adicionar como nova versão"
+        },
+        "analyzer": {
+            "checksum": "Soma de verificação",
+            "debug": "Depuração",
+            "doc_unique_id": "ID único do documento",
+            "filename": "Nome do ficheiro",
+            "image_colorspace": "Espaço de cor da imagem",
+            "image_dimension": "Dimensão da imagem"
+        },
+        "checksum": {
+            "algorithm": "Algoritmo",
+            "checksum": "Soma de verificação",
+            "duplicate_checksum_one": "Já existe {{count}} ficheiro com uma soma de verificação idêntica (verificado até {{limit}}).",
+            "duplicate_checksum_other": "Já existem {{count}} ficheiros com uma soma de verificação idêntica",
+            "stripped": "Metadados removidos"
+        },
+        "doc_unique_id": {
+            "duid": "ID único",
+            "duplicate_doc_unique_id_one": "{{count}} ficheiro partilha o mesmo ID único de documento (verificado até {{limit}}).",
+            "duplicate_doc_unique_id_other": "{{count}} ficheiros partilham o mesmo ID único de documento (verificado até {{limit}}).",
+            "found_in": "Lido do campo",
+            "new": "Gerado"
+        },
+        "duplicates": {
+            "title_one": "{{count}} ativo duplicado encontrado",
+            "title_other": "{{count}} ativos duplicados encontrados",
+            "unavailable": "Os ativos duplicados já não estão disponíveis ou não estão acessíveis."
+        },
+        "filename": {
+            "extension": "Extensão",
+            "extension_is_disallowed": "A extensão do ficheiro não é permitida.",
+            "extension_is_not_allowed": "A extensão do ficheiro não consta da lista de permitidas ({{allowed}}).",
+            "mime_type_is_disallowed": "O tipo MIME não é permitido.",
+            "mime_type_is_not_allowed": "O tipo MIME não consta da lista de permitidos ({{allowed}}).",
+            "pattern_is_disallowed": "O nome do ficheiro corresponde a um padrão não permitido ({{pattern}}).",
+            "pattern_is_not_allowed": "O nome do ficheiro não corresponde a nenhum padrão permitido ({{allowed}})."
+        },
+        "image_colorspace": {
+            "colorspace": "Espaço de cor",
+            "disallowed_colorspace": "O espaço de cor da imagem não é permitido ({{disallowed}}).",
+            "not_an_image": "O ficheiro não é uma imagem; o espaço de cor não foi verificado.",
+            "not_in_allowed_colorspaces": "O espaço de cor da imagem não consta da lista de permitidos ({{allowed}}).",
+            "unknown_colorspace": "Não foi possível determinar o espaço de cor da imagem."
+        },
+        "image_dimension": {
+            "dimensions": "Dimensões",
+            "max_height": "A altura de {{height}}px excede o máximo de {{max_height}}px.",
+            "max_width": "A largura de {{width}}px excede o máximo de {{max_width}}px.",
+            "min_height": "A altura de {{height}}px é inferior ao mínimo de {{min_height}}px.",
+            "min_width": "A largura de {{width}}px é inferior ao mínimo de {{min_width}}px.",
+            "not_an_image": "O ficheiro não é uma imagem; as dimensões não foram verificadas.",
+            "unreadable_image": "Não foi possível ler a imagem para determinar as suas dimensões."
+        },
+        "merge": {
+            "description": "Este ficheiro é idêntico a ativo(s) existente(s). Escolha qual pretende manter — os restantes serão movidos para o lixo.",
+            "error": "Falha ao unir os duplicados",
+            "existing": "Ativo existente",
+            "existing_hint": "Ativo existente · {{date}}",
+            "incoming": "Ficheiro recebido",
+            "incoming_hint": "Ficheiro carregado recentemente",
+            "new_badge": "novo",
+            "no_duplicates": "Os ativos duplicados já não estão disponíveis. Pode manter este ficheiro aceitando-o.",
+            "success": "Duplicados unidos",
+            "title": "Resolver duplicados"
+        },
+        "rejected": "Este ativo foi rejeitado pelos seguintes analisadores de ficheiros. Reveja os motivos abaixo e escolha uma ação.",
+        "skipped": "A análise do ficheiro foi ignorada.",
+        "title": "Ativo em quarentena"
+    },
+    "remove_bg": {
+        "bg_removed": "{{name}} - Fundo removido",
+        "cannot_interact": "Não tem permissões suficientes para remover o fundo",
+        "remove_bg": "Remover fundo",
+        "use_slider_to_compare": "Utilize o controlo deslizante para comparar"
+    },
+    "rename_attachment": {
+        "dialog": {
+            "success": "O nome do anexo foi alterado.",
+            "title": "Mudar o nome do anexo"
+        },
+        "form": {
+            "label": "Nome do anexo"
+        }
+    },
+    "rendition_definition": {
+        "build_mode": {
+            "custom": "Gerar",
+            "none": "Nenhum",
+            "pick_source": "Copiar a renderização principal ou o ficheiro de origem"
+        }
+    },
+    "rendition_definitions": {
+        "filter": {
+            "asset_type": "Filtrar por tipo de ativo"
+        },
+        "new": {
+            "label": "Nova renderização"
+        }
+    },
+    "rendition_delete": {
+        "confirm": "Tem a certeza de que pretende eliminar esta renderização?",
+        "confirmed": "A renderização foi eliminada!"
+    },
+    "rendition_policy": {
+        "new": {
+            "label": "Nova política"
+        }
+    },
+    "renditions": {
+        "create_custom": "Criar renderização personalizada",
+        "delete": "Eliminar",
+        "dirty": "Desatualizada",
+        "download": "Transferir",
+        "generating": "A gerar…",
+        "replace": "Substituir",
+        "upload": "Carregar renderização"
+    },
+    "rentition": {
+        "flags": {
+            "is_projection": "A renderização é uma projeção da origem",
+            "locked": "A renderização está bloqueada",
+            "non_projection": "A renderização não é uma projeção e a sua estrutura foi alterada",
+            "substituted": "A renderização foi substituída"
+        }
+    },
+    "replace_asset": {
+        "dialog": {
+            "submit": "Substituir",
+            "success": "O novo ficheiro de origem do ativo foi carregado.",
+            "title": "Substituir o ficheiro de origem do ativo"
+        }
+    },
+    "replace_asset_with_file_dialog": {
+        "asset_has_been_replaced": "O ativo foi substituído",
+        "please_confirm_replacing_asset": "Confirme a substituição do ativo.",
+        "replace_asset_with_file": "Substituir ativo por ficheiro"
+    },
+    "run_task": {
+        "initiated": "A tarefa foi iniciada com sucesso",
+        "not_found": "Nenhuma tarefa encontrada",
+        "submit": "Executar",
+        "title": "Executar tarefa: {{name}}"
+    },
+    "save_as_button": {
+        "new_asset": "Novo ativo",
+        "rendition": "Renderização",
+        "replace_asset_source": "Substituir origem do ativo",
+        "save_as": "Guardar como"
+    },
+    "save_as_template_form": {
+        "apply_to_collection": "Aplicar à coleção",
+        "include_collection_children": "Incluir subcoleções",
+        "my_template": "O meu modelo…",
+        "public": "Público",
+        "remember_attributes": "Memorizar atributos",
+        "remember_privacy": "Memorizar privacidade",
+        "remember_tags": "Memorizar etiquetas",
+        "replace": "Substituir o modelo aplicado",
+        "save_values_as_template_for_reuse": "Guardar valores como modelo para reutilização",
+        "template_name": "Nome do modelo"
+    },
+    "save_file_as_new_asset_dialog": {
+        "file_is_saved": "O ficheiro foi guardado",
+        "name": {
+            "label": "Nome"
+        },
+        "save": "Guardar",
+        "save_file_as_new_asset": "Guardar ficheiro como novo ativo"
+    },
+    "save_file_as_rendition_dialog": {
+        "rendition_has_been_saved": "A renderização foi guardada",
+        "rendition_to_add_or_replace": "Renderização a adicionar ou substituir",
+        "save_file_as_asset_rendition": "Guardar ficheiro como renderização do ativo"
+    },
+    "save_search": {
+        "dialog": {
+            "title": "Guardar pesquisa"
+        }
+    },
+    "saved_search": {
+        "automations": {
+            "coming_soon": "As automatizações chegam em breve!"
+        },
+        "form": {
+            "created": "A pesquisa foi guardada!"
+        },
+        "info": {
+            "creation_date": "Data de criação",
+            "id": "ID",
+            "modification_date": "Data de modificação",
+            "owner": "Proprietário"
+        },
+        "item": {
+            "delete": "Eliminar",
+            "edit": "Editar"
+        },
+        "list": {
+            "title": "Pesquisas guardadas"
+        },
+        "manage": {
+            "acl": {
+                "title": "Permissões"
+            },
+            "automations": {
+                "title": "Automatizações"
+            },
+            "edit": {
+                "title": "Editar"
+            },
+            "info": {
+                "title": "Informações"
+            },
+            "title": "Gerir pesquisa guardada {{name}}"
+        }
+    },
+    "search": {
+        "error": "Ups, ocorreu um erro:",
+        "more_options": {
+            "clear_search": "Limpar pesquisa",
+            "save_as_new": "Guardar como nova pesquisa"
+        },
+        "no_results_message": "Lamentamos, mas a sua pesquisa não devolveu <strong>nenhum ativo</strong>!",
+        "save_search": "Guardar pesquisa",
+        "search_button": "Pesquisar",
+        "sort_by": {
+            "title": "Ordenar por"
+        },
+        "suggestion": {
+            "check_spelling": "<strong>Verifique a ortografia</strong>: Certifique-se de que todos os termos de pesquisa estão corretamente escritos.",
+            "consider_using_facets": "<strong>Considere utilizar facetas</strong>: Clique nos diferentes valores das facetas para restringir ou alargar os resultados (espaço de trabalho, coleção, etiquetas, datas, etc.).",
+            "modify_filters": "<strong>Modifique os filtros</strong>: Se aplicou filtros, remova-os ou altere-os para alargar o âmbito da pesquisa."
+        },
+        "update_search": "Atualizar pesquisa",
+        "update_success": "A pesquisa foi atualizada com sucesso!"
+    },
+    "search_auto_complete": {
+        "search": "Pesquisar…"
+    },
+    "search_condition": {
+        "add_condition": "Adicionar condição",
+        "builder": {
+            "add_condition": "Adicionar condição",
+            "add_condition_group": "Adicionar grupo de condições",
+            "case_sensitive": "Sensível a maiúsculas e minúsculas",
+            "field": "Campo",
+            "operator": {
+                "and": "E",
+                "between": "Entre",
+                "contains": "Contém",
+                "equals": "= (Igual a)",
+                "exists": "Existe",
+                "greater_than": "> (Maior que)",
+                "greater_than_or_equals": ">= (Maior ou igual a)",
+                "in": "Pertence a",
+                "less_than": "< (Menor que)",
+                "less_than_or_equals": "<= (Menor ou igual a)",
+                "matches": "Corresponde a",
+                "missing": "Em falta",
+                "not_between": "Não está entre",
+                "not_contains": "Não contém",
+                "not_equals": "!= (Diferente de)",
+                "not_in": "Não pertence a",
+                "not_matches": "Não corresponde a",
+                "not_starts_with": "Não começa por",
+                "or": "OU",
+                "placeholder": "Operador",
+                "starts_with": "Começa por",
+                "within_circle": "Dentro do círculo",
+                "within_circle_latitude": "Latitude",
+                "within_circle_longitude": "Longitude",
+                "within_circle_radius": "Raio",
+                "within_rectangle": "Dentro do retângulo",
+                "within_rectangle_bottom_right_latitude": "Latitude inferior direita",
+                "within_rectangle_bottom_right_longitude": "Longitude inferior direita",
+                "within_rectangle_top_left_latitude": "Latitude superior esquerda",
+                "within_rectangle_top_left_longitude": "Longitude superior esquerda"
+            },
+            "value": "Valor"
+        },
+        "dialog": {
+            "add_condition": "Adicionar condição",
+            "edit_condition": "Editar condição",
+            "error": {
+                "empty_query": "Consulta vazia",
+                "invalid_query": "Consulta inválida: {{error}}"
+            },
+            "submit_add": "Adicionar",
+            "submit_update": "Atualizar",
+            "switch_to_builder": "Mudar para o construtor",
+            "switch_to_text": "Mudar para texto"
+        },
+        "menu": {
+            "disable": "Desativar",
+            "edit": "Editar",
+            "enable": "Ativar",
+            "remove": "Remover"
+        }
+    },
+    "selection_actions": {
+        "x_result_one": "<strong>{{count}}</strong> resultado",
+        "x_result_other": "<strong>{{total}}</strong> resultados",
+        "x_result_with_selection_one": "<strong>{{selection}} / {{total}}</strong> resultado",
+        "x_result_with_selection_other": "<strong>{{selection}} / {{total}}</strong> resultados"
+    },
+    "share": {
+        "dialog": {
+            "add_new": "Criar nova ligação de partilha",
+            "advanced_mode": "Modo avançado",
+            "copied": "Ligação copiada para a área de transferência",
+            "create_public_link": {
+                "primary": "Criar uma ligação pública",
+                "secondary": "Partilhe uma ligação com qualquer pessoa fora da sua organização"
+            },
+            "submit": "Copiar ligação",
+            "title": "Partilhar ativo"
+        },
+        "embed": {
+            "title": "Partilhar por incorporação"
+        },
+        "item": {
+            "createdAt": "Criada em {{date}}",
+            "expiresAt": "Expira em {{date}}",
+            "rendition": {
+                "asset": "Ativo"
+            },
+            "startsAt": "Começa em {{date}}"
+        },
+        "socials": {
+            "email": {
+                "title": "Partilhar por e-mail"
+            },
+            "embed": {
+                "title": "Partilhar por incorporação"
+            },
+            "facebook": {
+                "title": "Partilhar no Facebook"
+            },
+            "instapaper": {
+                "title": "Partilhar no Instapaper"
+            },
+            "linkedin": {
+                "title": "Partilhar no LinkedIn"
+            },
+            "pinterest": {
+                "title": "Partilhar no Pinterest"
+            },
+            "pocket": {
+                "title": "Partilhar no Pocket"
+            },
+            "telegram": {
+                "title": "Partilhar no Telegram"
+            },
+            "tumblr": {
+                "title": "Partilhar no Tumblr"
+            },
+            "whatsapp": {
+                "title": "Partilhar no WhatsApp"
+            },
+            "workplace": {
+                "title": "Partilhar no Workplace"
+            },
+            "x": {
+                "title": "Partilhar no X"
+            }
+        },
+        "terms": {
+            "accept": "Aceitar",
+            "accept_label": "Li e aceito os Termos e Condições",
+            "dialog_intro": "Tem de aceitar os Termos e Condições de {{workspace}} (versão {{version}}) para aceder a este conteúdo.",
+            "subtitle": "{{workspace}} — versão {{version}}",
+            "title": "Termos e Condições",
+            "view_pdf": "Ver Termos e Condições (PDF)"
+        }
+    },
+    "sort_by": {
+        "sort_by": "Ordenar por"
+    },
+    "sort_by_row": {
+        "ascendant": "Ascendente",
+        "descendant": "Descendente"
+    },
+    "story": {
+        "chip": {
+            "label": "História"
+        }
+    },
+    "tags": {
+        "label": "Etiquetas",
+        "new": {
+            "label": "Nova etiqueta"
+        }
+    },
+    "task": {
+        "card": {
+            "remaining": "Restante:"
+        },
+        "details": {
+            "info": {
+                "createdAt": "Lançada em",
+                "duration": "Duração",
+                "endedAt": "Terminada em",
+                "itemTotal": "Total de itens",
+                "output": "Resultado",
+                "owner": "Proprietário",
+                "payload": "Dados de entrada",
+                "progress": "Itens processados",
+                "startedAt": "Iniciada em",
+                "task": "Tarefa"
+            }
+        }
+    },
+    "taskCard": {
+        "runBy": "<strong>{{task}}</strong> executada por <strong>{{owner}}</strong>"
+    },
+    "tasks_details": {
+        "title": "Tarefa {{name}}"
+    },
+    "tasks_list": {
+        "create": "Nova tarefa",
+        "refresh": "Atualizar",
+        "title": "Histórico de tarefas"
+    },
+    "thread": {
+        "message": {
+            "delete": {
+                "confirm": {
+                    "success": "A mensagem foi removida!",
+                    "title": "Tem a certeza de que pretende eliminar esta mensagem?"
+                }
+            }
+        }
+    },
+    "translatable_attribute_tabs": {
+        "untranslated": "Sem tradução"
+    },
+    "tuiphoto_editor": {
+        "file_name": "Nome do ficheiro",
+        "open_recent": "Abrir recente",
+        "original": "Original",
+        "save": "Guardar",
+        "save_as": "Guardar como",
+        "saved": "Guardado!"
+    },
+    "upload": {
+        "pending": {
+            "cancel_upload": "Cancelar",
+            "empty": "Sem carregamentos pendentes.",
+            "title": "Carregamentos pendentes",
+            "toast": {
+                "message_one": "<strong>{{uploaded}} / {{count}}</strong>  carregado",
+                "message_other": "<strong>{{uploaded}} / {{count}}</strong>  carregados"
+            },
+            "uploaded": "Carregado"
+        }
+    },
+    "upload_dropzone": {
+        "drag_n_drop_some_files_here_or_click_to_select_files": "Arraste e largue ficheiros aqui ou clique para selecionar ficheiros"
+    },
+    "upload_rendition": {
+        "dialog": {
+            "submit": "Carregar renderização",
+            "success": "A renderização foi carregada com sucesso.",
+            "title": "Carregar renderização {{renditionName}}"
+        }
+    },
+    "use_integration_auth": {
+        "auth": "Autenticação"
+    },
+    "user_preferences": {
+        "loading": "A carregar as preferências do utilizador…"
+    },
+    "workspace": {
+        "info": {
+            "creation_date": "Data de criação",
+            "id": "ID",
+            "owner": "Proprietário"
+        },
+        "item": {
+            "create_asset": "Adicionar ativo ao espaço de trabalho",
+            "create_collection": "Adicionar coleção neste espaço de trabalho",
+            "edit": "Editar este espaço de trabalho"
+        },
+        "manage": {
+            "acl": {
+                "title": "Permissões"
+            },
+            "asset_policy": {
+                "title": "Políticas de ativos"
+            },
+            "attribute_definitions": {
+                "title": "Atributos"
+            },
+            "attribute_entity": {
+                "title": "Entidades"
+            },
+            "attribute_policy": {
+                "title": "Políticas de atributos"
+            },
+            "edit": {
+                "title": "Editar"
+            },
+            "filter_rules": {
+                "title": "Regras de filtro"
+            },
+            "info": {
+                "title": "Informações"
+            },
+            "integrations": {
+                "title": "Integrações"
+            },
+            "rendition_definition": {
+                "title": "Renderizações"
+            },
+            "rendition_policy": {
+                "title": "Políticas de renderizações"
+            },
+            "tags": {
+                "title": "Etiquetas"
+            },
+            "title": "Gerir espaço de trabalho {{name}}"
+        },
+        "no_locale_defined": "Nenhum idioma definido neste espaço de trabalho"
+    },
+    "workspaces": {
+        "list": {
+            "title": "Espaços de trabalho"
+        }
+    }
+}
