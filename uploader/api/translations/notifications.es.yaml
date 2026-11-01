@@ -1,0 +1,11 @@
+commit:
+    acknowledged:
+        email:
+            subject: 'Su carga se ha procesado'
+            greeting: 'Hola %recipient%,'
+            body: 'Su carga de %count% archivo se ha confirmado y procesado.|Su carga de %count% archivos se ha confirmado y procesado.'
+        in_app:
+            subject: 'Carga procesada'
+            body: 'Su carga de %count% archivo se ha procesado.|Su carga de %count% archivos se ha procesado.'
+        sms:
+            body: 'Su carga de %count% archivo se ha procesado.|Su carga de %count% archivos se ha procesado.'
