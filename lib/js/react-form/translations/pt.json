@@ -1,0 +1,45 @@
+{
+    "form": {
+        "translations": {
+            "collection": {
+                "remove": "Remover <1>esta tradução</1>"
+            }
+        }
+    },
+    "lib": {
+        "form": {
+            "cancel": "Cancelar",
+            "collection": {
+                "add": "Adicionar",
+                "remove": "Remover"
+            },
+            "error": {
+                "required": "Este campo é obrigatório"
+            },
+            "has_errors": "O formulário contém erros",
+            "translations": {
+                "collection": {
+                    "add": "Adicionar nova tradução",
+                    "title": "Traduções"
+                },
+                "disabled_translation": "Esta tradução está desativada",
+                "fallback": {
+                    "label": "Valor predefinido"
+                },
+                "locale": {
+                    "placeholder": "Selecionar idioma"
+                },
+                "saved": "Traduções guardadas!",
+                "submit": "Guardar",
+                "tooltip": "Gerir traduções",
+                "translation": {
+                    "label": "Tradução {{locale}}"
+                },
+                "value": {
+                    "label": "Tradução"
+                },
+                "value_for_locale": "Tradução para {{locale}}"
+            }
+        }
+    }
+}
