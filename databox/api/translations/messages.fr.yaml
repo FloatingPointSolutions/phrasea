@@ -26,7 +26,6 @@ privacy:
   private: Privé
   public_for_users: Ouvert aux utilisateurs
   public: Ouvert
-
 facet:
   collections:
     name: Collections
@@ -73,6 +72,8 @@ built_in_attribute:
     name: Nom
   collectionPaths:
     name: Collections
+    raw:
+      name: Collections directes
   workspaceId:
     name: Workspace
   ownerId:

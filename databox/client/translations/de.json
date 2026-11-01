@@ -242,6 +242,14 @@
             "show": "Elternberechtigungen anzeigen <strong> {{name}} </strong>"
         }
     },
+    "analysis": {
+        "severity": {
+            "error": "Fehler",
+            "info": "Info",
+            "success": "OK",
+            "warning": "Warnung"
+        }
+    },
     "asset": {
         "delete": {
             "confirm": {
@@ -261,7 +269,7 @@
             "shared_warning_one": "Dieser Asset ist zurzeit freigegeben. Beim Löschen wird allen Benutzern der Zugriff entzogen.",
             "shared_warning_other": "<strong>{{count}}</strong> dieser Assets sind zurzeit freigegeben. Beim Löschen wird allen Benutzern der Zugriff entzogen.",
             "confirm_hard_delete_message_one": "Möchten Sie wirklich diesen Asset <strong>dauerhaft</strong> löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
-            "confirm_hard_delete_message_other": "Möchten Sie wirklich diese Assets <strong>dauerhaft</strong> löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+            "confirm_hard_delete_message_other": "Möchten Sie wirklich <strong>{{count}} Assets</strong> <strong>dauerhaft</strong> löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
             "confirm_move_to_trash_message_one": "Möchten Sie wirklich diesen Asset in den Papierkorb verschieben?",
             "confirm_move_to_trash_message_other": "Möchten Sie wirklich <strong>{{count}} Assets</strong> in den Papierkorb verschieben?",
             "move_to_trash_one": "Asset in den Papierkorb verschieben",
@@ -432,7 +440,7 @@
     "asset_selection": {
         "item": "Element",
         "x_item_one": "<strong>{{count}}</strong> Asset",
-        "x_item_other": "<strong>{{count}}</strong> Assets",
+        "x_item_other": "<strong>{{total}}</strong> Assets",
         "x_item_with_selection_one": "<strong>{{selection}} / {{total}}</strong> Asset",
         "x_item_with_selection_other": "<strong>{{selection}} / {{total}}</strong> Assets"
     },
@@ -639,7 +647,7 @@
         "disabled": {
             "label": "Sie sind nicht berechtigt, diesen Korb zu ändern."
         },
-        "added_to_basket_one": "{{count}} Artikel zum Korb hinzugefügt",
+        "added_to_basket_one": "Artikel zum Korb hinzugefügt",
         "added_to_basket_other": "{{count}} Artikel zum Korb hinzugefügt",
         "display_archive": {
             "label": "Archiv anzeigen"
@@ -653,7 +661,7 @@
         "item": "Element",
         "remove_from_basket": "Aus dem Korb entfernen",
         "x_item_one": "<strong>{{count}}</strong> Element",
-        "x_item_other": "<strong>{{count}}</strong> Elemente",
+        "x_item_other": "<strong>{{total}}</strong> Elemente",
         "x_item_with_selection_one": "<strong>{{selection}} / {{total}}</strong> Element",
         "x_item_with_selection_other": "<strong>{{selection}} / {{total}}</strong> Elemente",
         "info": "Informationen",
@@ -914,7 +922,14 @@
         "is_missing": "{{title}} fehlt"
     },
     "filter_rule": {
+        "condition": {
+            "edit": "Bedingung bearbeiten",
+            "empty": "Noch keine Bedingung definiert",
+            "helper": "Assets in diesem Workspace sind nur sichtbar, wenn sie dieser Bedingung entsprechen.",
+            "label": "Bedingung"
+        },
         "confirm_delete_this_rule": "Bestätigen, diese Regel zu löschen?",
+        "groups": "Gruppen",
         "exclude": {
             "helper": "Assets in diesem {{type}} sind nur sichtbar, wenn sie diese Tags NICHT enthalten.",
             "label": "Tags zum <strong>ausschliessen</strong>"
@@ -926,7 +941,15 @@
         },
         "or": "Oder",
         "rule_applies_for": "Regel gilt für:",
+        "targets_helper": "Lassen Sie beide Felder leer, um diese Regel auf alle Benutzer anzuwenden.",
+        "users": "Benutzer",
         "user": "Benutzer"
+    },
+    "filter_rules": {
+        "edit_this_rule": "Diese Regel bearbeiten",
+        "everyone": "Alle",
+        "filter_rules": "Filterregeln",
+        "new_rule": "Neue Regel"
     },
     "foo": "Bar",
     "form": {
@@ -1032,6 +1055,14 @@
             "writeMetadata": {
                 "helper": "Metadatenname, in den der Wert dieses Attributs beim Exportieren des Assets (oder seiner Rendition) geschrieben wird.",
                 "label": "In Metadaten schreiben"
+            },
+            "writeMetadataRenditions": {
+                "all": {
+                    "helper": "Dieses Attribut wird in jede Rendition geschrieben.",
+                    "label": "Alle Renditions"
+                },
+                "helper": "Renditions, in die dieses Attribut geschrieben wird. Eine leere Auswahl bedeutet alle Renditions.",
+                "label": "In Metadaten der Renditions schreiben"
             }
         },
         "attribute_entity": {
@@ -1199,6 +1230,7 @@
                 "label": "Asset-Typ Ziel"
             },
             "help": {
+                "build_reference": "Referenz der Build-Definition:",
                 "modules_reference": "Verfügbare Module:"
             },
             "metadata": {
@@ -1556,6 +1588,7 @@
                 "event": {
                     "sync_clean": "Assets reinigen…",
                     "sync_complete": "Synchronisierung abgeschlossen!",
+                    "sync_failed": "Synchronisierung fehlgeschlagen: Bitte erneut anmelden",
                     "sync_progress": "Synchronisierung läuft…"
                 }
             }
@@ -1785,7 +1818,7 @@
         "result": "Ergebnis",
         "s": "",
         "x_result_one": "<strong>{{count}}</strong> Treffer",
-        "x_result_other": "<strong>{{count}}</strong> Treffer",
+        "x_result_other": "<strong>{{total}}</strong> Treffer",
         "x_result_with_selection_one": "<strong>{{selection}} / {{total}}</strong> Treffer",
         "x_result_with_selection_other": "<strong>{{selection}} / {{total}}</strong> Treffer"
     },
@@ -1851,6 +1884,9 @@
             },
             "edit": {
                 "title": "Bearbeiten"
+            },
+            "filter_rules": {
+                "title": "Filterregeln"
             },
             "info": {
                 "title": "Informationen"
@@ -2002,6 +2038,36 @@
         }
     },
     "file": {
+        "analysis": {
+            "state": {
+                "bypassed": {
+                    "label": "Umgangen",
+                    "message": "Die Analyse wurde von einem Administrator manuell umgangen."
+                },
+                "not_applicable": {
+                    "label": "Nicht anwendbar",
+                    "message": "Diese Datei muss nicht analysiert werden."
+                },
+                "not_required": {
+                    "label": "Nicht erforderlich",
+                    "message": "Die Dateianalyse ist in diesem Workspace nicht erforderlich."
+                },
+                "passed": {
+                    "label": "Analysiert",
+                    "message": "Diese Datei wurde erfolgreich analysiert."
+                },
+                "pending": {
+                    "message": "Diese Datei wartet auf die Analyse."
+                },
+                "reported": {
+                    "label": "Befunde",
+                    "message": "Die Analyse hat Probleme gemeldet, ist in diesem Workspace jedoch nicht erforderlich: Diese Datei ist nicht blockiert."
+                },
+                "skipped": {
+                    "label": "Übersprungen"
+                }
+            }
+        },
         "dialog": {
             "metadata": {
                 "refresh": "Aktualisieren"
@@ -2129,6 +2195,7 @@
             },
             "add_condition": "Bedingung hinzufügen",
             "add_condition_group": "Bedingungsgruppe hinzufügen",
+            "case_sensitive": "Groß-/Kleinschreibung beachten",
             "field": "Feld",
             "value": "Wert"
         },
@@ -2201,6 +2268,14 @@
             "workplace": {
                 "title": "Auf Workplace teilen"
             }
+        },
+        "terms": {
+            "accept": "Akzeptieren",
+            "accept_label": "Ich habe die Nutzungsbedingungen gelesen und akzeptiere sie",
+            "dialog_intro": "Sie müssen die Nutzungsbedingungen von {{workspace}} (Version {{version}}) akzeptieren, um auf diesen Inhalt zuzugreifen.",
+            "subtitle": "{{workspace}} — Version {{version}}",
+            "title": "Nutzungsbedingungen",
+            "view_pdf": "Nutzungsbedingungen anzeigen (PDF)"
         },
         "embed": {
             "title": "Eingebettete Freigabe"
@@ -2739,7 +2814,7 @@
     "remove_bg": {
         "cannot_interact": "Sie verfügen nicht über ausreichende Berechtigungen, um Bildhintergrund zu entfernen",
         "remove_bg": "Bildhintergrund entfernen",
-        "bg_removed": "{{title}} - Bildhintergrund entfernt",
+        "bg_removed": "{{name}} - Bildhintergrund entfernt",
         "use_slider_to_compare": "Verwenden Sie den Slider zum Vergleichen"
     },
     "save_search": {
@@ -2991,6 +3066,7 @@
     "file_analyzer": {
         "result": {
             "status": {
+                "rejected": "Diese Datei wurde von der Analyse abgelehnt.",
                 "rejected_with_reason": "Von folgenden Analysatoren abgelehnt",
                 "skipped": "Dateianalyse wurde übersprungen.",
                 "success": "Datei erfolgreich analysiert"
