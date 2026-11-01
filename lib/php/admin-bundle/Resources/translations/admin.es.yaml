@@ -1,0 +1,5 @@
+content_admin:
+  flash_message:
+    create: '"%name%" se ha creado.'
+    update: '"%name%" se ha actualizado.'
+    delete: 'El elemento se ha eliminado.'

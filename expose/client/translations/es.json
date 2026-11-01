@@ -1,4 +1,230 @@
 {
+    "appbar": {
+        "profiles": "Perfiles",
+        "publications": "Publicaciones"
+    },
+    "common": {
+        "close": "Cerrar",
+        "expose": "Expose",
+        "soon": "Próximamente"
+    },
+    "downloadArchiveButton": {
+        "downloadArchive": "Descargar archivo"
+    },
+    "download_terms": {
+        "dialog": {
+            "accept": "Aceptar y descargar",
+            "cancel": "Cancelar",
+            "please_read_accept": "Lea y acepte las <link>condiciones</link> de descarga",
+            "terms_cta": "Ver condiciones de descarga",
+            "title": "Condiciones de descarga"
+        }
+    },
+    "download_via_email": {
+        "cancel": "Cancelar",
+        "cta": "Descargar por correo electrónico",
+        "email": {
+            "helper": "Introduzca la dirección de correo electrónico en la que desea recibir el enlace de descarga.",
+            "label": "Correo electrónico"
+        },
+        "sent": "Recibirá el enlace de descarga por correo electrónico.",
+        "submit_request": "Solicitar descarga"
+    },
+    "embeded_asset": {
+        "publication_disabled": "La publicación de este asset está desactivada. Solo los administradores pueden verla."
+    },
+    "error": {
+        "authentication_required": "Autenticación requerida",
+        "forbidden": "Prohibido",
+        "invalid_password": "Contraseña no válida",
+        "not_found": "No encontrado",
+        "unexpected": "Error inesperado"
+    },
+    "form": {
+        "profile": {
+            "config": {
+                "label": "Configuración"
+            },
+            "create": {
+                "success": "¡Perfil creado!",
+                "title": "Crear perfil"
+            },
+            "edit": {
+                "submit": "Guardar perfil",
+                "success": "¡Perfil guardado!",
+                "title": "Editar perfil"
+            },
+            "name": {
+                "label": "Nombre"
+            }
+        },
+        "publication": {
+            "config": {
+                "beginsAt": {
+                    "label": "Comienza el"
+                },
+                "downloadEnabled": {
+                    "label": "Descarga habilitada"
+                },
+                "downloadTerms": {
+                    "enabledLabel": "Habilitar condiciones de descarga"
+                },
+                "downloadViaEmail": {
+                    "label": "Descarga por correo electrónico"
+                },
+                "enabled": {
+                    "label": "Habilitada"
+                },
+                "expiresAt": {
+                    "label": "Expira el"
+                },
+                "includeDownloadTermsInZippy": {
+                    "label": "Incluir las condiciones de descarga en el archivo"
+                },
+                "label": "Configuración",
+                "layout": {
+                    "label": "Diseño",
+                    "options": {
+                        "download": "Descarga",
+                        "gallery": "Galería",
+                        "grid": "Cuadrícula",
+                        "mapbox": "Mapbox"
+                    }
+                },
+                "overridden": {
+                    "label": "Sobrescribir la configuración"
+                },
+                "publiclyListed": {
+                    "label": "Listada públicamente"
+                },
+                "securityMethod": {
+                    "label": "Método de seguridad",
+                    "options": {
+                        "authentication": "Autenticación",
+                        "password": "Contraseña",
+                        "public": "Público"
+                    }
+                },
+                "securityOptions": {
+                    "password": {
+                        "label": "Contraseña"
+                    }
+                },
+                "terms": {
+                    "enabledLabel": "Habilitar condiciones de uso"
+                }
+            },
+            "date": {
+                "label": "Fecha"
+            },
+            "edit": {
+                "cover": "Establecer imagen de portada",
+                "submit": "Guardar publicación",
+                "success": "¡Publicación guardada!",
+                "title": "Editar publicación"
+            },
+            "parent": {
+                "label": "Publicación superior"
+            },
+            "profile": {
+                "edit": "Editar perfil",
+                "label": "Perfil"
+            },
+            "slug": {
+                "helper": "El slug se utiliza en la URL de la publicación.",
+                "label": "Slug"
+            },
+            "terms": {
+                "text": {
+                    "label": "Contenido de las condiciones"
+                },
+                "url": {
+                    "helper": "Como alternativa, indique una URL a las condiciones de uso.",
+                    "label": "URL de las condiciones"
+                }
+            },
+            "title": {
+                "label": "Título"
+            }
+        }
+    },
+    "profile": {
+        "delete_confirm": "Eliminar perfil",
+        "delete_title": "Eliminar el perfil \"{{title}}\"",
+        "list": {
+            "create_button": "Crear perfil",
+            "no_result": "Ningún perfil",
+            "title": "Perfiles",
+            "using_publications_one": "{{count}} publicación utiliza este perfil",
+            "using_publications_other": "{{count}} publicaciones utilizan este perfil"
+        }
+    },
+    "publication": {
+        "asset": {
+            "download": "Descargar"
+        },
+        "auth_required": {
+            "sign_in": "Iniciar sesión",
+            "title": "Esta publicación requiere autenticación."
+        },
+        "disabled": "Esta publicación está desactivada actualmente. Solo los administradores pueden verla.",
+        "edit": {
+            "cover": {
+                "set": "Establecer portada",
+                "title": "Establecer portada"
+            }
+        },
+        "layout": {
+            "download": {
+                "download_original": "Descargar original",
+                "download_subdef": "Descargar {{name}}"
+            }
+        },
+        "list": {
+            "delete_confirm": "Eliminar publicación",
+            "delete_title": "Eliminar la publicación \"{{title}}\"",
+            "no_result": "Ninguna publicación",
+            "order": {
+                "last_post_added": "Recientes",
+                "publication_name": "Nombre"
+            },
+            "sort_by": "Ordenar por {{order}}"
+        },
+        "noAssetAvailable": "Ningún asset disponible",
+        "not_allowed": "Lo sentimos, no tiene permiso para acceder a esta publicación.",
+        "security": {
+            "password": {
+                "form": {
+                    "password": {
+                        "label": "Contraseña"
+                    },
+                    "submit": {
+                        "label": "Entrar"
+                    }
+                },
+                "intro": "Esta publicación está protegida con contraseña. Introduzca la contraseña para acceder."
+            }
+        }
+    },
+    "publicationHeader": {
+        "editButton": "Editar",
+        "homeLink": "Inicio",
+        "openMenuTooltip": "Abrir el menú de navegación"
+    },
+    "publication_card": {
+        "delete": "Eliminar",
+        "disabled_tooltip": "Esta publicación está desactivada, solo los operadores pueden acceder a ella.",
+        "edit": "Editar",
+        "unlisted": "Esta publicación no está listada; puede verla porque dispone de los permisos necesarios"
+    },
+    "terms": {
+        "dialog": {
+            "accept": "Aceptar",
+            "please_read_accept": "Lea y acepte las <link>condiciones</link>",
+            "terms_cta": "Condiciones",
+            "title": "Condiciones de uso"
+        }
+    },
     "download": "Descargar",
     "download_archive": "Descargar archivo",
     "gallery": {

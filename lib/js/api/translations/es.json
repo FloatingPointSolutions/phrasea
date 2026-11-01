@@ -2,8 +2,11 @@
     "lib": {
         "api": {
             "error": {
+                "http_bad_request": "Solicitud incorrecta",
                 "http_error": "Error del servidor",
+                "http_not_found": "No encontrado",
                 "http_unauthorized": "No autorizado",
+                "network": "Error de red",
                 "session_expired": "Su sesión ha expirado"
             },
             "http_error": {

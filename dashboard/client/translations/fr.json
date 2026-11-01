@@ -1,1 +1,5 @@
-{}
+{
+    "common": {
+        "dashboard": "Tableau de bord"
+    }
+}

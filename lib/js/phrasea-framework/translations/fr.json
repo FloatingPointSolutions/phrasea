@@ -1,7 +1,45 @@
 {
     "framework": {
+        "dialog": {
+            "cancel": "Annuler",
+            "close": "Fermer",
+            "confirm": "Confirmer",
+            "confirm_text_type": {
+                "intro": "Veuillez saisir \"{{ text }}\" pour confirmer :",
+                "placeholder": "Saisissez \"{{ text }}\""
+            },
+            "ok": "OK"
+        },
         "locale": {
-            "current": "Français"
+            "current": "Français",
+            "switcher": {
+                "title": "Changer de langue"
+            }
+        },
+        "menu": {
+            "change_theme": "Changer de thème",
+            "services": "Services",
+            "settings": "Paramètres",
+            "sign_in": "Se connecter",
+            "theme_editor": "Éditeur de thème"
+        },
+        "notification": {
+            "menu": {
+                "label": "Notifications"
+            }
+        }
+    },
+    "lib": {
+        "ui": {
+            "beta": {
+                "label": "Bêta",
+                "tooltip": "Cette fonctionnalité est en bêta et peut évoluer sans préavis"
+            },
+            "menu": {
+                "account": "Mon compte",
+                "debug_user": "Déboguer l'utilisateur",
+                "logout": "Se déconnecter"
+            }
         }
     }
 }

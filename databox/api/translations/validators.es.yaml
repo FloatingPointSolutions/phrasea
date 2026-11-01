@@ -1,0 +1,5 @@
+rendition_metadata:
+    invalid_tag: 'La clave de metadatos "{{ tag }}" debe ser un identificador de etiqueta con espacio de nombres (p. ej. "IPTC:CopyrightNotice").'
+    unknown_tag: 'Etiqueta de metadatos desconocida: "{{ tag }}".'
+    not_writable_tag: 'La etiqueta de metadatos "{{ tag }}" no admite escritura.'
+    invalid_value: 'El valor de metadatos para "{{ tag }}" debe ser un escalar.'

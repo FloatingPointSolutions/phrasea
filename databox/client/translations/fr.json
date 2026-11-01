@@ -578,7 +578,7 @@
         "remove_from_basket": "Retirer du panier",
         "x_item_one": "<strong>{{count}}</strong> élément",
         "x_item_many": "",
-        "x_item_other": "<strong>{{count}}</strong> éléments",
+        "x_item_other": "<strong>{{total}}</strong> éléments",
         "x_item_with_selection_one": "<strong>{{selection}} / {{total}}</strong> élément",
         "x_item_with_selection_many": "",
         "x_item_with_selection_other": "<strong>{{selection}} / {{total}}</strong> éléments",
@@ -844,7 +844,14 @@
         "is_missing": "{{title}} manque"
     },
     "filter_rule": {
+        "condition": {
+            "edit": "Modifier la condition",
+            "empty": "Aucune condition définie pour le moment",
+            "helper": "Les assets de cet espace de travail ne seront visibles que s'ils correspondent à cette condition.",
+            "label": "Condition"
+        },
         "confirm_delete_this_rule": "Confirmer la suppression de cette règle ?",
+        "groups": "Groupes",
         "exclude": {
             "helper": "Les Assets dans ce {{type}} seront seulement visibles s'ils NE contiennent PAS ces tags.",
             "label": "Tags à <strong>exclure</strong>"
@@ -856,7 +863,15 @@
         },
         "or": "ou",
         "rule_applies_for": "La règle s'applique pour :",
+        "targets_helper": "Laissez les deux champs vides pour appliquer cette règle à tous les utilisateurs.",
+        "users": "Utilisateurs",
         "user": "Utilisateur"
+    },
+    "filter_rules": {
+        "edit_this_rule": "Modifier cette règle",
+        "everyone": "Tout le monde",
+        "filter_rules": "Règles de filtrage",
+        "new_rule": "Nouvelle règle"
     },
     "foo": "barre",
     "form": {
@@ -1159,6 +1174,7 @@
                 "label": "Type d'Asset cible"
             },
             "help": {
+                "build_reference": "Référence de la définition de build :",
                 "modules_reference": "Modules disponibles"
             },
             "metadata": {
@@ -1745,7 +1761,7 @@
         "s": "s",
         "x_result_one": "<strong>{{count}}</strong> résultat",
         "x_result_many": "",
-        "x_result_other": "<strong>{{count}}</strong> résultats",
+        "x_result_other": "<strong>{{total}}</strong> résultats",
         "x_result_with_selection_one": "<strong>{{selection}} / {{total}}</strong> résultat",
         "x_result_with_selection_many": "",
         "x_result_with_selection_other": "<strong>{{selection}} / {{total}}</strong> résultats"
@@ -1905,20 +1921,20 @@
             "confirm_message_one": "Êtes-vous sûr de vouloir supprimer l'asset ?",
             "confirm_message_many": "",
             "confirm_message_other": "Êtes-vous sûr de vouloir supprimer les {{count}}  assets ?",
-            "hard_delete_one": "Supprimer définitivement <strong> {{count}} Asset</strong>",
+            "hard_delete_one": "Supprimer définitivement l'asset",
             "hard_delete_many": "Supprimer définitivement <strong> {{count}} Assets</strong>",
             "hard_delete_other": "Supprimer définitivement <strong> {{count}} Assets</strong>",
             "remove_from_collection": "Supprimer de la collection <strong> {{name}} </strong>",
             "shared_warning_one": "Cet asset est actuellement partagé. Le supprimer supprimera l'accès de tous les utilisateurs.",
             "shared_warning_many": "",
             "shared_warning_other": "<strong> {{count}} </strong> de ces Assets sont actuellement partagés. Les supprimer supprimera l'accès de tous les utilisateurs.",
-            "confirm_hard_delete_message_one": "Êtes-vous sûr de vouloir supprimer <strong> définitivement {{count}} Asset </strong> ? Cette action ne peut pas être annulée.",
+            "confirm_hard_delete_message_one": "Êtes-vous sûr de vouloir supprimer <strong>définitivement</strong> cet asset ? Cette action ne peut pas être annulée.",
             "confirm_hard_delete_message_many": "Êtes-vous sûr de vouloir supprimer <strong> définitivement {{count}} Assets </strong> ? Cette action ne peut pas être annulée.",
-            "confirm_hard_delete_message_other": "Êtes-vous sûr de vouloir supprimer <strong> définitivement {{count}} Assets </strong> ? Cette action ne peut pas être annulée.",
-            "confirm_move_to_trash_message_one": "Êtes-vous sûr de vouloir déplacer <strong>{{count}} Asset</strong> vers la corbeille ?",
+            "confirm_hard_delete_message_other": "Êtes-vous sûr de vouloir supprimer <strong>définitivement</strong> <strong>{{count}} assets</strong> ? Cette action ne peut pas être annulée.",
+            "confirm_move_to_trash_message_one": "Êtes-vous sûr de vouloir déplacer cet asset vers la corbeille ?",
             "confirm_move_to_trash_message_many": "Êtes-vous sûr de vouloir déplacer <strong>{{count}} Assets</strong> vers la corbeille ?",
             "confirm_move_to_trash_message_other": "Êtes-vous sûr de vouloir déplacer <strong>{{count}} Assets</strong> vers la corbeille ?",
-            "move_to_trash_one": "Déplacer <strong> {{count}} </strong>Asset vers la corbeille",
+            "move_to_trash_one": "Déplacer l'asset vers la corbeille",
             "move_to_trash_many": "",
             "move_to_trash_other": "Déplacer les <strong> {{count}} Assets</strong> vers la corbeille",
             "remove_from_story": "Retirer de la Story <strong> {{name}} </strong>"
@@ -1994,7 +2010,7 @@
             "confirm": {
                 "title": "Confirmer la restauration"
             },
-            "confirm_message_one": "Êtes-vous sûr de vouloir restaurer {{count}} Asset ?",
+            "confirm_message_one": "Êtes-vous sûr de vouloir restaurer cet asset ?",
             "confirm_message_many": "Êtes-vous sûr de vouloir restaurer {{count}} Assets ?",
             "confirm_message_other": "Êtes-vous sûr de vouloir restaurer {{count}} Assets ?",
             "deleted_collection": "Restaurer",
@@ -2038,6 +2054,9 @@
             },
             "edit": {
                 "title": "Editer"
+            },
+            "filter_rules": {
+                "title": "Règles de filtrage"
             },
             "info": {
                 "title": "Informations"
@@ -2428,7 +2447,6 @@
                 }
             }
         },
-        "rejected": "Rejeté",
         "usages": {
             "rendition": "Rendition \"{{name}}\" de l'asset \"{{asset}}\"",
             "source": "Source de l'asset \"{{asset}}\"",
@@ -2518,7 +2536,7 @@
             "placeholder": "Saisir l'URL du fichier"
         },
         "upload_from_url": "Importer à partir d'une l'URL",
-        "asset_created_one": "{{count}} Asset créé avec succès.",
+        "asset_created_one": "Asset créé avec succès.",
         "asset_created_many": "{{count}} Assets créés avec succès.",
         "asset_created_other": "{{count}} Assets créés avec succès.",
         "back_to_file_upload": "Charger un fichier",
@@ -3050,8 +3068,8 @@
         "result": {
             "status": {
                 "rejected": "Ce fichier a été rejeté par l'analyse.",
-                "rejected_with_reason": "Ce fichier a été rejeté par les analyseurs suivants.",
-                "skipped": "L'analyse du fichier a été ignorée.",
+                "rejected_with_reason": "Ce fichier a été rejeté par les analyseurs suivants",
+                "skipped": "L'analyse de fichier a été ignorée.",
                 "success": "Ce fichier a été analysé avec succès"
             }
         }
@@ -3223,15 +3241,6 @@
         "refresh": "Actualiser",
         "title": "Historique de la tâche"
     },
-    "file_analyzer": {
-        "result": {
-            "status": {
-                "rejected_with_reason": "Ce fichier a été rejeté par les analyseurs suivants",
-                "skipped": "L'analyse de fichier a été ignorée.",
-                "success": "Ce fichier a été analysé avec succès"
-            }
-        }
-    },
     "archive": {
         "basket": {
             "confirmed": "Le panier a été archivé!"
@@ -3289,6 +3298,8 @@
         },
         "analyzer": {
             "checksum": "Somme de contrôle",
+            "debug": "Débogage",
+            "doc_unique_id": "Identifiant unique du document",
             "filename": "Nom du fichier",
             "image_colorspace": "Espace colorimétrique",
             "image_dimension": "Dimension de l'image"
@@ -3302,6 +3313,7 @@
             "duplicate_checksum_other": "{{count}} fichiers avec une somme de contrôle identique existent déjà"
         },
         "doc_unique_id": {
+            "duid": "Identifiant unique",
             "duplicate_doc_unique_id_one": "{{count}} fichier d'asset partage le même identifiant unique de document (limité à {{limit}}).",
             "duplicate_doc_unique_id_many": "{{count}} fichiers d'assets partagent le même identifiant unique de document (limité à {{limit}}).",
             "duplicate_doc_unique_id_other": "{{count}} fichiers d'assets partagent le même identifiant unique de document (limité à {{limit}}).",

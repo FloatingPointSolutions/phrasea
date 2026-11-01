@@ -1,6 +1,9 @@
 {
     "lib": {
         "ui": {
+            "load_more": {
+                "label": "Cargar más"
+            },
             "menu": {
                 "account": "Mi cuenta",
                 "logout": "Cerrar sesión"

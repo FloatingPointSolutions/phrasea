@@ -1,7 +1,45 @@
 {
     "framework": {
+        "dialog": {
+            "cancel": "Cancelar",
+            "close": "Cerrar",
+            "confirm": "Confirmar",
+            "confirm_text_type": {
+                "intro": "Escriba \"{{ text }}\" para confirmar:",
+                "placeholder": "Escriba \"{{ text }}\""
+            },
+            "ok": "Aceptar"
+        },
         "locale": {
-            "current": "Español"
+            "current": "Español",
+            "switcher": {
+                "title": "Cambiar idioma"
+            }
+        },
+        "menu": {
+            "change_theme": "Cambiar tema",
+            "services": "Servicios",
+            "settings": "Ajustes",
+            "sign_in": "Iniciar sesión",
+            "theme_editor": "Editor de temas"
+        },
+        "notification": {
+            "menu": {
+                "label": "Notificaciones"
+            }
+        }
+    },
+    "lib": {
+        "ui": {
+            "beta": {
+                "label": "Beta",
+                "tooltip": "Esta función está en fase beta y puede cambiar sin previo aviso"
+            },
+            "menu": {
+                "account": "Mi cuenta",
+                "debug_user": "Depurar usuario",
+                "logout": "Cerrar sesión"
+            }
         }
     }
 }
