@@ -1,6 +1,6 @@
 export const languageCountryMap: Record<string, string> = {
     en: 'gb',
-    pt: 'br',
+    pt: 'pt',
     zh: 'cn',
     he: 'il',
     iw: 'il',
