@@ -2,6 +2,7 @@ import en from './en.json';
 import fr from './fr.json';
 import es from './es.json';
 import de from './de.json';
+import pt from './pt.json';
 
 import {translations} from '@alchemy/phrasea-framework';
 
@@ -25,4 +26,15 @@ const deMerged = {
     ...translations.de,
 };
 
-export {enMerged as en, frMerged as fr, esMerged as es, deMerged as de};
+const ptMerged = {
+    ...pt,
+    ...translations.pt,
+};
+
+export {
+    enMerged as en,
+    frMerged as fr,
+    esMerged as es,
+    deMerged as de,
+    ptMerged as pt,
+};

@@ -27,7 +27,7 @@
         "collection_list": {
             "collections_many": "",
             "collections_one": "+ {{count}} Collection",
-            "collections_other": "",
+            "collections_other": "+ {{count}} colecciones",
             "collections_plural": "+ {{count}} Collection",
             "others_many": "",
             "others_one": "+ {{count}} otros",
@@ -189,7 +189,7 @@
     "attributes": {
         "values_many": "",
         "values_one": "{{count}} valores",
-        "values_other": ""
+        "values_other": "{{count}} valores"
     },
     "attributes_editor_form": {
         "attributes_saved": "¡Attributos guardados!"

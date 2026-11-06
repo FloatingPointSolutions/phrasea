@@ -1,0 +1,9 @@
+{
+    "lib": {
+        "ui": {
+            "load_more": {
+                "label": "Carregar mais"
+            }
+        }
+    }
+}

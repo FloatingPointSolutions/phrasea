@@ -2,31 +2,37 @@ import enApi from '@alchemy/api/translations/en.json';
 import frApi from '@alchemy/api/translations/fr.json';
 import esApi from '@alchemy/api/translations/es.json';
 import deApi from '@alchemy/api/translations/de.json';
+import ptApi from '@alchemy/api/translations/pt.json';
 
 import enNav from '@alchemy/navigation/translations/en.json';
 import frNav from '@alchemy/navigation/translations/fr.json';
 import esNav from '@alchemy/navigation/translations/es.json';
 import deNav from '@alchemy/navigation/translations/de.json';
+import ptNav from '@alchemy/navigation/translations/pt.json';
 
 import enUi from '@alchemy/phrasea-ui/translations/en.json';
 import frUi from '@alchemy/phrasea-ui/translations/fr.json';
 import esUi from '@alchemy/phrasea-ui/translations/es.json';
 import deUi from '@alchemy/phrasea-ui/translations/de.json';
+import ptUi from '@alchemy/phrasea-ui/translations/pt.json';
 
 import enAuth from '@alchemy/react-auth/translations/en.json';
 import frAuth from '@alchemy/react-auth/translations/fr.json';
 import esAuth from '@alchemy/react-auth/translations/es.json';
 import deAuth from '@alchemy/react-auth/translations/de.json';
+import ptAuth from '@alchemy/react-auth/translations/pt.json';
 
 import enForm from '@alchemy/react-form/translations/en.json';
 import frForm from '@alchemy/react-form/translations/fr.json';
 import esForm from '@alchemy/react-form/translations/es.json';
 import deForm from '@alchemy/react-form/translations/de.json';
+import ptForm from '@alchemy/react-form/translations/pt.json';
 
 import enFramework from './en.json';
 import frFramework from './fr.json';
 import esFramework from './es.json';
 import deFramework from './de.json';
+import ptFramework from './pt.json';
 
 const en = {
     framework: {...enFramework.framework},
@@ -72,4 +78,15 @@ const de = {
     },
 };
 
-export {en, fr, es, de};
+const pt = {
+    framework: {...ptFramework.framework},
+    lib: {
+        ...ptApi.lib,
+        ...ptNav.lib,
+        ...ptUi.lib,
+        ...ptAuth.lib,
+        ...ptForm.lib,
+    },
+};
+
+export {en, fr, es, de, pt};

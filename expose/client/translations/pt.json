@@ -1,0 +1,228 @@
+{
+    "appbar": {
+        "profiles": "Perfis",
+        "publications": "Publicações"
+    },
+    "common": {
+        "close": "Fechar",
+        "expose": "Expose",
+        "soon": "Brevemente"
+    },
+    "downloadArchiveButton": {
+        "downloadArchive": "Transferir arquivo"
+    },
+    "download_terms": {
+        "dialog": {
+            "accept": "Aceitar e transferir",
+            "cancel": "Cancelar",
+            "please_read_accept": "Leia e aceite os <link>Termos</link> de transferência",
+            "terms_cta": "Ver termos de transferência",
+            "title": "Termos e condições de transferência"
+        }
+    },
+    "download_via_email": {
+        "cancel": "Cancelar",
+        "cta": "Transferir por email",
+        "email": {
+            "helper": "Introduza o endereço de email onde pretende receber a ligação de transferência.",
+            "label": "Email"
+        },
+        "sent": "Receberá a ligação de transferência por email.",
+        "submit_request": "Solicitar transferência"
+    },
+    "embeded_asset": {
+        "publication_disabled": "A publicação deste ativo está desativada. Apenas os administradores o podem ver."
+    },
+    "error": {
+        "authentication_required": "Autenticação necessária",
+        "forbidden": "Acesso proibido",
+        "invalid_password": "Palavra-passe inválida",
+        "not_found": "Não encontrado",
+        "unexpected": "Erro inesperado"
+    },
+    "form": {
+        "profile": {
+            "config": {
+                "label": "Configuração"
+            },
+            "create": {
+                "success": "Perfil criado!",
+                "title": "Criar perfil"
+            },
+            "edit": {
+                "submit": "Guardar perfil",
+                "success": "Perfil guardado!",
+                "title": "Editar perfil"
+            },
+            "name": {
+                "label": "Nome"
+            }
+        },
+        "publication": {
+            "config": {
+                "beginsAt": {
+                    "label": "Começa em"
+                },
+                "downloadEnabled": {
+                    "label": "Transferência ativada"
+                },
+                "downloadTerms": {
+                    "enabledLabel": "Ativar termos e condições de transferência"
+                },
+                "downloadViaEmail": {
+                    "label": "Transferência por email"
+                },
+                "enabled": {
+                    "label": "Ativado"
+                },
+                "expiresAt": {
+                    "label": "Expira em"
+                },
+                "includeDownloadTermsInZippy": {
+                    "label": "Incluir termos de transferência no arquivo"
+                },
+                "label": "Configuração",
+                "layout": {
+                    "label": "Disposição",
+                    "options": {
+                        "download": "Transferência",
+                        "gallery": "Galeria",
+                        "grid": "Grelha",
+                        "mapbox": "Mapbox"
+                    }
+                },
+                "overridden": {
+                    "label": "Substituir definições"
+                },
+                "publiclyListed": {
+                    "label": "Listada publicamente"
+                },
+                "securityMethod": {
+                    "label": "Método de segurança",
+                    "options": {
+                        "authentication": "Autenticação",
+                        "password": "Palavra-passe",
+                        "public": "Público"
+                    }
+                },
+                "securityOptions": {
+                    "password": {
+                        "label": "Palavra-passe"
+                    }
+                },
+                "terms": {
+                    "enabledLabel": "Ativar termos e condições"
+                }
+            },
+            "date": {
+                "label": "Data"
+            },
+            "edit": {
+                "cover": "Definir imagem de capa",
+                "submit": "Guardar publicação",
+                "success": "Publicação guardada!",
+                "title": "Editar publicação"
+            },
+            "parent": {
+                "label": "Publicação ascendente"
+            },
+            "profile": {
+                "edit": "Editar perfil",
+                "label": "Perfil"
+            },
+            "slug": {
+                "helper": "O slug é utilizado no URL da publicação.",
+                "label": "Slug"
+            },
+            "terms": {
+                "text": {
+                    "label": "Conteúdo dos termos"
+                },
+                "url": {
+                    "helper": "Em alternativa, indique um URL para os termos e condições.",
+                    "label": "URL dos termos"
+                }
+            },
+            "title": {
+                "label": "Título"
+            }
+        }
+    },
+    "profile": {
+        "delete_confirm": "Eliminar perfil",
+        "delete_title": "Eliminar perfil \"{{title}}\"",
+        "list": {
+            "create_button": "Criar perfil",
+            "no_result": "Nenhum perfil",
+            "title": "Perfis",
+            "using_publications_one": "{{count}} publicação utiliza este perfil",
+            "using_publications_other": "{{count}} publicações utilizam este perfil"
+        }
+    },
+    "publication": {
+        "asset": {
+            "download": "Transferir"
+        },
+        "auth_required": {
+            "sign_in": "Iniciar sessão",
+            "title": "Esta publicação requer autenticação."
+        },
+        "disabled": "Esta publicação está atualmente desativada. Apenas os administradores a podem ver.",
+        "edit": {
+            "cover": {
+                "set": "Definir capa",
+                "title": "Definir capa"
+            }
+        },
+        "layout": {
+            "download": {
+                "download_original": "Transferir original",
+                "download_subdef": "Transferir {{name}}"
+            }
+        },
+        "list": {
+            "delete_confirm": "Eliminar publicação",
+            "delete_title": "Eliminar publicação \"{{title}}\"",
+            "no_result": "Nenhuma publicação",
+            "order": {
+                "last_post_added": "Recentes",
+                "publication_name": "Nome"
+            },
+            "sort_by": "Ordenar por {{order}}"
+        },
+        "noAssetAvailable": "Nenhum ativo disponível",
+        "not_allowed": "Lamentamos! Não tem permissão para aceder a esta publicação.",
+        "security": {
+            "password": {
+                "form": {
+                    "password": {
+                        "label": "Palavra-passe"
+                    },
+                    "submit": {
+                        "label": "Entrar"
+                    }
+                },
+                "intro": "Esta publicação está protegida por palavra-passe. Introduza a palavra-passe para aceder."
+            }
+        }
+    },
+    "publicationHeader": {
+        "editButton": "Editar",
+        "homeLink": "Início",
+        "openMenuTooltip": "Abrir menu de navegação"
+    },
+    "publication_card": {
+        "delete": "Eliminar",
+        "disabled_tooltip": "Esta publicação está desativada, apenas os operadores podem aceder-lhe.",
+        "edit": "Editar",
+        "unlisted": "Esta publicação não está listada; pode vê-la porque dispõe das permissões necessárias"
+    },
+    "terms": {
+        "dialog": {
+            "accept": "Aceitar",
+            "please_read_accept": "Leia e aceite os <link>Termos</link>",
+            "terms_cta": "Termos",
+            "title": "Termos e condições"
+        }
+    }
+}

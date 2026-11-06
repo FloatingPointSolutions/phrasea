@@ -1,0 +1,119 @@
+field_type:
+    types:
+        boolean: Booleano
+        code: Código
+        color: Cor
+        date: Data
+        date_time: Data e hora
+        duration: Duração
+        entity: Entidade
+        filesize: Tamanho do ficheiro
+        geo_point: Ponto geográfico
+        html: HTML
+        ip: IP
+        json: JSON
+        keyword: Palavra-chave
+        number: Número
+        text: Texto
+        textarea: Área de texto
+        id: ID
+        privacy: Privacidade
+        asset_status: Estado do ativo
+privacy:
+    secret: Secreto
+    private_in_workspace: Privado no espaço de trabalho
+    public_in_workspace: Público no espaço de trabalho
+    private: Privado
+    public_for_users: Público para utilizadores
+    public: Público
+asset_status:
+    accepted: Aceite
+    pending: Pendente
+    quarantined: Em quarentena
+facet:
+    collections:
+        name: Coleções
+    created_at:
+        name: Criado em
+    edited_at:
+        name: Editado em
+    owner:
+        name: Proprietário
+    privacy:
+        name: Privacidade
+    renditions:
+        name: Renderizações
+    relevance:
+        name: Relevância
+    tags:
+        name: Etiquetas
+    workspace:
+        name: Espaço de trabalho
+    is_story:
+        name: É uma história
+    stories:
+        name: Histórias
+    file_type:
+        name: Tipo de ficheiro
+    file_extension:
+        name: Extensão do ficheiro
+    has_source_file:
+        name: Tem ficheiro de origem
+    assetStatus:
+        name: Estado do ativo
+built_in_attribute:
+    collectionPositions:
+        name: Posição
+    _score:
+        name: Pontuação
+    _id:
+        name: ID
+    name:
+        name: Nome
+    collectionPaths:
+        name: Coleções
+        raw:
+            name: Coleções diretas
+    workspaceId:
+        name: Espaço de trabalho
+    ownerId:
+        name: Proprietário
+    privacy:
+        name: Privacidade
+    isStory:
+        name: É uma história
+    stories:
+        name: Histórias
+    tags:
+        name: Etiqueta
+    renditions:
+        name: Renderização
+    editedAt:
+        name: Editado em
+    createdAt:
+        name: Criado em
+    fileType:
+        name: Tipo de ficheiro
+    fileMimeType:
+        name: Tipo MIME do ficheiro
+    fileExtension:
+        name: Extensão do ficheiro
+    fileSize:
+        name: Tamanho do ficheiro
+    fileName:
+        name: Nome do ficheiro
+    checksum:
+        name: Soma de verificação
+    docUniqueId:
+        name: ID único do documento
+    hasSourceFile:
+        name: Tem ficheiro de origem
+    deleted:
+        name: Eliminado
+    assetStatus:
+        name: Estado do ativo
+search:
+    suggestion:
+        type:
+            asset: Ativo
+            collection: Coleção

@@ -1,7 +1,45 @@
 {
     "framework": {
+        "dialog": {
+            "cancel": "Abbrechen",
+            "close": "Schließen",
+            "confirm": "Bestätigen",
+            "confirm_text_type": {
+                "intro": "Bitte geben Sie \"{{ text }}\" zur Bestätigung ein:",
+                "placeholder": "\"{{ text }}\" eingeben"
+            },
+            "ok": "OK"
+        },
         "locale": {
-            "current": "Deutsch"
+            "current": "Deutsch",
+            "switcher": {
+                "title": "Sprache ändern"
+            }
+        },
+        "menu": {
+            "change_theme": "Design ändern",
+            "services": "Dienste",
+            "settings": "Einstellungen",
+            "sign_in": "Anmelden",
+            "theme_editor": "Design-Editor"
+        },
+        "notification": {
+            "menu": {
+                "label": "Benachrichtigungen"
+            }
+        }
+    },
+    "lib": {
+        "ui": {
+            "beta": {
+                "label": "Beta",
+                "tooltip": "Diese Funktion befindet sich in der Betaphase und kann sich ohne Vorankündigung ändern"
+            },
+            "menu": {
+                "account": "Mein Konto",
+                "debug_user": "Benutzer debuggen",
+                "logout": "Abmelden"
+            }
         }
     }
 }
