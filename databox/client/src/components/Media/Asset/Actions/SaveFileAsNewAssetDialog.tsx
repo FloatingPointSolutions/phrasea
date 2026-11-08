@@ -7,15 +7,20 @@ import FileCopyIcon from '@mui/icons-material/FileCopy';
 import {RemoteErrors} from '@alchemy/react-form';
 import {Asset, ApiFile} from '../../../../types';
 import {StackedModalProps, useModals} from '@alchemy/navigation';
-import {useDirtyFormPrompt} from '@alchemy/phrasea-framework';
+import {TreeNode, useDirtyFormPrompt} from '@alchemy/phrasea-framework';
 import {toast} from 'react-toastify';
 import CollectionTreeWidget from '../../../Form/CollectionTreeWidget';
 import {FormFieldErrors, FormRow} from '@alchemy/react-form';
 import {postAsset} from '../../../../api/asset';
+import {getWorkspaceOrCollectionIri} from '../../../../api/collection';
+import {
+    EntityType,
+    WorkspaceOrCollectionTreeItem,
+} from '../../Collection/CollectionTree/types.ts';
 
 type FormData = {
     name: string;
-    destination: string;
+    destination: TreeNode<WorkspaceOrCollectionTreeItem>;
 };
 
 export type BaseSaveAsProps = {
@@ -53,15 +58,14 @@ export default function SaveFileAsNewAssetDialog({
             destination: undefined,
         },
         onSubmit: async (data: FormData) => {
-            const workspace = data.destination.includes('/workspaces/')
-                ? data.destination
-                : undefined;
-            const collection = !workspace ? data.destination : undefined;
+            const destination = data.destination.data;
+            const iri = getWorkspaceOrCollectionIri(destination);
+            const isWorkspace = destination.type === EntityType.Workspace;
 
             return await postAsset({
                 name: data.name,
-                collection,
-                workspace,
+                collection: isWorkspace ? undefined : iri,
+                workspace: isWorkspace ? iri : undefined,
                 sourceFileId: file.id,
                 relationship: {
                     source: asset.id,
