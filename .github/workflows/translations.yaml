@@ -1,0 +1,14 @@
+name: Translations
+
+on: [pull_request]
+
+jobs:
+  check:
+    name: 'Check translation completeness'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Compare every locale against en
+        run: node lib/js/i18n/bin/check-translations.mjs
