@@ -9,8 +9,8 @@ use App\Service\Workspace\WorkspaceTemplater;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand('app:workspace:export')]
@@ -29,7 +29,7 @@ class ExportWorkspaceCommand extends Command
 
         $this
             ->setDescription('Export a workspace as a template.')
-            ->addArgument('workspace', InputOption::VALUE_REQUIRED, 'Workspace ID to export')
+            ->addArgument('workspace', InputArgument::REQUIRED, 'Workspace ID to export')
         ;
     }
 

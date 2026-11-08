@@ -12,7 +12,9 @@ use App\Entity\Core\RenditionDefinition;
 use App\Entity\Core\RenditionPolicy;
 use App\Entity\Core\Tag;
 use App\Entity\Core\Workspace;
+use App\Entity\Integration\WorkspaceIntegration;
 use App\Entity\Template\WorkspaceTemplate;
+use App\Integration\Core\Rendition\RenditionIntegration;
 use App\Model\AssetTypeEnum;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -30,16 +32,18 @@ final readonly class WorkspaceTemplater
     {
         $entityClassMap = [];
         $renditionClassMap = [];
+        $renditionDefinitionMap = [];
         $attributeClassMap = [];
 
         return [
             'Workspace' => $this->exportWorkspace($workspace),
             'RenditionPolicy' => $this->exportRenditionPolicies($workspace->getId(), $renditionClassMap),
-            'RenditionDefinition' => $this->exportRenditionDefinitions($workspace->getId(), $renditionClassMap),
+            'RenditionDefinition' => $this->exportRenditionDefinitions($workspace->getId(), $renditionClassMap, $renditionDefinitionMap),
             'EntityList' => $this->exportEntityLists($workspace->getId(), $entityClassMap),
             'AttributePolicy' => $this->exportAttributePolicies($workspace->getId(), $attributeClassMap),
             'AttributeDefinition' => $this->exportAttributeDefinitions($workspace->getId(), $attributeClassMap, $entityClassMap),
             'Tag' => $this->exportTags($workspace->getId()),
+            'WorkspaceIntegration' => $this->exportIntegrations($workspace->getId(), $renditionDefinitionMap),
         ];
     }
 
@@ -98,13 +102,15 @@ final readonly class WorkspaceTemplater
             $this->importAttributeDefinition($ws, $data['AttributeDefinition'] ?? [], $attributeClassMap, $entityClassMap);
 
             $renditionClassMap = [];
+            $renditionDefinitionMap = [];
             $this->importRenditionPolicies($ws, $data['RenditionPolicy'] ?? [], $renditionClassMap);
-            $this->importRenditionDefinitions($ws, $data['RenditionDefinition'] ?? [], $renditionClassMap);
+            $this->importRenditionDefinitions($ws, $data['RenditionDefinition'] ?? [], $renditionClassMap, $renditionDefinitionMap);
 
             // the scope links attribute definitions to rendition definitions, which only exist now
             $this->importAttributeDefinitionRenditionScope($ws, $data['AttributeDefinition'] ?? []);
 
             $this->importTags($ws, $data['Tag'] ?? []);
+            $this->importIntegrations($ws, $data['WorkspaceIntegration'] ?? [], $renditionDefinitionMap);
 
             $this->em->flush();
             if ($addTransaction) {
@@ -121,6 +127,8 @@ final readonly class WorkspaceTemplater
     private function exportWorkspace(Workspace $workspace): array
     {
         return [
+            'name' => $workspace->getName(),
+            'slug' => $workspace->getSlug(),
             'public' => $workspace->isPublic(),
             'enabledLocales' => $workspace->getEnabledLocales(),
             'localeFallbacks' => $workspace->getLocaleFallbacks(),
@@ -192,7 +200,7 @@ final readonly class WorkspaceTemplater
         }
     }
 
-    private function exportRenditionDefinitions(string $workspaceId, array $renditionPolicyMap): array
+    private function exportRenditionDefinitions(string $workspaceId, array $renditionPolicyMap, array &$renditionDefinitionMap): array
     {
         $o = [];
 
@@ -200,15 +208,16 @@ final readonly class WorkspaceTemplater
         $items = $this->em->getRepository(RenditionDefinition::class)->findBy([
             'workspace' => $workspaceId,
         ]);
-        $renditionMap = [];
         foreach ($items as $item) {
-            for ($slugId = '#'.$item->getName(), $n = 2; in_array($slugId, $renditionMap); ++$n) {
+            for ($slugId = '#'.$item->getName(), $n = 2; in_array($slugId, $renditionDefinitionMap); ++$n) {
                 $slugId = '#'.$item->getName().'_'.$n;
             }
-            $renditionMap[$item->getId()] = $slugId;
+            $renditionDefinitionMap[$item->getId()] = $slugId;
             $o[] = [
                 'id' => $item->getId(),
                 'name' => $item->getName(),
+                'key' => $item->getKey(),
+                'target' => $item->getTarget()->value,
                 'policy' => $renditionPolicyMap[$item->getPolicy()->getId()] ?? null,
                 'parent' => $item->getParent()?->getId(),
                 'buildMode' => $item->getBuildMode(),
@@ -227,9 +236,9 @@ final readonly class WorkspaceTemplater
         }
         $o = array_values($this->orderByParent($o));
         foreach ($o as $k => $v) {
-            $o[$k]['id'] = $renditionMap[$v['id']] ?? null;
+            $o[$k]['id'] = $renditionDefinitionMap[$v['id']] ?? null;
             if ($v['parent']) {
-                $o[$k]['parent'] = $renditionMap[$v['parent']] ?? null;
+                $o[$k]['parent'] = $renditionDefinitionMap[$v['parent']] ?? null;
             }
         }
 
@@ -249,11 +258,10 @@ final readonly class WorkspaceTemplater
         return $end || empty($tu) ? $o : $this->orderByParent($tu, $o);
     }
 
-    private function importRenditionDefinitions(Workspace $ws, array $data, array $renditionClassMap): void
+    private function importRenditionDefinitions(Workspace $ws, array $data, array $renditionClassMap, array &$renditionDefinitionMap): void
     {
         $rdOrdered = $this->orderByParent($data);
 
-        $rdMap = [];
         foreach ($rdOrdered as $id => $item) {
             /** @var RenditionDefinition $o */
             if (!($o = $this->em->getRepository(RenditionDefinition::class)->findOneBy([
@@ -268,6 +276,10 @@ final readonly class WorkspaceTemplater
                 $this->logger->info(sprintf('Updating RenditionDefinition "%s"', $item['name']));
             }
 
+            $o->setKey($item['key'] ?? $o->getKey());
+            if (isset($item['target'])) {
+                $o->setTarget(AssetTypeEnum::from((int) $item['target']));
+            }
             $o->setBuildMode($item['buildMode']);
             $o->setPriority($item['priority']);
             $o->setDownload($item['download']);
@@ -282,9 +294,9 @@ final readonly class WorkspaceTemplater
             $o->setDefinition($item['definition']);
             $o->setPolicy($renditionClassMap[$item['policy']]);
             if ($item['parent']) {
-                $o->setParent($rdMap[$item['parent']]);
+                $o->setParent($renditionDefinitionMap[$item['parent']]);
             }
-            $rdMap[$id] = $o;
+            $renditionDefinitionMap[$id] = $o;
 
             $this->em->persist($o);
         }
@@ -348,6 +360,7 @@ final readonly class WorkspaceTemplater
         foreach ($items as $item) {
             $o[] = [
                 'name' => $item->getName(),
+                'key' => $item->getKey(),
                 'policy' => $attributePolicyMap[$item->getPolicy()->getId()] ?? null,
                 'labels' => $item->getLabels(),
                 'entityList' => $item->getEntityList() ? $entityClassMap[$item->getEntityList()->getId()] ?? null : null,
@@ -398,6 +411,7 @@ final readonly class WorkspaceTemplater
             } else {
                 $this->logger->info(sprintf('Updating AttributeDefinition "%s"', $item['name']));
             }
+            $o->setKey($item['key'] ?? $o->getKey());
             $o->setPolicy($attributeClassMap[$item['policy']]);
             $o->setLabels($item['labels']);
             if ($item['entityList'] ?? null) {
@@ -559,8 +573,6 @@ final readonly class WorkspaceTemplater
                 $o->setName($entityList['name']);
                 $this->em->persist($o);
 
-                $entityClassMap[$entityList['id']] = $o;
-
                 foreach ($entityList['entities'] as $item) {
                     $ae = new AttributeEntity();
                     $ae->setWorkspace($ws);
@@ -574,6 +586,80 @@ final readonly class WorkspaceTemplater
             } else {
                 $this->logger->info(sprintf('EntityList "%s" exists', $entityList['name']));
             }
+
+            $entityClassMap[$entityList['id']] = $o;
         }
+    }
+
+    private function exportIntegrations(string $workspaceId, array $renditionDefinitionMap): array
+    {
+        /** @var WorkspaceIntegration[] $items */
+        $items = $this->em->getRepository(WorkspaceIntegration::class)->findBy([
+            'workspace' => $workspaceId,
+        ]);
+
+        return array_map(fn (WorkspaceIntegration $item): array => [
+            'id' => $item->getId(),
+            'name' => $item->getName(),
+            'integration' => $item->getIntegration(),
+            'config' => $this->mapIntegrationConfig($item->getIntegration(), $item->getConfig(), $renditionDefinitionMap),
+            'enabled' => $item->isEnabled(),
+            'public' => $item->getPublic(),
+            'if' => $item->getIf(),
+            'needs' => $item->getNeeds()
+                ->map(fn (WorkspaceIntegration $need): string => $need->getId())
+                ->getValues(),
+        ], $items);
+    }
+
+    private function importIntegrations(Workspace $ws, array $data, array $renditionDefinitionMap): void
+    {
+        $renditionIdMap = array_map(fn (RenditionDefinition $rd): string => $rd->getId(), $renditionDefinitionMap);
+
+        $integrationMap = [];
+        foreach ($data as $item) {
+            /** @var WorkspaceIntegration $o */
+            if (!($o = $this->em->getRepository(WorkspaceIntegration::class)->findOneBy([
+                'workspace' => $ws,
+                'name' => $item['name'],
+                'integration' => $item['integration'],
+            ]))) {
+                $this->logger->info(sprintf('Creating WorkspaceIntegration "%s" (%s)', $item['name'], $item['integration']));
+                $o = new WorkspaceIntegration();
+                $o->setWorkspace($ws);
+                $o->setOwnerId($ws->getOwnerId());
+                $o->setName($item['name']);
+                $o->setIntegration($item['integration']);
+            } else {
+                $this->logger->info(sprintf('Updating WorkspaceIntegration "%s" (%s)', $item['name'], $item['integration']));
+            }
+            $o->setConfig($this->mapIntegrationConfig($item['integration'], $item['config'] ?? [], $renditionIdMap));
+            $o->setEnabled($item['enabled'] ?? true);
+            $o->setPublic($item['public']);
+            $o->setIf($item['if'] ?? null);
+            $this->em->persist($o);
+
+            $integrationMap[$item['id']] = $o;
+        }
+
+        foreach ($data as $item) {
+            $o = $integrationMap[$item['id']];
+            $o->getNeeds()->clear();
+            foreach ($item['needs'] ?? [] as $need) {
+                $o->addNeed($integrationMap[$need]);
+            }
+        }
+    }
+
+    private function mapIntegrationConfig(string $integration, array $config, array $renditionDefinitionMap): array
+    {
+        if (RenditionIntegration::getName() === $integration && !empty($config['renditions'])) {
+            $config['renditions'] = array_map(
+                fn (string $rendition): string => $renditionDefinitionMap[$rendition] ?? $rendition,
+                $config['renditions'],
+            );
+        }
+
+        return $config;
     }
 }
