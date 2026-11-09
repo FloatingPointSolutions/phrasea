@@ -15,14 +15,13 @@ on:
 
 env:
   COMPOSE_PROJECT_NAME: build
-  REGISTRY_NAMESPACE: ghcr.io/${{ github.repository_owner }}/ps-
+  REGISTRY_NAMESPACE: ghcr.io/floatingpointsolutions/ps-
   DOCKER_TAG: ${{ github.sha }}
-  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+  IMAGE_REGISTRY: ghcr.io/floatingpointsolutions
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'alchemy-fr' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
