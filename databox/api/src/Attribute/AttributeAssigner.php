@@ -68,6 +68,8 @@ final readonly class AttributeAssigner
             if ($data->confidence) {
                 $attribute->setConfidence($data->confidence);
             }
+            $attribute->setModel($data->model);
+            $attribute->setModelVersion($data->modelVersion);
             $attribute->setAssetAnnotations($data->annotations);
         }
 

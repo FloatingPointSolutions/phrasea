@@ -98,4 +98,10 @@ class AttributeOutput extends AbstractUuidOutput
 
     #[Groups([Attribute::GROUP_LIST, Attribute::GROUP_READ])]
     public $confidence;
+
+    #[Groups([Attribute::GROUP_LIST, Attribute::GROUP_READ])]
+    public ?string $model = null;
+
+    #[Groups([Attribute::GROUP_LIST, Attribute::GROUP_READ])]
+    public ?string $modelVersion = null;
 }

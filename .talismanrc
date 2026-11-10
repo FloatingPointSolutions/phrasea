@@ -1,6 +1,8 @@
 fileignoreconfig:
 - filename: .env
   checksum: e60c61e29e8534758363528d96750652f8bda1115f95f0785480475fa91ccbd9
+- filename: databox/api/migrations/Version20261110120000.php
+  checksum: bde26a21f42ea7d931a880399670ce3df6b32bb6c518285a82f686215fb864c3
 - filename: databox/api/translations/messages.es.yaml
   checksum: 57e916f0599e117899ef3ffac467aa3cbc6af6edbe6fd84a56cd7fee42c8dcdb
 - filename: databox/api/translations/messages.pt.yaml

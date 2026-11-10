@@ -73,12 +73,17 @@ class Attribute extends AbstractBaseAttribute implements ESIndexableDeleteDepend
     final public const int ORIGIN_FALLBACK = 2;
     final public const int ORIGIN_INITIAL = 3;
     final public const int ORIGIN_FALLBACK_PERSISTED = 4;
+    final public const int ORIGIN_MIGRATION = 5;
+    final public const int ORIGIN_INHERITED = 6;
 
     final public const array ORIGIN_LABELS = [
         self::ORIGIN_MACHINE => 'machine',
         self::ORIGIN_HUMAN => 'human',
         self::ORIGIN_FALLBACK => 'fallback',
         self::ORIGIN_INITIAL => 'initial',
+        self::ORIGIN_FALLBACK_PERSISTED => 'fallback_persisted',
+        self::ORIGIN_MIGRATION => 'migration',
+        self::ORIGIN_INHERITED => 'inherited',
     ];
 
     final public const int STATUS_VALID = 0;
@@ -129,6 +134,16 @@ class Attribute extends AbstractBaseAttribute implements ESIndexableDeleteDepend
 
     #[ORM\Column(type: Types::FLOAT, nullable: false)]
     private float $confidence = 1.0;
+
+    /**
+     * Model that produced a machine value, with its version, so a re-run of the
+     * same model replaces its own suggestions only.
+     */
+    #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
+    private ?string $model = null;
+
+    #[ORM\Column(type: Types::STRING, length: 100, nullable: true)]
+    private ?string $modelVersion = null;
 
     public ?AttributeBatchUpdateInput $batchUpdate = null;
 
@@ -233,6 +248,26 @@ class Attribute extends AbstractBaseAttribute implements ESIndexableDeleteDepend
     public function setConfidence(float $confidence): void
     {
         $this->confidence = $confidence;
+    }
+
+    public function getModel(): ?string
+    {
+        return $this->model;
+    }
+
+    public function setModel(?string $model): void
+    {
+        $this->model = $model;
+    }
+
+    public function getModelVersion(): ?string
+    {
+        return $this->modelVersion;
+    }
+
+    public function setModelVersion(?string $modelVersion): void
+    {
+        $this->modelVersion = $modelVersion;
     }
 
     public function getIndexableDeleteDependencies(): array

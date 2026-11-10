@@ -44,4 +44,8 @@ abstract class AbstractExtendedAttributeInput extends AbstractBaseAttributeInput
      * @var float
      */
     public $confidence;
+
+    public ?string $model = null;
+
+    public ?string $modelVersion = null;
 }
