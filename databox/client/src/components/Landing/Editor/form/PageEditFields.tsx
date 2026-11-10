@@ -45,7 +45,9 @@ export default function PageEditFields({usedFormSubmit}: Props) {
                         'pages.form.slug.helper',
                         'The slug is used in the page URL and must be unique.'
                     )}
-                    {...register('slug')}
+                    {...register('slug', {
+                        required: true,
+                    })}
                 />
                 <FormFieldErrors field={'slug'} errors={errors} />
             </FormRow>

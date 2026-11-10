@@ -18,7 +18,7 @@ final readonly class PageBySlugProvider implements ProviderInterface
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
     {
         return $this->pageRepository->findOneBy([
-            'slug' => $uriVariables['slug'] ?? null,
+            'slug' => $uriVariables['slug'],
             'enabled' => true,
         ]);
     }

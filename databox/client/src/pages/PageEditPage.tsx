@@ -43,15 +43,9 @@ export default function PageEditPage({}: Props) {
             return;
         }
 
-        const slug = data?.slug;
-
-        const uri = `${window.location.origin}${
-            slug
-                ? getPath(routes.pages, {
-                      slug,
-                  })
-                : '/'
-        }`;
+        const uri = `${window.location.origin}${getPath(routes.pages, {
+            slug: data.slug,
+        })}`;
         window.open(uri, '_blank');
     }, [data]);
 
