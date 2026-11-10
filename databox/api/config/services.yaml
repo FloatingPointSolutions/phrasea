@@ -6,6 +6,7 @@
 parameters:
     default_locale: 'en'
     env(VERIFY_SSL): true
+    env(ONBOARDING_WORKSPACE_TEMPLATE): '%kernel.project_dir%/../seed/workspace.json'
     stof_doctrine_extensions.listener.softdeleteable.class: App\Doctrine\Listener\SoftDeleteableListener
 
 services:
@@ -19,6 +20,7 @@ services:
             string $databoxClientBaseUrl: '%env(DATABOX_CLIENT_URL)%'
             string $matomoSiteId: '%env(MATOMO_SITE_ID)%'
             string $matomoAuthToken: '%env(MATOMO_AUTH_TOKEN)%'
+            string $onboardingWorkspaceTemplate: '%env(resolve:ONBOARDING_WORKSPACE_TEMPLATE)%'
             ApiPlatform\State\ProviderInterface $itemProvider: '@api_platform.doctrine.orm.state.item_provider'
             ApiPlatform\State\ProviderInterface $collectionProvider: '@api_platform.doctrine.orm.state.collection_provider'
             bool $useAlias: '%elastica.use_alias%'

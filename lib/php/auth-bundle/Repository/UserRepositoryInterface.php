@@ -13,4 +13,6 @@ interface UserRepositoryInterface extends AclUserRepositoryInterface
     public function getUsersByIds(array $ids, array $options = []): array;
 
     public function getUser(string $userId, array $options = []): ?array;
+
+    public function createUser(array $data): array;
 }

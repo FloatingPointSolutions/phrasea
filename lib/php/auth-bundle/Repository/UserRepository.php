@@ -64,6 +64,11 @@ class UserRepository extends AbstractKeycloakRepository implements UserRepositor
         });
     }
 
+    public function createUser(array $data): array
+    {
+        return $this->executeWithAccessToken(fn (string $accessToken): array => $this->oauthClient->createUser($data, $accessToken));
+    }
+
     /**
      * @param JwtUser $user
      */

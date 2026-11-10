@@ -1,0 +1,8 @@
+{% block subject %}{{ 'user.welcome.email.subject'|trans({'%workspaceName%': workspaceName}, 'notifications')|raw }}{% endblock %}
+
+{% block body %}{{ 'user.welcome.email.body'|trans({
+    '%recipient%': (recipient.displayName|default(recipient.email))|e,
+    '%username%': username|e,
+    '%workspaceName%': workspaceName|e,
+    '%url%': notification_url(url)|e('html_attr'),
+}, 'notifications')|raw }}{% endblock %}

@@ -61,7 +61,7 @@ final readonly class WorkspaceTemplater
         return $wsTemplate;
     }
 
-    public function import(array $data, string $newName, ?string $slug, ?string $ownerId): void
+    public function import(array $data, string $newName, ?string $slug, ?string $ownerId): Workspace
     {
         $this->em->beginTransaction();
         try {
@@ -80,6 +80,7 @@ final readonly class WorkspaceTemplater
 
             $this->em->commit();
 
+            return $ws;
         } catch (\Throwable $e) {
             $this->em->rollback();
             throw $e;

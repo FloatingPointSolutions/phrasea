@@ -29,6 +29,9 @@ alchemy_notifier:
         # User-facing exceptions (ExceptionNotifier)
         'user:exception':
             channels: [email, in_app]
+        # Account ready after onboarding (UserOnboarding)
+        'user:welcome':
+            channels: [email]
 
 twig:
     paths:
