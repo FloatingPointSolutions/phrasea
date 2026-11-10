@@ -17,7 +17,7 @@ final class Version20261109120000 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // A UUID is a valid slug, which keeps the former home pages reachable at /p/{id}
-        $this->addSql('UPDATE page SET slug = id WHERE slug IS NULL');
+        $this->addSql("UPDATE page SET slug = id WHERE slug IS NULL OR slug = ''");
         $this->addSql('ALTER TABLE page ALTER slug SET NOT NULL');
     }
 

@@ -7,36 +7,48 @@ namespace App\Tests\Api;
 use Alchemy\AuthBundle\Tests\Client\KeycloakClientTestMock;
 use App\Entity\Page\Page;
 use App\Tests\AbstractDataboxTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class PageTest extends AbstractDataboxTestCase
 {
+    public static function blankSlugProvider(): iterable
+    {
+        yield 'empty' => [''];
+        yield 'null' => [null];
+    }
+
     public function testPageCannotBeCreatedWithoutSlug(): void
     {
         $client = static::createClient();
 
         $client->request('POST', '/pages', [
-            'headers' => [
-                'Authorization' => 'Bearer '.KeycloakClientTestMock::getJwtFor(KeycloakClientTestMock::ADMIN_UID),
-            ],
-            'json' => [
-                'title' => 'Landing',
-            ],
+            'headers' => self::adminHeaders(),
+            'json' => ['title' => 'Landing'],
         ]);
         $this->assertResponseStatusCodeSame(422);
     }
 
-    public function testPageCannotBeCreatedWithEmptySlug(): void
+    #[DataProvider('blankSlugProvider')]
+    public function testPageCannotBeCreatedWithBlankSlug(?string $slug): void
     {
         $client = static::createClient();
 
         $client->request('POST', '/pages', [
-            'headers' => [
-                'Authorization' => 'Bearer '.KeycloakClientTestMock::getJwtFor(KeycloakClientTestMock::ADMIN_UID),
-            ],
-            'json' => [
-                'title' => 'Landing',
-                'slug' => '',
-            ],
+            'headers' => self::adminHeaders(),
+            'json' => ['title' => 'Landing', 'slug' => $slug],
+        ]);
+        $this->assertResponseStatusCodeSame(422);
+    }
+
+    #[DataProvider('blankSlugProvider')]
+    public function testPageSlugCannotBeCleared(?string $slug): void
+    {
+        $client = static::createClient();
+        $page = $this->createPage('about');
+
+        $client->request('PUT', '/pages/'.$page->getId(), [
+            'headers' => self::adminHeaders(),
+            'json' => ['slug' => $slug],
         ]);
         $this->assertResponseStatusCodeSame(422);
     }
@@ -64,6 +76,13 @@ class PageTest extends AbstractDataboxTestCase
 
         $client->request('GET', '/page-by-slug/unknown');
         $this->assertResponseStatusCodeSame(404);
+    }
+
+    private static function adminHeaders(): array
+    {
+        return [
+            'Authorization' => 'Bearer '.KeycloakClientTestMock::getJwtFor(KeycloakClientTestMock::ADMIN_UID),
+        ];
     }
 
     private function createPage(string $slug): Page
