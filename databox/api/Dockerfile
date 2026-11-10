@@ -93,8 +93,6 @@ ENV PHP_MEMORY_LIMIT=1G \
     IS_WORKER=1
 
 RUN apk add --no-cache \
-        exiftool \
-        rsvg-convert \
         supervisor \
     && mkdir -p /var/log/supervisor \
     && chown -R app: /var/log/supervisor \
