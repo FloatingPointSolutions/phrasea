@@ -8,6 +8,10 @@ import MyMarkdown from '../../_databox/_rendition_transformers.md'
 
 The Rendition Factory is a service responsible for generating various renditions (alternative formats or versions) of media assets stored in Databox. It utilizes a set of transformers to process and convert the original media files into different renditions based on predefined configurations.
 
+## Supported input formats
+
+Image renditions are produced by ImageMagick (through the `imagick` extension), which delegates to tools shipped in the worker image: Ghostscript rasterizes PDF, PostScript, EPS and Illustrator (AI) files, librsvg (`imagemagick-svg`, `rsvg-convert`) rasterizes SVG, and ExifTool extracts the embedded previews used for formats ImageMagick cannot open, such as InDesign (INDD) and camera raw files. Videos and audio go through FFmpeg and office documents through LibreOffice.
+
 ## Transformers
 
 Here is the list of available transformers:
