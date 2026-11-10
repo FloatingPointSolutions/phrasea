@@ -86,7 +86,7 @@ HELP
             throw new \InvalidArgumentException('send template to stdin, e.g. `sf app:workspace:import new_workspace < template.json`');
         }
 
-        return json_decode(stream_get_contents(STDIN), true, 512, JSON_THROW_ON_ERROR);
+        return $this->workspaceTemplater->decode(stream_get_contents(STDIN));
     }
 
     private function resolveOwnerId(string $owner): string

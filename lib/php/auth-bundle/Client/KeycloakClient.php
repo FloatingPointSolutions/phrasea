@@ -105,6 +105,14 @@ final readonly class KeycloakClient
         return $users[0];
     }
 
+    public function sendExecuteActionsEmail(string $accessToken, string $userId, array $actions): void
+    {
+        $this->keycloakClient->request('PUT', sprintf('%s/%s/execute-actions-email', $this->urlGenerator->getUsersApiUrl(), $userId), $this->getRequestOptions([
+            'access_token' => $accessToken,
+            'json' => $actions,
+        ]))->getStatusCode();
+    }
+
     public function getUser(string $accessToken, string $userId, array $options = []): ?array
     {
         try {

@@ -6,7 +6,8 @@
 parameters:
     default_locale: 'en'
     env(VERIFY_SSL): true
-    env(ONBOARDING_WORKSPACE_TEMPLATE): '%kernel.project_dir%/../seed/workspace.json'
+    # Mount point of the generic workspace template inside the API and worker images
+    env(ONBOARDING_WORKSPACE_TEMPLATE): '/srv/seed/workspace.json'
     stof_doctrine_extensions.listener.softdeleteable.class: App\Doctrine\Listener\SoftDeleteableListener
 
 services:

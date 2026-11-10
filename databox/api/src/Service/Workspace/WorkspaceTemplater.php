@@ -61,6 +61,11 @@ final readonly class WorkspaceTemplater
         return $wsTemplate;
     }
 
+    public function decode(string $json): array
+    {
+        return json_decode($json, true, 512, JSON_THROW_ON_ERROR);
+    }
+
     public function import(array $data, string $newName, ?string $slug, ?string $ownerId): Workspace
     {
         $this->em->beginTransaction();

@@ -6,14 +6,14 @@ namespace Alchemy\AuthBundle\Repository;
 
 use Alchemy\AuthBundle\Client\KeycloakClient;
 use Alchemy\AuthBundle\Client\ServiceAccountClient;
-use Symfony\Contracts\Cache\CacheInterface;
+use Symfony\Contracts\Cache\TagAwareCacheInterface;
 
 abstract class AbstractKeycloakRepository
 {
     public function __construct(
         protected readonly ServiceAccountClient $serviceAccountClient,
         protected readonly KeycloakClient $oauthClient,
-        protected readonly CacheInterface $keycloakRealmCache,
+        protected readonly TagAwareCacheInterface $keycloakRealmCache,
     ) {
     }
 

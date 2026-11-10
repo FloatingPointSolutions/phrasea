@@ -94,4 +94,4 @@ user:
     welcome:
         email:
             subject: 'Bienvenido a %workspaceName%'
-            body: '<p>Hola %recipient%,</p><p>Su cuenta <strong>%username%</strong> está lista y su espacio de trabajo <a href="%url%"><em>%workspaceName%</em></a> le espera.</p><p>Si todavía no ha elegido una contraseña, utilice el enlace <em>Olvidé mi contraseña</em> en la página de inicio de sesión.</p>'
+            body: '<p>Hola %recipient%,</p><p>Su cuenta <strong>%username%</strong> está lista y su espacio de trabajo <a href="%url%"><em>%workspaceName%</em></a> le espera.</p><p>Si todavía no ha elegido una contraseña, utilice el enlace del correo electrónico aparte que le hemos enviado.</p>'

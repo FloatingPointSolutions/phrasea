@@ -15,4 +15,6 @@ interface UserRepositoryInterface extends AclUserRepositoryInterface
     public function getUser(string $userId, array $options = []): ?array;
 
     public function createUser(array $data): array;
+
+    public function sendExecuteActionsEmail(string $userId, array $actions): void;
 }

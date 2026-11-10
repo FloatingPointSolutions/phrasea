@@ -7,9 +7,12 @@ namespace Alchemy\AuthBundle\Repository;
 use Alchemy\AclBundle\Model\AclUserInterface;
 use Alchemy\AuthBundle\Security\JwtUser;
 use Psr\Cache\CacheItemPoolInterface;
+use Symfony\Contracts\Cache\ItemInterface;
 
 class UserRepository extends AbstractKeycloakRepository implements UserRepositoryInterface
 {
+    private const string USERS_CACHE_TAG = 'users';
+
     public function getUsers(array $options = []): array
     {
         $accessToken = $options['access_token'] ?? null;
@@ -18,7 +21,9 @@ class UserRepository extends AbstractKeycloakRepository implements UserRepositor
             return $this->oauthClient->getUsers($accessToken, $options);
         }
 
-        return $this->keycloakRealmCache->get('users_'.md5(json_encode($options, JSON_THROW_ON_ERROR)), function () use ($options): array {
+        return $this->keycloakRealmCache->get('users_'.md5(json_encode($options, JSON_THROW_ON_ERROR)), function (ItemInterface $item) use ($options): array {
+            $item->tag(self::USERS_CACHE_TAG);
+
             return $this->executeWithAccessToken(fn (string $accessToken): array => $this->oauthClient->getUsers($accessToken, $options));
         });
     }
@@ -66,7 +71,15 @@ class UserRepository extends AbstractKeycloakRepository implements UserRepositor
 
     public function createUser(array $data): array
     {
-        return $this->executeWithAccessToken(fn (string $accessToken): array => $this->oauthClient->createUser($data, $accessToken));
+        $user = $this->executeWithAccessToken(fn (string $accessToken): array => $this->oauthClient->createUser($data, $accessToken));
+        $this->keycloakRealmCache->invalidateTags([self::USERS_CACHE_TAG]);
+
+        return $user;
+    }
+
+    public function sendExecuteActionsEmail(string $userId, array $actions): void
+    {
+        $this->executeWithAccessToken(fn (string $accessToken) => $this->oauthClient->sendExecuteActionsEmail($accessToken, $userId, $actions));
     }
 
     /**
