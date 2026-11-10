@@ -7,6 +7,7 @@ import {
 import {AbortableFile, UploadedAsset} from './types.ts';
 import {apiClient, config} from './init.ts';
 import {AxiosProgressEvent} from 'axios';
+import {getMIMETypeFromFile} from '@alchemy/core';
 
 type Props = {
     targetId: string;
@@ -60,7 +61,9 @@ export async function uploadMultipartFile({
             `/uploads`,
             {
                 filename: file.file.name,
-                type: file.file.type,
+                type:
+                    getMIMETypeFromFile(file.file) ??
+                    'application/octet-stream',
                 size: file.file.size,
             },
             {

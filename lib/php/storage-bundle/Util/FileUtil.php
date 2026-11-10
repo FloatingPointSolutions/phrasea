@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Alchemy\StorageBundle\Util;
 
-use Symfony\Component\Mime\MimeTypes;
-
 final class FileUtil
 {
     private const array COMPOUND_EXTENSIONS = [
@@ -73,9 +71,7 @@ final class FileUtil
             return null;
         }
 
-        $mimeTypes = new MimeTypes();
-
-        $extensions = $mimeTypes->getExtensions($type);
+        $extensions = MimeTypesFactory::create()->getExtensions($type);
 
         if (empty($extensions)) {
             return null;
@@ -90,9 +86,7 @@ final class FileUtil
             return null;
         }
 
-        $mimeTypes = new MimeTypes();
-
-        $types = $mimeTypes->getMimeTypes($extension);
+        $types = MimeTypesFactory::create()->getMimeTypes($extension);
 
         if (empty($types)) {
             if (false !== ($pos = strrpos($extension, '.'))) {

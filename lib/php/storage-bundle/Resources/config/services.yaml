@@ -63,5 +63,13 @@ services:
         $ttl: '%env(int:S3_REQUEST_SIGNATURE_TTL)%'
         $pathPrefix: '%env(S3_PATH_PREFIX)%'
 
+    mime_types:
+        class: Symfony\Component\Mime\MimeTypes
+        factory: ['Alchemy\StorageBundle\Util\MimeTypesFactory', 'create']
+        calls:
+            - setDefault: ['@mime_types']
+
+    Symfony\Component\Mime\MimeTypes: '@mime_types'
+
     Alchemy\StorageBundle\Upload\FileValidator:
         $allowedTypes: '%alchemy_storage.upload.allowed_types%'

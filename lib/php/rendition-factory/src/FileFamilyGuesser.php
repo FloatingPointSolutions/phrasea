@@ -54,11 +54,10 @@ final readonly class FileFamilyGuesser
             'application/postscript',
             'application/x-photoshop',
             'application/photoshop',
-            'application/psd' => FamilyEnum::Image,
-            'application/vnd.3gpp.pic-bw-small' => FamilyEnum::Image,
+            'application/psd',
+            'application/vnd.3gpp.pic-bw-small',
             'application/illustrator',
-            'application/x-adobe-indesign',
-            'application/x-indesign' => FamilyEnum::Image,
+            'application/x-adobe-indesign' => FamilyEnum::Image,
 
             default => FamilyEnum::Unknown,
         };

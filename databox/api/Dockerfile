@@ -13,7 +13,6 @@ ENV IMAGICK_VERSION=3.8.1 \
 RUN apk add --no-cache \
     	imagemagick \
         imagemagick-heic \
-        imagemagick-svg \
         imagemagick-webp \
         ffmpeg \
         freetype \
