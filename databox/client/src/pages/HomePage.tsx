@@ -1,16 +1,8 @@
 import {routes} from '../routes.ts';
-import {getPath, useNavigate} from '@alchemy/navigation';
-import {useEffect} from 'react';
-import {FullPageLoader} from '@alchemy/phrasea-ui';
+import {getPath, Navigate} from '@alchemy/navigation';
 
 type Props = {};
 
 export default function HomePage({}: Props) {
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        navigate(getPath(routes.assets), {replace: true});
-    }, [navigate]);
-
-    return <FullPageLoader />;
+    return <Navigate to={getPath(routes.assets)} replace />;
 }

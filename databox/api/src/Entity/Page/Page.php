@@ -111,7 +111,7 @@ class Page extends AbstractUuidEntity implements OwnerPersistableInterface, AclO
         return $this->getTitle() ?? 'Page - '.$this->getId();
     }
 
-    public function getSlug(): ?string
+    public function getSlug(): string
     {
         return $this->slug;
     }

@@ -17,6 +17,12 @@ class PageTest extends AbstractDataboxTestCase
         yield 'null' => [null];
     }
 
+    public static function unresolvableSlugProvider(): iterable
+    {
+        yield 'empty' => [''];
+        yield 'unknown' => ['unknown'];
+    }
+
     public function testPageCannotBeCreatedWithoutSlug(): void
     {
         $client = static::createClient();
@@ -25,7 +31,7 @@ class PageTest extends AbstractDataboxTestCase
             'headers' => self::adminHeaders(),
             'json' => ['title' => 'Landing'],
         ]);
-        $this->assertResponseStatusCodeSame(422);
+        $this->assertSlugIsRejected();
     }
 
     #[DataProvider('blankSlugProvider')]
@@ -37,7 +43,7 @@ class PageTest extends AbstractDataboxTestCase
             'headers' => self::adminHeaders(),
             'json' => ['title' => 'Landing', 'slug' => $slug],
         ]);
-        $this->assertResponseStatusCodeSame(422);
+        $this->assertSlugIsRejected();
     }
 
     #[DataProvider('blankSlugProvider')]
@@ -50,7 +56,7 @@ class PageTest extends AbstractDataboxTestCase
             'headers' => self::adminHeaders(),
             'json' => ['slug' => $slug],
         ]);
-        $this->assertResponseStatusCodeSame(422);
+        $this->assertSlugIsRejected();
     }
 
     public function testPageBySlugIsResolved(): void
@@ -66,16 +72,22 @@ class PageTest extends AbstractDataboxTestCase
         ]);
     }
 
-    public function testEmptySlugIsNotFound(): void
+    #[DataProvider('unresolvableSlugProvider')]
+    public function testPageBySlugIsNotFound(string $slug): void
     {
         $client = static::createClient();
         $this->createPage('about');
 
-        $client->request('GET', '/page-by-slug/');
+        $client->request('GET', '/page-by-slug/'.$slug);
         $this->assertResponseStatusCodeSame(404);
+    }
 
-        $client->request('GET', '/page-by-slug/unknown');
-        $this->assertResponseStatusCodeSame(404);
+    private function assertSlugIsRejected(): void
+    {
+        $this->assertResponseStatusCodeSame(422);
+        $this->assertJsonContains([
+            'violations' => [['propertyPath' => 'slug']],
+        ]);
     }
 
     private static function adminHeaders(): array
