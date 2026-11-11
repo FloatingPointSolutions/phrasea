@@ -34,6 +34,7 @@ class FileUtilTest extends TestCase
             ['application/x-xz-compressed-tar', 'tar.xz'],
             ['application/x-zstd-compressed-tar', 'tar.zst'],
             ['application/x-gzip', 'sql.gz'],
+            ['application/x-adobe-indesign', 'indd'],
             [null, 'unknownext'],
             [null, null],
         ];

@@ -8,6 +8,12 @@ import MyMarkdown from '../../_databox/_rendition_transformers.md'
 
 The Rendition Factory is a service responsible for generating various renditions (alternative formats or versions) of media assets stored in Databox. It utilizes a set of transformers to process and convert the original media files into different renditions based on predefined configurations.
 
+## Supported input formats
+
+The default preview rule first runs `extract_embedded_preview`, which uses ExifTool (shipped through the `exiftool/exiftool` composer package) to pull the embedded preview out of Illustrator (AI), EPS, InDesign (INDD) and camera raw files; the extracted image, or the original file when none is found, then goes through ImageMagick via the `imagick` extension, which relies on Ghostscript (installed in the worker image) for PDF, PostScript, EPS and AI files. SVG files are kept as-is by the `imagine` module, so their preview is the vector source itself. Videos and audio go through FFmpeg and office documents through LibreOffice.
+
+InDesign files are recognised by their `.indd` extension (`application/x-adobe-indesign`) both in the uploader client and server side through the `MimeTypes` service of the storage bundle; API clients that set the type explicitly must use that same value. The preview rule is copied into a workspace when it is created, so existing workspaces have to update the `eligible_types` of their preview rendition definition to benefit from the InDesign support.
+
 ## Transformers
 
 Here is the list of available transformers:

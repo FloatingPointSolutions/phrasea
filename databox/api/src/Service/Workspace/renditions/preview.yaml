@@ -6,6 +6,7 @@ image:
                 eligible_types:
                     - application/illustrator
                     - application/postscript
+                    - application/x-adobe-indesign
                     - image/x-canon-cr2
                     - image/x-olympus-orf
                     - image/x-sony-arw
