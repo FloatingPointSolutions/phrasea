@@ -116,6 +116,28 @@ Operational notes:
 - Save and delete actions require valid user context and integration data identifiers.
 - Unsupported actions are rejected.
 
+## AI Enrichment integration (ai.enrichment)
+
+Display name: AI Enrichment
+
+This integration sends every ingested asset to any HTTP service implementing the enrichment contract (`contracts/enrichment.openapi.yaml` in the services repository) and writes back what the service returns.
+
+Main behavior:
+
+- Runs as a workflow job on asset ingest. When the workspace integration declares the `core.rendition` integration in its `needs`, the job waits for the configured rendition, or for the preview renditions when none is configured; without that entry the job runs alongside the rendition builds and the source file is usually sent.
+- Sends a pre-signed URL of the configured rendition, else of the preview, else of the source file, together with the capabilities the service advertises for the file MIME type.
+- Attribute suggestions are written through the batch attribute manager according to the `attributes` mapping (service attribute name to workspace attribute slug, optional confidence threshold).
+- Machine values record their model and version; a re-run of the same model replaces its own suggestions only and never overwrites values written by humans or other integrations.
+- Files returned with the `rendition` purpose are stored as the rendition they are named after: as a substitution when the definition is substitutable (the rendition build job then leaves it untouched), otherwise the next rendition build overwrites it. A name unknown in the workspace fails the job.
+- The returned embedding is persisted on the asset (`asset_embedding`) for later indexing.
+
+Operational notes:
+
+- Configuration: `endpoint`, `token` (defaults to the `AI_ENRICHMENT_TOKEN` environment variable), `timeout`, `rendition`, `capabilities`, `locales`, `attributes`, `budgetLimit`.
+- Setting `rendition` requires the `core.rendition` integration in the workspace integration `needs`; the configuration is rejected otherwise. Mapped attributes must exist and be editable.
+- A 503 reply is retried after the announced delay; 400, 401 and 415 replies disable the workspace integration and notify its owners.
+- Assets whose MIME type is accepted by no advertised capability are skipped without calling the service.
+
 ## Exhaustive integration list
 
 The table below is the exhaustive integration list currently available in Databox codebase.
@@ -133,6 +155,7 @@ The table below is the exhaustive integration list currently available in Databo
 | aws.transcribe | AWS Transcribe | Workflow transcription with AWS integration | Yes |
 | happyscribe | Happyscribe | Workflow transcription/subtitling with Happyscribe | Yes |
 | aws.rekognition | AWS Rekognition | Asset view integration for visual analysis | Yes |
+| ai.enrichment | AI Enrichment | Workflow enrichment through any service implementing the enrichment contract | Yes |
 | aws.translate | AWS Translate | Workflow translation integration | Yes |
 | core.webhook | Webhook | Outbound workflow webhook calls | No |
 | remove.bg | Remove BG | Asset view background removal | Yes |

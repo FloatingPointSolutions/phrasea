@@ -158,6 +158,8 @@ class BatchAttributeManager
                                 'origin' => $action->origin,
                                 'originVendor' => $action->originVendor,
                                 'originVendorContext' => $action->originVendorContext,
+                                'model' => $action->model,
+                                'modelVersion' => $action->modelVersion,
                             ]);
                             break;
                         case self::ACTION_SET:
@@ -426,10 +428,10 @@ class BatchAttributeManager
                 ->andWhere('a.id IN (:ids)')
                 ->setParameter('ids', $options['ids']);
         }
-        if ($options['origin'] ?? null) {
+        if (isset($options['origin'])) {
             $qb
                 ->andWhere('a.origin = :origin')
-                ->setParameter('origin', $options['origin']);
+                ->setParameter('origin', Attribute::resolveOrigin($options['origin']));
         }
         if ($options['originVendor'] ?? null) {
             $qb
@@ -440,6 +442,16 @@ class BatchAttributeManager
             $qb
                 ->andWhere('a.originVendorContext = :ovc')
                 ->setParameter('ovc', $options['originVendorContext']);
+        }
+        if ($options['model'] ?? null) {
+            $qb
+                ->andWhere('a.model = :model')
+                ->setParameter('model', $options['model']);
+        }
+        if ($options['modelVersion'] ?? null) {
+            $qb
+                ->andWhere('a.modelVersion = :modelVersion')
+                ->setParameter('modelVersion', $options['modelVersion']);
         }
         $qb->getQuery()->execute();
     }

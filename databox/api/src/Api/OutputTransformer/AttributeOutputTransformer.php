@@ -55,6 +55,8 @@ class AttributeOutputTransformer implements OutputTransformerInterface
             $output->originVendorContext = $data->getOriginVendorContext();
             $output->status = $data->getStatusLabel();
             $output->confidence = $data->getConfidence();
+            $output->model = $data->getModel();
+            $output->modelVersion = $data->getModelVersion();
             $output->assetAnnotations = $data->getAssetAnnotations();
         }
 

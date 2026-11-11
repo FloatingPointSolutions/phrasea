@@ -199,6 +199,11 @@ class WorkspaceIntegration extends AbstractUuidEntity implements \Stringable, Er
         $this->needs->add($need);
     }
 
+    public function needsIntegration(string $integration): bool
+    {
+        return $this->needs->exists(fn ($key, WorkspaceIntegration $need): bool => $integration === $need->getIntegration());
+    }
+
     public function removeNeed(WorkspaceIntegration $need): void
     {
         if ($this->needs->contains($need)) {
