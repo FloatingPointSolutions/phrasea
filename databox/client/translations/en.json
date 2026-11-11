@@ -1455,15 +1455,6 @@
     "file_analyzer": {
         "result": {
             "status": {
-                "rejected_with_reason": "This file was rejected by the following analyzers.",
-                "skipped": "File analysis was skipped.",
-                "success": "This file was analyzed successfully"
-            }
-        }
-    },
-    "file_analyzer": {
-        "result": {
-            "status": {
                 "rejected": "This file was rejected by the analysis.",
                 "rejected_with_reason": "This file was rejected by the following analyzers.",
                 "skipped": "File analysis was skipped.",

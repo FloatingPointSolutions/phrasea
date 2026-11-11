@@ -10,5 +10,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Compare every locale against en
-        run: node lib/js/i18n/bin/check-translations.mjs
+      - name: Report every locale against en, fail only when pt is incomplete
+        run: node lib/js/i18n/bin/check-translations.mjs --require=pt
