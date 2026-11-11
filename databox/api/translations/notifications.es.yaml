@@ -91,3 +91,7 @@ user:
             greeting: 'Hola %recipient%,'
         in_app:
             subject: 'Se ha producido un error'
+    welcome:
+        email:
+            subject: 'Bienvenido a %workspaceName%'
+            body: '<p>Hola %recipient%,</p><p>Su cuenta <strong>%username%</strong> está lista y su espacio de trabajo <a href="%url%"><em>%workspaceName%</em></a> le espera.</p><p>Si todavía no ha elegido una contraseña, utilice el enlace del correo electrónico aparte que le hemos enviado.</p>'

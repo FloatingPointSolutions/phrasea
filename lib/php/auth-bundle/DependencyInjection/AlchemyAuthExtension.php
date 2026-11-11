@@ -78,6 +78,7 @@ class AlchemyAuthExtension extends Extension implements PrependExtensionInterfac
                         'adapter' => 'cache.adapter.redis',
                         'provider' => '%env(REDIS_URL)%',
                         'default_lifetime' => 60,
+                        'tags' => true,
                     ],
                     'one_time_token.cache' => [
                         'adapter' => 'cache.adapter.redis',
