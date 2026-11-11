@@ -41,11 +41,6 @@ use Symfony\Component\Validator\Constraints as Assert;
             name: 'get_page_by_slug',
             provider: PageBySlugProvider::class
         ),
-        new Get(
-            uriTemplate: '/page-by-slug/',
-            name: 'get_home_page',
-            provider: PageBySlugProvider::class
-        ),
         new Delete(security: 'is_granted("'.AbstractVoter::DELETE.'", object)'),
         new Put(
             security: 'is_granted("'.AbstractVoter::EDIT.'", object)',
@@ -78,9 +73,10 @@ class Page extends AbstractUuidEntity implements OwnerPersistableInterface, AclO
     // Skip validation
     protected ?string $ownerId = null;
 
+    #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^[a-z0-9]+(?:-[a-z0-9]+)*$/')]
     #[Assert\Length(max: 100)]
-    #[ORM\Column(type: Types::STRING, length: 100, nullable: true)]
+    #[ORM\Column(type: Types::STRING, length: 100, nullable: false)]
     #[Groups([self::GROUP_LIST, self::GROUP_WRITE])]
     private ?string $slug = null;
 
@@ -115,19 +111,14 @@ class Page extends AbstractUuidEntity implements OwnerPersistableInterface, AclO
         return $this->getTitle() ?? 'Page - '.$this->getId();
     }
 
-    public function isHomepage(): bool
-    {
-        return null === $this->slug;
-    }
-
-    public function getSlug(): ?string
+    public function getSlug(): string
     {
         return $this->slug;
     }
 
     public function setSlug(?string $slug): void
     {
-        $this->slug = $slug ?: null;
+        $this->slug = $slug;
     }
 
     public function getTitle(): ?string

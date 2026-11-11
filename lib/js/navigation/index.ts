@@ -10,6 +10,7 @@ import {
 } from './src/useNavigateToOverlay';
 import {
     Link,
+    Navigate,
     useLocation,
     useNavigate,
     useParams,
@@ -35,6 +36,7 @@ export {
     useLocation,
     useParams,
     Link,
+    Navigate,
     useNavigate,
     useNavigation,
 };
