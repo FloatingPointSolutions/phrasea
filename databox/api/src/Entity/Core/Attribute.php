@@ -195,6 +195,19 @@ class Attribute extends AbstractBaseAttribute implements ESIndexableDeleteDepend
         return self::ORIGIN_LABELS[$this->origin];
     }
 
+    /**
+     * Accepts the stored constant as well as its API label.
+     */
+    public static function resolveOrigin(int|string $origin): int
+    {
+        $resolved = is_int($origin) ? $origin : array_search($origin, self::ORIGIN_LABELS, true);
+        if (false === $resolved || !isset(self::ORIGIN_LABELS[$resolved])) {
+            throw new \InvalidArgumentException(sprintf('Invalid origin value "%s", allowed ones are: %s', $origin, implode(', ', self::ORIGIN_LABELS)));
+        }
+
+        return $resolved;
+    }
+
     public function getOriginVendor(): ?string
     {
         return $this->originVendor;

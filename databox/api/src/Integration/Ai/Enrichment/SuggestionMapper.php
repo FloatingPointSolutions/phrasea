@@ -90,6 +90,7 @@ final readonly class SuggestionMapper
         $input->value = $value;
         $input->locale = $locale;
         $input->confidence = $suggestion->confidence;
+        $input->originVendorContext = $suggestion->conceptId;
 
         return $input;
     }

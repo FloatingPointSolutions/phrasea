@@ -45,11 +45,11 @@ final readonly class AttributeAssigner
 
         if ($data instanceof AbstractExtendedAttributeInput) {
             assert($attribute instanceof Attribute);
-            if ($data->origin) {
-                if (false !== $k = array_search($data->origin, Attribute::ORIGIN_LABELS, true)) {
-                    $attribute->setOrigin($k);
-                } else {
-                    throw new BadRequestHttpException(sprintf('Invalid origin value "%s", allowed ones are: %s', $data->origin, implode(', ', Attribute::ORIGIN_LABELS)));
+            if (null !== $data->origin && '' !== $data->origin) {
+                try {
+                    $attribute->setOrigin(Attribute::resolveOrigin($data->origin));
+                } catch (\InvalidArgumentException $e) {
+                    throw new BadRequestHttpException($e->getMessage(), $e);
                 }
             } elseif (!$attribute->hasOrigin()) {
                 $attribute->setOrigin(Attribute::ORIGIN_MACHINE);
@@ -65,7 +65,7 @@ final readonly class AttributeAssigner
             $attribute->setOriginUserId($data->originUserId);
             $attribute->setOriginVendor($data->originVendor);
             $attribute->setOriginVendorContext($data->originVendorContext);
-            if ($data->confidence) {
+            if (null !== $data->confidence) {
                 $attribute->setConfidence($data->confidence);
             }
             $attribute->setModel($data->model);

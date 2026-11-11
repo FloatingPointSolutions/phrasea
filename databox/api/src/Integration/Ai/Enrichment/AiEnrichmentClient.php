@@ -12,15 +12,18 @@ use App\Integration\IntegrationConfig;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
+use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 final readonly class AiEnrichmentClient
 {
     /**
      * 503 is the only reply the contract allows the worker to retry, after the announced delay.
+     * The delay is capped because it blocks the worker holding the job.
      */
     private const int MAX_ATTEMPTS = 3;
-    private const int MAX_RETRY_DELAY = 30;
+    private const int MAX_RETRY_DELAY = 10;
     private const int CAPABILITIES_TTL = 3600;
 
     public function __construct(
@@ -67,10 +70,22 @@ final readonly class AiEnrichmentClient
             }
 
             if ($status >= Response::HTTP_BAD_REQUEST) {
-                throw EnrichmentError::fromResponse($status, $response->toArray(false))->toException();
+                throw EnrichmentError::fromResponse($status, $this->decodeErrorBody($response))->toException();
             }
 
             return $response->toArray();
+        }
+    }
+
+    /**
+     * Proxies and gateways answer errors with HTML or an empty body, which the contract error shape must tolerate.
+     */
+    private function decodeErrorBody(ResponseInterface $response): array
+    {
+        try {
+            return $response->toArray(false);
+        } catch (DecodingExceptionInterface) {
+            return [];
         }
     }
 }

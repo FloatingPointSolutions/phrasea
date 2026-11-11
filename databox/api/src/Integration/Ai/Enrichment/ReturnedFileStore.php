@@ -14,6 +14,9 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Stores a file returned by the service as the rendition it is named after.
+ *
+ * A substitutable definition receives it as a substitution so the rendition
+ * build job leaves it untouched; any other definition is rebuilt on the next run.
  */
 final readonly class ReturnedFileStore
 {
@@ -33,10 +36,22 @@ final readonly class ReturnedFileStore
             return;
         }
 
-        $definition = $this->renditionManager->getRenditionDefinitionByName($asset->getWorkspaceId(), $file->name);
+        try {
+            $definition = $this->renditionManager->getRenditionDefinitionByName($asset->getWorkspaceId(), $file->name);
+        } catch (\InvalidArgumentException $e) {
+            throw new EnrichmentFailedException(sprintf('Returned file names rendition "%s", unknown in the workspace', $file->name), 0, $e);
+        }
         $stored = $this->fileManager->createFileFromPath($asset->getWorkspace(), $this->fetch($file), $file->contentType);
 
-        $this->renditionManager->createOrReplaceRenditionFile($asset, $definition, $stored, null, null);
+        $this->renditionManager->createOrReplaceRenditionFile(
+            $asset,
+            $definition,
+            $stored,
+            null,
+            null,
+            substituted: $definition->isSubstitutable(),
+            force: true,
+        );
     }
 
     private function fetch(ReturnedFile $file): string

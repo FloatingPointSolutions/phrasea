@@ -19,7 +19,7 @@ class EnrichmentReplyTest extends TestCase
     {
         $reply = EnrichmentReply::fromArray([
             'asset_id' => 'asset-1',
-            'applied' => ['caption', 'embedding'],
+            'applied' => ['scene', 'embedding'],
             'suggestions' => [
                 ['attribute' => 'caption', 'value' => 'A beach', 'locale' => 'en', 'confidence' => 0.91, 'model' => 'blip', 'model_version' => '2.1'],
                 ['attribute' => 'keywords', 'values' => ['beach', 'sea'], 'confidence' => 0.7, 'model' => 'clip', 'model_version' => '1.0', 'concept_id' => 'c-42'],
@@ -64,16 +64,16 @@ class EnrichmentReplyTest extends TestCase
             'service' => 'demo',
             'version' => '0.1',
             'capabilities' => [
-                ['name' => 'caption', 'mime_types' => ['image/*']],
-                ['name' => 'transcript', 'mime_types' => ['audio/*', 'video/mp4']],
+                ['name' => 'scene', 'mime_types' => ['image/*']],
+                ['name' => 'text', 'mime_types' => ['audio/*', 'video/mp4']],
                 ['name' => 'embedding'],
             ],
         ]);
 
-        $this->assertSame(['caption', 'embedding'], $capabilities->supporting('image/jpeg'));
-        $this->assertSame(['transcript', 'embedding'], $capabilities->supporting('video/mp4'));
+        $this->assertSame(['scene', 'embedding'], $capabilities->supporting('image/jpeg'));
+        $this->assertSame(['text', 'embedding'], $capabilities->supporting('video/mp4'));
         $this->assertSame(['embedding'], $capabilities->supporting('application/pdf'));
-        $this->assertSame(['caption'], $capabilities->supporting('image/png', ['caption', 'ocr']));
+        $this->assertSame(['scene'], $capabilities->supporting('image/png', ['scene', 'people']));
     }
 
     public function testErrorStatusSelectsTheException(): void

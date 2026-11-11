@@ -6,6 +6,7 @@ namespace App\Integration\Ai\Enrichment;
 
 use Alchemy\Workflow\Model\Job;
 use Alchemy\Workflow\Model\Workflow;
+use App\Entity\Core\RenditionDefinition;
 use App\Integration\AbstractIntegration;
 use App\Integration\Ai\Enrichment\Exception\EnrichmentFailedException;
 use App\Integration\Core\Rendition\RenditionIntegration;
@@ -18,6 +19,7 @@ use App\Repository\Core\AttributeDefinitionRepository;
 use App\Service\Storage\RenditionManager;
 use App\Service\Workflow\Event\AssetIngestWorkflowEvent;
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
+use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 /**
@@ -92,6 +94,10 @@ class AiEnrichmentIntegration extends AbstractIntegration implements WorkflowInt
     public function validateConfiguration(IntegrationConfig $config): void
     {
         if (null !== $config['rendition']) {
+            if (!$config->getWorkspaceIntegration()->needsIntegration(RenditionIntegration::getName())) {
+                throw new \InvalidArgumentException(sprintf('Rendition "%s" is sent to the service but this integration does not declare the "%s" integration in its needs: the rendition would not be built before the enrichment', $config['rendition'], RenditionIntegration::getDisplayName()));
+            }
+
             try {
                 $this->renditionManager->getRenditionDefinitionByName($config->getWorkspaceId(), $config['rendition']);
             } catch (\InvalidArgumentException $e) {
@@ -100,15 +106,19 @@ class AiEnrichmentIntegration extends AbstractIntegration implements WorkflowInt
         }
 
         foreach ($config['attributes'] as $name => $target) {
-            if (null === $this->definitionRepository->getAttributeDefinitionBySlug($config->getWorkspaceId(), $target['attribute'])) {
+            $definition = $this->definitionRepository->getAttributeDefinitionBySlug($config->getWorkspaceId(), $target['attribute']);
+            if (null === $definition) {
                 throw new \InvalidArgumentException(sprintf('"%s": attribute "%s" not found in the workspace', $name, $target['attribute']));
+            }
+            if (!$definition->isEditable()) {
+                throw new \InvalidArgumentException(sprintf('"%s": attribute "%s" is not editable', $name, $target['attribute']));
             }
         }
 
         if ([] !== $config['capabilities']) {
             try {
                 $advertised = $this->client->getCapabilities($config)->getNames();
-            } catch (EnrichmentFailedException|TransportExceptionInterface $e) {
+            } catch (EnrichmentFailedException|TransportExceptionInterface|DecodingExceptionInterface $e) {
                 throw new \InvalidArgumentException(sprintf('Enrichment service "%s" is unreachable: %s', $config['endpoint'], $e->getMessage()), 0, $e);
             }
 
@@ -128,22 +138,39 @@ class AiEnrichmentIntegration extends AbstractIntegration implements WorkflowInt
         yield WorkflowHelper::createIntegrationJob($config, AiEnrichmentAction::class);
     }
 
+    /**
+     * Waits for the configured rendition, or for every preview rendition when none is configured,
+     * so the service receives the preview rather than the original file.
+     */
     public function getNeededJobs(IntegrationConfig $config, IntegrationConfig $neededIntegrationConfig, Job $job): ?array
     {
-        $rendition = $config['rendition'];
-        if (null === $rendition || !$neededIntegrationConfig->getIntegration() instanceof RenditionIntegration) {
+        if (!$neededIntegrationConfig->getIntegration() instanceof RenditionIntegration) {
             return null;
         }
 
-        try {
-            $renditionDefinition = $this->renditionManager
-                ->getRenditionDefinitionByName($neededIntegrationConfig->getWorkspaceId(), $rendition);
-        } catch (\InvalidArgumentException $e) {
-            throw new EntityDisableNotifyableException($config->getWorkspaceIntegration(), sprintf('Rendition "%s" not found', $rendition), sprintf('Rendition "%s" not found in workspace "%s"', $rendition, $neededIntegrationConfig->getWorkspaceIntegration()->getWorkspace()->getName()), $e->getCode(), $e);
+        return array_map(
+            fn (RenditionDefinition $definition): string => RenditionIntegration::getJobId($neededIntegrationConfig, $definition->getId()),
+            $this->getSentRenditionDefinitions($config, $neededIntegrationConfig->getWorkspaceId()),
+        );
+    }
+
+    /**
+     * @return RenditionDefinition[]
+     */
+    private function getSentRenditionDefinitions(IntegrationConfig $config, string $workspaceId): array
+    {
+        $rendition = $config['rendition'];
+        if (null === $rendition) {
+            return array_values(array_filter(
+                $this->renditionManager->getRenditionDefinitions($workspaceId),
+                fn (RenditionDefinition $definition): bool => $definition->isUseAsPreview(),
+            ));
         }
 
-        return [
-            RenditionIntegration::getJobId($neededIntegrationConfig, $renditionDefinition->getId()),
-        ];
+        try {
+            return [$this->renditionManager->getRenditionDefinitionByName($workspaceId, $rendition)];
+        } catch (\InvalidArgumentException $e) {
+            throw new EntityDisableNotifyableException($config->getWorkspaceIntegration(), sprintf('Rendition "%s" not found', $rendition), sprintf('Rendition "%s" not found in workspace "%s"', $rendition, $config->getWorkspaceIntegration()->getWorkspace()->getName()), $e->getCode(), $e);
+        }
     }
 }

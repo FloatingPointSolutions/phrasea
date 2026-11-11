@@ -431,7 +431,7 @@ class BatchAttributeManager
         if (isset($options['origin'])) {
             $qb
                 ->andWhere('a.origin = :origin')
-                ->setParameter('origin', $options['origin']);
+                ->setParameter('origin', Attribute::resolveOrigin($options['origin']));
         }
         if ($options['originVendor'] ?? null) {
             $qb

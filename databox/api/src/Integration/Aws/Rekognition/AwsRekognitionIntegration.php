@@ -74,7 +74,7 @@ class AwsRekognitionIntegration extends AbstractAwsIntegration implements Filter
                 continue;
             }
 
-            if (!$this->needsRenditionIntegration($workspaceIntegration)) {
+            if (!$workspaceIntegration->needsIntegration(RenditionIntegration::getName())) {
                 throw new \InvalidArgumentException(sprintf('"%s" uses the rendition "%s" but this integration does not declare the "%s" integration in its needs: the rendition would not be built before the analysis', $category, $rendition, RenditionIntegration::getDisplayName()));
             }
 
@@ -86,17 +86,6 @@ class AwsRekognitionIntegration extends AbstractAwsIntegration implements Filter
 
             $this->validateRenditionSize($category, $definition);
         }
-    }
-
-    private function needsRenditionIntegration(WorkspaceIntegration $workspaceIntegration): bool
-    {
-        foreach ($workspaceIntegration->getNeeds() as $need) {
-            if (RenditionIntegration::getName() === $need->getIntegration()) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     /**

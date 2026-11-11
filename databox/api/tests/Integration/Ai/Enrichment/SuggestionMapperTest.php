@@ -9,17 +9,15 @@ use App\Attribute\BatchAttributeManager;
 use App\Entity\Core\Asset;
 use App\Entity\Core\Attribute;
 use App\Entity\Core\AttributeDefinition;
+use App\Entity\Core\Workspace;
 use App\Integration\Ai\Enrichment\AiEnrichmentIntegration;
 use App\Integration\Ai\Enrichment\Contract\AttributeSuggestion;
 use App\Integration\Ai\Enrichment\SuggestionMapper;
 use App\Repository\Core\AttributeDefinitionRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
-use Ramsey\Uuid\Uuid;
 
 class SuggestionMapperTest extends TestCase
 {
-    private const string WORKSPACE_ID = 'ce9899b7-2513-44b7-9c12-f6cf0f052b9f';
     private const array MAPPING = [
         'keywords' => ['attribute' => 'keywords', 'threshold' => 0.5],
         'caption' => ['attribute' => 'caption'],
@@ -30,10 +28,12 @@ class SuggestionMapperTest extends TestCase
      * @var array<string, AttributeDefinition> definitions of the workspace, indexed by slug
      */
     private array $definitions = [];
+    private Workspace $workspace;
 
     protected function setUp(): void
     {
         $this->definitions = [];
+        $this->workspace = new Workspace();
     }
 
     public function testMultiValuedSuggestionDeletesOwnValuesThenAddsEachValue(): void
@@ -78,6 +78,16 @@ class SuggestionMapperTest extends TestCase
         $deletes = array_filter($actions, fn (AttributeActionInput $a): bool => BatchAttributeManager::ACTION_DELETE === $a->action);
         $this->assertSame(['1.0', '2.0'], array_values(array_map(fn (AttributeActionInput $a): ?string => $a->modelVersion, $deletes)));
         $this->assertCount(5, $actions);
+    }
+
+    public function testConceptIdIsKeptAsVendorContextOfTheValueOnly(): void
+    {
+        $this->createDefinition('keywords', multiple: true);
+
+        $actions = $this->map([new AttributeSuggestion('keywords', ['beach'], null, 'https://vocab.example/beach', 0.8, 'clip', '1.0')]);
+
+        $this->assertNull($actions[0]->originVendorContext);
+        $this->assertSame('https://vocab.example/beach', $actions[1]->originVendorContext);
     }
 
     public function testValuesBelowTheThresholdAreDropped(): void
@@ -185,9 +195,9 @@ class SuggestionMapperTest extends TestCase
      */
     private function map(array $suggestions, array $existing = []): array
     {
-        $asset = $this->createMock(Asset::class);
-        $asset->method('getWorkspaceId')->willReturn(self::WORKSPACE_ID);
-        $asset->method('getAttributes')->willReturn(new ArrayCollection($existing));
+        $asset = new Asset();
+        $asset->setWorkspace($this->workspace);
+        array_walk($existing, $asset->addAttribute(...));
 
         $repository = $this->createMock(AttributeDefinitionRepository::class);
         $repository->method('getAttributeDefinitionBySlug')
@@ -213,22 +223,21 @@ class SuggestionMapperTest extends TestCase
 
     private function existing(AttributeDefinition $definition, ?string $locale, ?string $originVendor): Attribute
     {
-        $attribute = $this->createMock(Attribute::class);
-        $attribute->method('getDefinition')->willReturn($definition);
-        $attribute->method('getLocale')->willReturn($locale);
-        $attribute->method('getOriginVendor')->willReturn($originVendor);
+        $attribute = new Attribute();
+        $attribute->setDefinition($definition);
+        $attribute->setLocale($locale);
+        $attribute->setOriginVendor($originVendor);
 
         return $attribute;
     }
 
     private function createDefinition(string $slug, bool $multiple = false, bool $translatable = false): AttributeDefinition
     {
-        $definition = $this->createMock(AttributeDefinition::class);
-        $definition->method('getId')->willReturn(Uuid::uuid4()->toString());
-        $definition->method('getSlug')->willReturn($slug);
-        $definition->method('isMultiple')->willReturn($multiple);
-        $definition->method('isTranslatable')->willReturn($translatable);
-        $definition->method('getWorkspaceId')->willReturn(self::WORKSPACE_ID);
+        $definition = new AttributeDefinition();
+        $definition->setWorkspace($this->workspace);
+        $definition->setSlug($slug);
+        $definition->setMultiple($multiple);
+        $definition->setTranslatable($translatable);
 
         return $this->definitions[$slug] = $definition;
     }
