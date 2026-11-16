@@ -85,7 +85,7 @@ export default function PublicationStructure({publication, children}: Props) {
                 </div>
             }
             logoProps={{
-                appTitle: t('common.expose', 'Expose'),
+                appTitle: t('common.expose', 'Media Point'),
                 onLogoClick: !config.disableIndexPage
                     ? () => {
                           navigate(getPath(routes.index));

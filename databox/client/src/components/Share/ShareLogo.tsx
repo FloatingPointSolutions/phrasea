@@ -35,7 +35,7 @@ export default function ShareLogo({logo}: Props) {
                 />
             ) : (
                 <AppLogo
-                    appTitle={t('common.databox', `Databox`)}
+                    appTitle={t('common.databox', `Media Point`)}
                     config={config}
                 />
             )}

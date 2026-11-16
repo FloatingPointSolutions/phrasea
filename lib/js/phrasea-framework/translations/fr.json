@@ -18,7 +18,6 @@
         },
         "menu": {
             "change_theme": "Changer de thème",
-            "services": "Services",
             "settings": "Paramètres",
             "sign_in": "Se connecter",
             "theme_editor": "Éditeur de thème"

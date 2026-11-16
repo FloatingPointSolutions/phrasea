@@ -37,7 +37,7 @@ export default function AppBar({children}: Props) {
             >
                 <AppLogo
                     config={config}
-                    appTitle={t('common.expose', 'Expose')}
+                    appTitle={t('common.expose', 'Media Point')}
                     onLogoClick={() => {
                         navigate(getPath(routes.index));
                     }}

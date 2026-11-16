@@ -1,5 +1,4 @@
 import {Chip, ChipProps} from '@mui/material';
-import {grey} from '@mui/material/colors';
 import {AssetStatus} from '../../types.ts';
 import {useTranslation} from 'react-i18next';
 import {getAssetStatusTranslations} from '../../translations/assetStatusTranslations.ts';
@@ -17,10 +16,10 @@ export default function AssetStatusChip({status, ...props}: Props & ChipProps) {
         <Chip
             {...props}
             label={labels[status]}
-            sx={() => ({
+            sx={theme => ({
                 ml: 1,
-                bgcolor: grey[200],
-                color: grey[800],
+                bgcolor: theme.palette.secondary.main,
+                color: theme.palette.secondary.contrastText,
             })}
         />
     );

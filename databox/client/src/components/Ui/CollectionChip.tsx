@@ -11,8 +11,8 @@ export const CollectionChip = ({children, collection, ...props}: Props) => {
         <Chip
             {...props}
             sx={theme => ({
-                bgcolor: theme.palette.grey[300],
-                color: theme.palette.grey[900],
+                bgcolor: theme.palette.secondary.main,
+                color: theme.palette.secondary.contrastText,
             })}
             {...(collection?.deleted
                 ? {

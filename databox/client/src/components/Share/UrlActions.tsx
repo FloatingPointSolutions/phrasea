@@ -25,6 +25,6 @@ export function getShareTitle(share: Share): string {
             .filter(Boolean)
             .slice(0, 3)
             .join(', ') ||
-        'Databox'
+        'Media Point'
     );
 }

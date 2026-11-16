@@ -1,6 +1,5 @@
 import {Chip, ChipProps, SvgIconProps} from '@mui/material';
 import {useTranslation} from 'react-i18next';
-import {grey} from '@mui/material/colors';
 import LockIcon from '@mui/icons-material/Lock';
 import {Privacy} from '../../api/privacy';
 import FastTooltip from './FastTooltip';
@@ -37,10 +36,10 @@ export default function PrivacyChip({
             {...props}
             icon={<LockIcon color={'inherit'} fontSize={props.size} />}
             label={privacyLabel}
-            sx={() => ({
+            sx={theme => ({
                 ml: 1,
-                bgcolor: grey[200],
-                color: grey[800],
+                bgcolor: theme.palette.secondary.main,
+                color: theme.palette.secondary.contrastText,
             })}
         />
     );

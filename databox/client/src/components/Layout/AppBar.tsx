@@ -40,7 +40,7 @@ export default function AppBar({children}: Props) {
             >
                 <AppLogo
                     config={config}
-                    appTitle={t('common.databox', 'Databox')}
+                    appTitle={t('common.databox', 'Media Point')}
                     onLogoClick={() => {
                         navigate(getPath(routes.assets));
                     }}

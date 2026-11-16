@@ -23,7 +23,8 @@ const baseTheme: ThemeOptions = {
             contrastText: '#e7eaea',
         },
         secondary: {
-            main: '#007EA7',
+            main: '#4f8cff',
+            contrastText: '#ffffff',
         },
         background: {
             default: '#f7f7f8',

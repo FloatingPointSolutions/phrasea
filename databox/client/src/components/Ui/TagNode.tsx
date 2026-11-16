@@ -1,4 +1,4 @@
-import {Chip, ChipProps} from '@mui/material';
+import {Chip, ChipProps, useTheme} from '@mui/material';
 import {invertColor} from '../../lib/colors';
 
 type Props = {
@@ -11,7 +11,8 @@ type Props = {
 export const tagClassName = 'pTag';
 
 export default function TagNode({color, name, title, size}: Props) {
-    const c: string = color ?? '#CCC';
+    const theme = useTheme();
+    const c: string = color ?? theme.palette.secondary.main;
 
     return (
         <Chip

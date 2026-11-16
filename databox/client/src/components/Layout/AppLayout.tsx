@@ -38,7 +38,7 @@ export default function AppLayout({children}: Props) {
             config={config}
             logoProps={{
                 onLogoClick,
-                appTitle: t('common.databox', `Databox`),
+                appTitle: t('common.databox', `Media Point`),
             }}
             commonMenuProps={{
                 keycloakClient,

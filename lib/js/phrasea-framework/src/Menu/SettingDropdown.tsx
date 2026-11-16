@@ -1,5 +1,5 @@
 import {useModals} from '@alchemy/navigation';
-import {DashboardMenu, DropdownActions} from '@alchemy/phrasea-ui';
+import {DropdownActions} from '@alchemy/phrasea-ui';
 import {Box, ListItemIcon, ListItemText, MenuItem} from '@mui/material';
 import {SettingDropdownProps} from './types';
 import {LocaleIcon} from '../Locale/LocaleIcon';
@@ -18,7 +18,6 @@ export default function SettingDropdown({
     appLocales,
     defaultLocale = rootDefaultLocale,
     ChangeThemeDialog,
-    config,
     LocaleDialogComponent = LocaleDialog,
     anchorOrigin,
     transformOrigin,
@@ -122,33 +121,6 @@ export default function SettingDropdown({
                                 )}
                             />
                         </MenuItem>,
-                        config.displayServicesMenu ? (
-                            <DashboardMenu
-                                key={'services_menu'}
-                                dashboardBaseUrl={config.dashboardBaseUrl}
-                            >
-                                {({icon, open, onClick, ...props}) => {
-                                    return (
-                                        <MenuItem
-                                            selected={open}
-                                            style={{
-                                                color: 'inherit',
-                                            }}
-                                            {...props}
-                                            onClick={onClick}
-                                        >
-                                            <ListItemIcon>{icon}</ListItemIcon>
-                                            <ListItemText
-                                                primary={t(
-                                                    'framework.menu.services',
-                                                    'Services'
-                                                )}
-                                            />
-                                        </MenuItem>
-                                    );
-                                }}
-                            </DashboardMenu>
-                        ) : null,
                         <Box key={'dark_mode'} sx={{p: 1}}>
                             <DarkModeSwitch />
                         </Box>,

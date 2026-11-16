@@ -42,7 +42,7 @@ function WrapperComponent({children}: RouteWrapperProps) {
                     config={config}
                     logoProps={{
                         onLogoClick: () => navigate(getPath(routes.index)),
-                        appTitle: t('common.uploader', `Uploader`),
+                        appTitle: t('common.uploader', `Media Point`),
                     }}
                     commonMenuProps={{
                         keycloakClient,
