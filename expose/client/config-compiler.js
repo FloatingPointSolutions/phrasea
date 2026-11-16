@@ -38,6 +38,7 @@ window.config.muiTheme = ${stackConfig.theme.replace(/^export\s+const\s+themeOpt
 
     return {
         customHTML,
+        logo: stackConfig.logo,
         autoConnectIdP: env.AUTO_CONNECT_IDP,
         baseUrl: env.EXPOSE_API_URL,
         keycloakUrl: env.KEYCLOAK_URL,

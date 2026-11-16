@@ -67,6 +67,7 @@ window.config.muiTheme = ${stackConfig.theme.replace(/^export\s+const\s+themeOpt
 
     return {
         customHTML,
+        logo: stackConfig.logo,
         maxCommitSize: castInteger(uploaderConfig.max_upload_commit_size),
         maxFileCount: castInteger(uploaderConfig.max_upload_file_count),
         autoConnectIdP: env.AUTO_CONNECT_IDP,
