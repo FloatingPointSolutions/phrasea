@@ -19,7 +19,8 @@ env:
   TRAEFIK_HTTP_PORT: 8042
   HTTPS_PORT_PREFIX: ':4442'
   REGISTRY_NAMESPACE: ghcr.io/floatingpointsolutions/ps-
-  DOCKER_TAG: ${{ github.sha }}
+  DOCKER_TAG: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+  BUILD_CACHE_VERSION: v1
   IMAGE_REGISTRY: ghcr.io/floatingpointsolutions
   VERIFY_SSL: "false"
   COMPOSE_PROFILES: databox,expose,uploader,db,rabbitmq,redis,minio,report,mailpit,elasticsearch,dashboard

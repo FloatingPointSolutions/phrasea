@@ -16,7 +16,8 @@ on:
 env:
   COMPOSE_PROJECT_NAME: build
   REGISTRY_NAMESPACE: ghcr.io/floatingpointsolutions/ps-
-  DOCKER_TAG: ${{ github.sha }}
+  DOCKER_TAG: ${{ github.ref_type == 'tag' && github.ref_name || github.sha }}
+  BUILD_CACHE_VERSION: v1
   IMAGE_REGISTRY: ghcr.io/floatingpointsolutions
 
 jobs:
