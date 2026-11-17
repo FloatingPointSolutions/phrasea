@@ -6,7 +6,7 @@ Testing App\Tests\Api\Webhook\AssetLifecycleWebhookTest
 {
     "asset:create": {
         "data": {
-            "id": "16261b2c-9c49-4dfe-877f-33def114d268",
+            "id": "8748f928-c424-4620-8477-f9f73f1b7125",
             "capabilities": {
                 "edit": false,
                 "editAttributes": false,
@@ -24,9 +24,9 @@ Testing App\Tests\Api\Webhook\AssetLifecycleWebhookTest
                         "type": "text",
                         "translatable": false,
                         "multiple": false,
-                        "createdAt": "2026-11-17T18:16:13+00:00",
-                        "updatedAt": "2026-11-17T18:16:13+00:00",
-                        "id": "9410dd10-39e1-4281-9633-7149fd5c2034"
+                        "createdAt": "2026-11-17T18:52:04+00:00",
+                        "updatedAt": "2026-11-17T18:52:04+00:00",
+                        "id": "068330ae-3396-4fbc-871e-cdd5d3cc96b5"
                     },
                     "value": "Cabo Carvoeiro",
                     "invalid": false,
@@ -40,24 +40,24 @@ Testing App\Tests\Api\Webhook\AssetLifecycleWebhookTest
                     "model": null,
                     "modelVersion": null,
                     "translation": null,
-                    "createdAt": "2026-11-17T18:16:13+00:00",
-                    "updatedAt": "2026-11-17T18:16:13+00:00",
-                    "id": "82fbf0b7-a21b-4113-871d-a5e8c6ba9aca"
+                    "createdAt": "2026-11-17T18:52:05+00:00",
+                    "updatedAt": "2026-11-17T18:52:05+00:00",
+                    "id": "75d7fec2-816c-4924-960d-c2e6d103441c"
                 }
             ],
             "attachments": [],
             "name": "Cabo Carvoeiro",
             "nameHighlight": null,
             "thread": null,
-            "threadKey": "asset:16261b2c-9c49-4dfe-877f-33def114d268",
+            "threadKey": "asset:8748f928-c424-4620-8477-f9f73f1b7125",
             "privacy": 0,
             "deleted": false,
             "workspace": {
                 "capabilities": [],
                 "name": "My workspace",
                 "displayName": "My workspace",
-                "createdAt": "2026-11-17T18:16:13+00:00",
-                "id": "8409d7d4-99c1-40cc-babd-0583bdfac201"
+                "createdAt": "2026-11-17T18:52:04+00:00",
+                "id": "7c2bfcab-47cd-4ecd-a007-255d91e9f5df"
             },
             "storyCollection": null,
             "tags": [],
@@ -72,41 +72,42 @@ Testing App\Tests\Api\Webhook\AssetLifecycleWebhookTest
             "main": null,
             "preview": null,
             "thumbnail": null,
-            "webUrl": "http://define-me/assets?_m=%2Fassets%2F16261b2c-9c49-4dfe-877f-33def114d268%2F_",
+            "webUrl": "http://define-me/assets?_m=%2Fassets%2F8748f928-c424-4620-8477-f9f73f1b7125%2F_",
             "animatedThumbnail": null,
-            "editedAt": "2026-11-17T18:16:13+00:00",
-            "attributesEditedAt": "2026-11-17T18:16:13+00:00",
+            "editedAt": "2026-11-17T18:52:05+00:00",
+            "attributesEditedAt": "2026-11-17T18:52:05+00:00",
             "topicSubscriptions": null,
             "trackingId": null,
             "externalId": null,
-            "resolvedTrackingId": "16261b2c-9c49-4dfe-877f-33def114d268",
+            "resolvedTrackingId": "8748f928-c424-4620-8477-f9f73f1b7125",
             "status": 0,
             "groupValue": null,
-            "createdAt": "2026-11-17T18:16:13+00:00",
-            "updatedAt": "2026-11-17T18:16:13+00:00",
+            "createdAt": "2026-11-17T18:52:05+00:00",
+            "updatedAt": "2026-11-17T18:52:05+00:00",
             "extraMetadata": [],
             "resolvedName": "Cabo Carvoeiro"
         }
     },
     "asset:approved": {
-        "id": "16261b2c-9c49-4dfe-877f-33def114d268",
+        "id": "8748f928-c424-4620-8477-f9f73f1b7125",
         "state": "approved",
-        "workspaceId": "8409d7d4-99c1-40cc-babd-0583bdfac201"
+        "workspaceId": "7c2bfcab-47cd-4ecd-a007-255d91e9f5df"
     },
     "asset:published": {
-        "id": "16261b2c-9c49-4dfe-877f-33def114d268",
+        "id": "8748f928-c424-4620-8477-f9f73f1b7125",
         "state": "published",
-        "workspaceId": "8409d7d4-99c1-40cc-babd-0583bdfac201"
+        "workspaceId": "7c2bfcab-47cd-4ecd-a007-255d91e9f5df"
     },
     "asset:delete": {
-        "id": "16261b2c-9c49-4dfe-877f-33def114d268"
+        "id": "8748f928-c424-4620-8477-f9f73f1b7125"
     }
 }
-...                                                                4 / 4 (100%)
+.....PHP Deprecated:  Method App\Api\Model\Output\AssetOutput::getResolvedName() is deprecated, Use getName() instead in /app/databox/api/vendor/symfony/property-access/PropertyAccessor.php on line 401
+.                                                             7 / 7 (100%)
 
-Time: 00:00.817, Memory: 123.00 MB
+Time: 00:01.535, Memory: 135.00 MB
 
-OK (4 tests, 12 assertions)
+OK (7 tests, 21 assertions)
 === tests/Api/Export/AssetMetadataExportTest.php ===
 PHPUnit 9.6.36 by Sebastian Bergmann and contributors.
 
@@ -127,35 +128,35 @@ Testing App\Tests\Api\Export\AssetMetadataExportTest
         "attributes": "AssetMetadataExportOutput/attributes"
     },
     "@type": "AssetMetadataExportOutput",
-    "@id": "/.well-known/genid/a81e0d685100d9dc0e28",
-    "id": "5773bf92-26d0-4c66-b63b-c318e5473d13",
+    "@id": "/.well-known/genid/682b53e0727e31767a43",
+    "id": "c0f8f727-170d-4f41-b779-209c74a9549e",
     "title": "Cabo Carvoeiro",
-    "workspaceId": "b144d8cd-2659-4952-8792-dd58d295afe1",
-    "createdAt": "2026-11-17T18:16:14+00:00",
-    "updatedAt": "2026-11-17T18:16:14+00:00",
+    "workspaceId": "23689923-254b-42a6-8635-fa65fbc63f8a",
+    "createdAt": "2026-11-17T18:52:06+00:00",
+    "updatedAt": "2026-11-17T18:52:06+00:00",
     "collections": [
         {
             "@type": "ExportedCollectionOutput",
-            "@id": "/.well-known/genid/45143769f0f50b42cdec",
-            "id": "65bb8f62-814c-4941-8975-6e491532ed51",
+            "@id": "/.well-known/genid/f70e710bb057f7dbc752",
+            "id": "49603dd5-c3b2-4421-8824-86c115e3dde7",
             "path": "Praias"
         }
     ],
     "file": {
         "@type": "ExportedFileOutput",
-        "@id": "/.well-known/genid/78f8f468953135125f26",
-        "id": "139b4b27-a6c9-4941-825c-54a734d06459",
+        "@id": "/.well-known/genid/e7e3bcfec7c3a49480ab",
+        "id": "a86e305a-2048-4f62-b713-77538e1bbdcb",
         "fileName": "cabo-carvoeiro.jpg",
         "type": "image/jpeg",
         "size": 18,
         "fixity": "d13a7009f86481a8057d3ac88caa0181cbe849430a9247cecdbbd2e213e5d10f",
         "checksum": "d13a7009f86481a8057d3ac88caa0181cbe849430a9247cecdbbd2e213e5d10f",
-        "url": "http://minio:9000/databox/test/0e77d3ce-1152-4192-b4ba-6e0e4e90493e.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181614Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=e7364ab1ed1636a50d78264202e5b856a62318a5d83e826749cd59c70a94d2b2"
+        "url": "http://minio:9000/databox/test/95e79407-cfbe-4a00-8e70-d13d5dbf76a8.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185206Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=b6ad694da7ace6606c51937144182d32f8acdf81bcba60de8d924eaf2e3088e9"
     },
     "attributes": [
         {
             "@type": "ExportedAttributeOutput",
-            "@id": "/.well-known/genid/7bb026c17a9056594e3d",
+            "@id": "/.well-known/genid/0201542e7ecb6bd84079",
             "slug": "credit",
             "name": "Credit",
             "type": "text",
@@ -163,7 +164,7 @@ Testing App\Tests\Api\Export\AssetMetadataExportTest
         },
         {
             "@type": "ExportedAttributeOutput",
-            "@id": "/.well-known/genid/ebabd25d141df1d89b53",
+            "@id": "/.well-known/genid/44a8c31fe76ba58d3429",
             "slug": "name",
             "name": "Name",
             "type": "text",
@@ -171,11 +172,13 @@ Testing App\Tests\Api\Export\AssetMetadataExportTest
         }
     ]
 }
-...                                                               5 / 5 (100%)
+.PHP Deprecated:  Method SplObjectStorage::contains() is deprecated since 8.5, use method SplObjectStorage::offsetExists() instead in /app/databox/api/vendor/api-platform/core/src/Symfony/Routing/SkolemIriConverter.php on line 55
+.PHP Deprecated:  Method SplObjectStorage::contains() is deprecated since 8.5, use method SplObjectStorage::offsetExists() instead in /app/databox/api/vendor/api-platform/core/src/Symfony/Routing/SkolemIriConverter.php on line 55
+...                                                              6 / 6 (100%)
 
-Time: 00:00.736, Memory: 129.00 MB
+Time: 00:01.599, Memory: 129.00 MB
 
-OK (5 tests, 20 assertions)
+OK (6 tests, 23 assertions)
 === tests/Api/Export/CollectionManifestTest.php ===
 PHPUnit 9.6.36 by Sebastian Bergmann and contributors.
 
@@ -184,110 +187,113 @@ Testing App\Tests\Api\Export\CollectionManifestTest
 [
     {
         "@type": "ManifestEntryOutput",
-        "@id": "/.well-known/genid/009bf58ac8bb5459aa66",
-        "assetId": "6bfcf900-ad67-482b-91c6-5395c5c6f09d",
+        "@id": "/.well-known/genid/a75abc95268dd0856fcc",
+        "assetId": "e745bb0a-5038-4e28-85a2-4b3d0d97acba",
         "position": 0,
         "title": "Cabo Carvoeiro",
         "file": {
             "@type": "ExportedFileOutput",
-            "@id": "/.well-known/genid/cab0c1aabf19e14ad9f0",
-            "id": "a89db3c3-06ed-4767-8dcb-cbf7d181759d",
+            "@id": "/.well-known/genid/8db80b51caf43565699b",
+            "id": "5a2ae991-ba36-4402-8844-27aad5290c5e",
             "fileName": "Cabo Carvoeiro.jpg",
             "type": "image/jpeg",
             "size": 14,
             "fixity": "499f87f56e2023601d093c37134b4860fd5d5f37af3fa97cfe1757b470e5f2b0",
             "checksum": "499f87f56e2023601d093c37134b4860fd5d5f37af3fa97cfe1757b470e5f2b0",
-            "url": "http://minio:9000/databox/test/9fee257b-ffbd-4a7b-a369-4ea371eb5271.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181616Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=618364de8d173e3ba223261858aa05cbc19434ffe365b7e9fd71493dce5a6572"
+            "url": "http://minio:9000/databox/test/d32885e6-1406-42a3-a9f1-268d81db6620.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185210Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=9977114932b8bbaec753af77efcd4b1c5acee68057ec1dda024a38ccb25b11c8"
         },
         "renditions": {
             "thumbnail": {
                 "@type": "ExportedFileOutput",
-                "@id": "/.well-known/genid/d164db00aac86529340f",
-                "id": "234b63d6-c808-4b34-adf8-bf1284c67f64",
-                "fileName": "Cabo Carvoeiro-thumbnail.jpg",
+                "@id": "/.well-known/genid/a95c46151189060db897",
+                "id": "98c5718e-81e9-4901-83ea-eb0899c2c660",
+                "fileName": "thumbnail of Cabo Carvoeiro.jpg",
                 "type": "image/jpeg",
                 "size": 27,
                 "fixity": "89d8d992572077e4925ef03ec7ac07a567760e5f1a9f5227c9d0a105d7eac011",
                 "checksum": "89d8d992572077e4925ef03ec7ac07a567760e5f1a9f5227c9d0a105d7eac011",
-                "url": "http://minio:9000/databox/test/2c30870b-4139-4856-b15a-a846af748768.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181616Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=fd5b6ecbdb01060b4308ac59a2d2724eb45050ec2867eec29fced66d679b99ec"
+                "url": "http://minio:9000/databox/test/7530fb85-118c-4116-94c7-fad466f2cb8a.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185210Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=87fb6e2c389de288a678ac70007a31a58715ebcbf00e4953e4991f453c2b9fc0"
             }
         }
     },
     {
         "@type": "ManifestEntryOutput",
-        "@id": "/.well-known/genid/3cd8260db9a073844db0",
-        "assetId": "4de1c55a-5065-43a5-837d-da4f7046d45d",
+        "@id": "/.well-known/genid/c4e083c2a99559820d32",
+        "assetId": "15df2619-23df-4d44-a9c8-3f2bfc494c91",
         "position": 1,
         "title": "Berlengas",
         "file": {
             "@type": "ExportedFileOutput",
-            "@id": "/.well-known/genid/4c242f650f618252f78e",
-            "id": "f03565b5-950c-45dc-afa9-98def3b5c7c4",
+            "@id": "/.well-known/genid/0bae2f6cad1d2715134e",
+            "id": "7a7eb6b0-a121-4f05-bab2-995b03368740",
             "fileName": "Berlengas.jpg",
             "type": "image/jpeg",
             "size": 9,
             "fixity": "ca0110ee37eaa851910376df6a813a0e6ed76d278137c976c6596d334ecefbe0",
             "checksum": "ca0110ee37eaa851910376df6a813a0e6ed76d278137c976c6596d334ecefbe0",
-            "url": "http://minio:9000/databox/test/180bb871-4c2d-4be3-9414-57c14f8f11a3.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181616Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=5055644e3e714dc8d193ee56ac2483d3af2815339fcabc3647090b6e3bc07eb4"
+            "url": "http://minio:9000/databox/test/520b40e4-51b1-4648-b882-7139488d5eeb.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185210Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=5ebfd37f74837839b9fd5b7f80af4b8fb7db7890828d1f6ddf0443cf298b20d3"
         },
         "renditions": {
             "thumbnail": {
                 "@type": "ExportedFileOutput",
-                "@id": "/.well-known/genid/552eb2e263df493f996b",
-                "id": "07281e3a-363e-4b35-ab2c-988d5171bf3d",
-                "fileName": "Berlengas-thumbnail.jpg",
+                "@id": "/.well-known/genid/b340940826f3751364c7",
+                "id": "b7cadbd7-4133-404c-93dd-5fb81cd5cc26",
+                "fileName": "thumbnail of Berlengas.jpg",
                 "type": "image/jpeg",
                 "size": 22,
                 "fixity": "af3aebb882fbd1d8a920322c137de804d298b52d66d43a46ae94333942831e5d",
                 "checksum": "af3aebb882fbd1d8a920322c137de804d298b52d66d43a46ae94333942831e5d",
-                "url": "http://minio:9000/databox/test/ff2c5216-093c-4c02-8855-45ba949923a2.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181616Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=995697878e1d3f9bfa89745d918a9e7db3a6d0f5cd0f8410bf4117da166a6250"
+                "url": "http://minio:9000/databox/test/8d8fc933-b1d3-457a-a513-2fda5bd3599e.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185210Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=f94917e6347b2a6f0716078d357d1059ab688ec49b0359a9d75737b643a7fda0"
             }
         }
     },
     {
         "@type": "ManifestEntryOutput",
-        "@id": "/.well-known/genid/76e403cea74ba895a775",
-        "assetId": "c11f9304-0ee8-4359-aac7-fa7eb3e1b016",
+        "@id": "/.well-known/genid/93752a86b97f15eee67e",
+        "assetId": "ecbbabc4-a2c8-4e0b-a225-be5fa6748966",
         "position": 2,
         "title": "Baleal",
         "file": {
             "@type": "ExportedFileOutput",
-            "@id": "/.well-known/genid/8642f311f35fc3b5bec9",
-            "id": "ec2e332a-3e1b-4db8-ac29-0760c4d199ac",
+            "@id": "/.well-known/genid/f05a0560cc627bd94ff2",
+            "id": "4896f2f8-720f-4ccb-a90f-a8cb4b96853a",
             "fileName": "Baleal.jpg",
             "type": "image/jpeg",
             "size": 6,
             "fixity": "d6dd616f7bb8b62efe5d2239ad340680eb86b604ff2e91cc2ebacbe8404a7985",
             "checksum": "d6dd616f7bb8b62efe5d2239ad340680eb86b604ff2e91cc2ebacbe8404a7985",
-            "url": "http://minio:9000/databox/test/4aed98a3-607b-4e87-a0df-2f1ef364c46f.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181616Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=3a74c3081df2683f63b5c62559c26f9ee9ec23bb821609973e96f418abfb270b"
+            "url": "http://minio:9000/databox/test/32c49b6d-9c2f-4652-a50f-3820178c7450.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185210Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=12c9bfa0c0f53685333c4fa7012047767c92622b66c44d716653d2e9fc7b5181"
         },
         "renditions": {
             "thumbnail": {
                 "@type": "ExportedFileOutput",
-                "@id": "/.well-known/genid/23e3e94e07b9e498375a",
-                "id": "535b5ba3-c3b5-4c77-b1ba-b482e75b6241",
-                "fileName": "Baleal-thumbnail.jpg",
+                "@id": "/.well-known/genid/b49bb29da0fbb6504091",
+                "id": "d3e1dd9a-7726-4920-894a-213041dbc04e",
+                "fileName": "thumbnail of Baleal.jpg",
                 "type": "image/jpeg",
                 "size": 19,
                 "fixity": "5bd15d3f0c4e5c478c1bcb14b422b137917560d8f741c1df6bd7eb0941873793",
                 "checksum": "5bd15d3f0c4e5c478c1bcb14b422b137917560d8f741c1df6bd7eb0941873793",
-                "url": "http://minio:9000/databox/test/317dc9b4-3f73-4a7c-b032-dffbf8c4b003.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T181616Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=09fc3d0568d61c4ea49df19179fdf04e67ac0bb1acf875119e0c7fe447ea6b2b"
+                "url": "http://minio:9000/databox/test/d9dea306-5c58-48ba-88b5-9de1cfd005dd.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20261117%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261117T185210Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=93e0df4da4b0819bbf1e1c7ea920f1ea1002aa1157f9aa44cc1ce10471e25cf6"
             }
         }
     }
 ]
-...                                                              6 / 6 (100%)
+..PHP Deprecated:  Method SplObjectStorage::contains() is deprecated since 8.5, use method SplObjectStorage::offsetExists() instead in /app/databox/api/vendor/api-platform/core/src/Symfony/Routing/SkolemIriConverter.php on line 55
+.PHP Deprecated:  Method SplObjectStorage::contains() is deprecated since 8.5, use method SplObjectStorage::offsetExists() instead in /app/databox/api/vendor/api-platform/core/src/Symfony/Routing/SkolemIriConverter.php on line 55
+.PHP Deprecated:  Method SplObjectStorage::contains() is deprecated since 8.5, use method SplObjectStorage::offsetExists() instead in /app/databox/api/vendor/api-platform/core/src/Symfony/Routing/SkolemIriConverter.php on line 55
+...                                                            8 / 8 (100%)
 
-Time: 00:05.313, Memory: 143.00 MB
+Time: 00:10.576, Memory: 143.00 MB
 
-OK (6 tests, 26 assertions)
+OK (8 tests, 33 assertions)
 === tests/Api/OpenApi/IntegrationOpenApiFactoryTest.php ===
 PHPUnit 9.6.36 by Sebastian Bergmann and contributors.
 
 Testing App\Tests\Api\OpenApi\IntegrationOpenApiFactoryTest
 ....                                                                4 / 4 (100%)
 
-Time: 00:00.007, Memory: 12.00 MB
+Time: 00:00.015, Memory: 12.00 MB
 
 OK (4 tests, 9 assertions)
 === tests/Border/FileAnalyzer/ChecksumAnalyzerTest.php ===
@@ -296,6 +302,24 @@ PHPUnit 9.6.36 by Sebastian Bergmann and contributors.
 Testing App\Tests\Border\FileAnalyzer\ChecksumAnalyzerTest
 ...                                                                 3 / 3 (100%)
 
-Time: 00:00.018, Memory: 12.00 MB
+Time: 00:00.040, Memory: 12.00 MB
 
 OK (3 tests, 6 assertions)
+=== tests/Service/Pdf/PdfmarkWriterTest.php ===
+PHPUnit 9.6.36 by Sebastian Bergmann and contributors.
+
+Testing App\Tests\Service\Pdf\PdfmarkWriterTest
+..                                                                  2 / 2 (100%)
+
+Time: 00:00.333, Memory: 16.00 MB
+
+OK (2 tests, 3 assertions)
+=== tests/Service/Integration/IntegrationGuideGeneratorTest.php ===
+PHPUnit 9.6.36 by Sebastian Bergmann and contributors.
+
+Testing App\Tests\Service\Integration\IntegrationGuideGeneratorTest
+..                                                                  2 / 2 (100%)
+
+Time: 00:01.004, Memory: 44.00 MB
+
+OK (2 tests, 17 assertions)

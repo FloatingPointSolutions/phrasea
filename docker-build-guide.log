@@ -1,0 +1,13 @@
+#12 [api-php 8/9] RUN mkdir -p var/cache var/logs var/sessions     && composer install --prefer-dist --no-dev --no-progress --classmap-authoritative --no-interaction     && composer clear-cache     && bin/console alchemy:core:documentation:dump /srv/app/doc     && php -d memory_limit=512M bin/console app:integration:guide:dump public/doc/guia-de-integracao.pdf
+#12 27.31 Cache directory does not exist (cache-repo-dir): 
+#12 27.31 Clearing cache (cache-files-dir): /home/app/.cache/composer/files
+#12 27.45 Clearing cache (cache-dir): /home/app/.cache/composer
+#12 27.45 All caches cleared.
+#12 27.71 Documentation for chapter "_file_analyzers.md" written to "/srv/app/doc/_file_analyzers.md".
+#12 27.71 Documentation for chapter "_initial_attribute_values.md" written to "/srv/app/doc/_initial_attribute_values.md".
+#12 27.72 Documentation for chapter "_rendition_transformers.md" written to "/srv/app/doc/_rendition_transformers.md".
+#12 31.68 Documentation for chapter "_schema.json" written to "/srv/app/doc/_schema.json".
+#12 31.68 Documentation for chapter "_app_config.md" written to "/srv/app/doc/_app_config.md".
+#12 31.68 Documentation for chapter "_global_config.md" written to "/srv/app/doc/_global_config.md".
+#12 33.05 Integration guide written to "/srv/app/public/doc/guia-de-integracao.pdf".
+#12 DONE 33.2s
